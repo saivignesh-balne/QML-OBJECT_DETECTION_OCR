@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-04-05T16:20:29.568808",
+  "kind": "classifier",
+  "artifact_path": "artifacts\\logistic_regression.pkl",
+  "summary_path": "artifacts\\logistic_regression.summary.json",
+  "dataset_dir": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\data\\roi_classifier",
+  "num_samples": 997,
+  "num_classes": 3,
+  "class_names": [
+    "bottle",
+    "chip_packet",
+    "medicine_box"
+  ],
+  "train_samples_original": 797,
+  "train_samples_balanced": 1047,
+  "test_samples": 200,
+  "train_class_counts_original": {
+    "bottle": 246,
+    "medicine_box": 349,
+    "chip_packet": 202
+  },
+  "train_class_counts_augmented": {
+    "bottle": 103,
+    "medicine_box": 0,
+    "chip_packet": 147
+  },
+  "model_name": "Logistic Regression",
+  "model_family": "classical",
+  "model_type": "logreg",
+  "encoding": "classical_projection",
+  "n_qubits": 6,
+  "feature_map_reps": 2,
+  "ansatz_reps": 2,
+  "maxiter": 50,
+  "preselect_dim": 256,
+  "classical_feature_dim": 128,
+  "kernel_name": "linear",
+  "feature_map_name": "PCA feature encoder",
+  "feature_map_detail": "classical baseline",
+  "ansatz_name": "none",
+  "model_summary": "Linear classical baseline for a clean performance floor.",
+  "model_strengths": "Fast to train and easy to explain to non-technical audiences.",
+  "model_limitations": "Limited nonlinear capacity compared with richer baselines.",
+  "test_size": 0.2,
+  "device": "cpu",
+  "tta_views": 3,
+  "artifact_reused": true,
+  "accuracy": 0.995,
+  "macro_precision": 0.9947089947089948,
+  "macro_recall": 0.9962121212121212,
+  "macro_f1": 0.9954285714285714,
+  "weighted_precision": 0.995079365079365,
+  "weighted_recall": 0.995,
+  "weighted_f1": 0.9950057142857142,
+  "train_time_seconds": 54.62046220000775,
+  "classification_report": {
+    "bottle": {
+      "precision": 0.9841269841269841,
+      "recall": 1.0,
+      "f1-score": 0.992,
+      "support": 62.0
+    },
+    "chip_packet": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 50.0
+    },
+    "medicine_box": {
+      "precision": 1.0,
+      "recall": 0.9886363636363636,
+      "f1-score": 0.9942857142857143,
+      "support": 88.0
+    },
+    "accuracy": 0.995,
+    "macro avg": {
+      "precision": 0.9947089947089948,
+      "recall": 0.9962121212121212,
+      "f1-score": 0.9954285714285714,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.995079365079365,
+      "recall": 0.995,
+      "f1-score": 0.9950057142857142,
+      "support": 200.0
+    }
+  }
+}

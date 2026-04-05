@@ -1,0 +1,183 @@
+6 TO 7 MINUTE FULL VIDEO SCRIPT
+Project: Hybrid Quantum Machine Learning for Object Detection, Classification, and OCR
+
+Recommended duration: 6 minutes 30 seconds to 7 minutes
+Use case: internship evaluation video, project explanation plus live demo
+Style: professional, clear, research-focused, practical
+
+==================================================
+1. FULL VIDEO SCRIPT
+==================================================
+
+Hello everyone.
+
+My name is [Your Name], and in this video I am presenting my internship project on Hybrid Quantum Machine Learning for Object Detection, Classification, and OCR.
+
+The main theme of my internship was Quantum Machine Learning, or QML. My goal was not just to study QML theoretically, but to understand how it can be applied in a realistic AI workflow and how it compares against strong classical machine-learning models.
+
+To do that, I built a complete end-to-end vision pipeline for packaging analysis. The system works on three object categories: chip packets, medicine boxes, and bottles. Given an input image, the pipeline detects the object, extracts the relevant region, classifies the object, and reads any printed text visible on it.
+
+So this project has two important dimensions. The first is the application dimension, which is the working computer-vision and OCR pipeline. The second is the research dimension, which is the comparison between classical and hybrid quantum approaches within the same system.
+
+The reason I selected this problem is because packaging images are realistic and challenging. These images may contain cluttered backgrounds, multiple colors, reflections, different orientations, and partially visible text. Because of these variations, this is a meaningful problem for evaluating whether quantum-oriented models can contribute useful value in practice.
+
+Let me explain the overall pipeline.
+
+The first stage is image preprocessing. In this stage, I use OpenCV-based methods for noise reduction, contrast enhancement, and binarization. These preprocessing steps improve the visual quality of the input and help both object detection and OCR perform more reliably.
+
+The second stage is object detection. For this, I use YOLO. The detector takes the full image and identifies the location of the object using bounding boxes. This is important because the classifier should not operate on the entire scene when only one region actually contains the target object.
+
+Once the detector finds the object, the third stage is ROI extraction. ROI means Region of Interest. The detected object area is cropped and passed to the classification branch and the OCR branch.
+
+In the classification branch, I perform feature extraction and then evaluate multiple models. On the classical side, I tested models such as Support Vector Machine, Logistic Regression, Random Forest, and MLP. On the quantum side, I tested hybrid quantum classifiers using Qiskit, including QSVM models with different kernels and encodings, as well as variational quantum classifiers.
+
+An important design choice in this project is that I used a hybrid quantum approach instead of a pure quantum image pipeline. The reason is that raw images are very high-dimensional, and directly processing them in quantum form is not practical in the current near-term setting. So the realistic approach is hybrid: image preprocessing and feature extraction remain classical, and the quantum component is used in the classifier stage.
+
+For quantum feature encoding, I implemented both angle encoding and amplitude encoding. In angle encoding, classical feature values are mapped to quantum rotation angles. In amplitude encoding, the classical features are normalized and embedded into the amplitudes of a quantum state. This allowed me to compare not only classical and quantum models, but also different ways of representing classical data inside a quantum circuit.
+
+For OCR, I integrated both Tesseract OCR and TrOCR. This gives the system more flexibility, because one OCR backend may perform better than the other depending on image quality, font, or text orientation. If text is found, the system returns the extracted text. If no reliable text is found, the system still reports the detected object and marks the text output as No label.
+
+Another important part of this internship project is the user interface. I built a React and Flask based UI so that the full process can be performed visually. Through the UI, I can train models, compare benchmarks, save trained artifacts, run inference on uploaded images, and view final results in a clean way. This makes the project not only technically complete, but also easy to demonstrate and evaluate.
+
+Now I will talk about the data and training setup.
+
+I used separate datasets for detection and ROI classification. The detector is trained on full images with YOLO-style bounding-box annotations. The ROI classifier is trained on cropped images of chip packets, medicine boxes, and bottles. This separation is useful because detection and classification solve different problems. Detection answers where the object is. Classification answers what the object is once the region is isolated.
+
+For model evaluation, I used the same ROI dataset and benchmark logic across all classifier families so that the comparison remains fair. This was one of the most important goals of the internship. I did not want to assume that quantum would be better just because it is newer. Instead, I wanted to measure performance honestly and select the best model based on evidence.
+
+Now let me explain the benchmark results.
+
+The detector achieved strong results, with high precision, high recall, and strong mAP values. On the classifier side, the best classical models achieved about 99.5 percent ROI classification accuracy. Interestingly, one hybrid quantum model, the amplitude-encoding QSVM, also achieved 99.5 percent on the same ROI benchmark. Other quantum models, especially some variational classifiers, performed lower. This is actually a very valuable research outcome.
+
+Why is it valuable? Because it shows that QML should not be treated as automatically better than classical AI. Some hybrid quantum models can be competitive, but others may not perform as well, and they often require more computational effort. So this project gives a balanced conclusion: classical models are still the strongest default choice for production, while hybrid quantum models are highly meaningful for research, experimentation, and innovation.
+
+Now I will move to the demo section.
+
+This is the main dashboard of the project. From here, I can navigate to training, benchmarking, and inference.
+
+In the training section, I can train the detector and the ROI classifiers. I can also train multiple models and save them for reuse, so I do not need to repeat the same training every time. This is useful because some quantum models take longer to train than classical ones.
+
+In the benchmark section, the system shows graphs and comparison tables for all trained models. This makes it easy to compare model families such as classical, hybrid quantum, and variational quantum approaches. It also helps identify which model should be recommended for production and which models are more suitable for research experimentation.
+
+Now I will show the inference lab.
+
+Here, I upload a new image. Once the image is uploaded, the system applies preprocessing, performs object detection, extracts the ROI, predicts the object label, and then runs OCR to extract visible text. The final output is displayed on the image, and the result also shows the predicted label and extracted text separately for clarity.
+
+This part is important because it demonstrates that the project is not only a benchmark study but also a working application. It produces a real output on real images, and at the same time it allows model comparison in the background.
+
+From a business and engineering perspective, the current recommendation from the benchmark is to use the classical winner for deployment, because it is strong, stable, and efficient. From a research perspective, the hybrid quantum branch is valuable because it shows where QML can become competitive and how it can be integrated into a real pipeline in a measurable way.
+
+So the final contribution of this internship is not only the working packaging-analysis system. The deeper contribution is a benchmarked framework that helps answer an important question: when we compare classical and quantum-oriented models fairly in the same environment, what do we learn about their practical strengths and limitations?
+
+To conclude, this internship helped me work across computer vision, OCR, machine learning, Qiskit, benchmarking, UI design, and documentation. It gave me practical experience in building a complete AI system, and it also helped me understand QML more realistically.
+
+The key final takeaway is this: classical models are the current best choice for immediate production, but hybrid quantum machine learning remains a strong direction for research and innovation. This project demonstrates both the engineering path and the exploration path in one complete system.
+
+Thank you.
+
+==================================================
+2. TIMED VIDEO FLOW
+==================================================
+
+0:00 to 0:40
+Show:
+- title screen
+- your name
+- project title
+Say:
+- internship topic
+- QML research focus
+- practical pipeline goal
+
+0:40 to 1:30
+Show:
+- project overview or architecture
+- maybe the dashboard home page
+Say:
+- problem statement
+- object types
+- detection, classification, OCR flow
+
+1:30 to 2:30
+Show:
+- architecture diagram
+- training or workflow screen
+Say:
+- preprocessing
+- YOLO detection
+- ROI extraction
+- OCR branch
+- why hybrid quantum instead of pure quantum
+
+2:30 to 3:30
+Show:
+- benchmark or training section
+- model list if visible
+Say:
+- classical models used
+- quantum models used
+- angle encoding and amplitude encoding
+- fair comparison idea
+
+3:30 to 4:30
+Show:
+- benchmark graphs and tables
+Say:
+- detector performed well
+- best classical models reached around 99.5 percent ROI accuracy
+- QSVM amplitude also reached 99.5 percent
+- other quantum models varied
+- honest conclusion from results
+
+4:30 to 5:50
+Show:
+- inference lab
+- upload an image
+- wait for output
+- final output image with label and extracted text
+Say:
+- live demo flow
+- object is detected
+- label is predicted
+- text is extracted
+- models can also be compared
+
+5:50 to 6:30
+Show:
+- final result screen
+- benchmark summary or recommendation
+Say:
+- production recommendation is classical winner
+- research recommendation is hybrid quantum branch
+- project value for internship
+
+6:30 to 7:00
+Show:
+- closing slide or dashboard
+Say:
+- summary
+- thank you
+
+==================================================
+3. DEMO TALKING POINTS
+==================================================
+
+If you want a more natural demo while recording, use these lines:
+
+"This is the dashboard for the project, where I can manage training, benchmarking, and inference."
+
+"Here in the training section, I can train both detection and ROI classification models, including classical and hybrid quantum models."
+
+"In the benchmark section, I can compare all trained models using graphs and tables, which helps identify the best production model and the most promising research model."
+
+"Now in the inference lab, I upload an image and the system detects the object, predicts the label, and extracts visible text."
+
+"The final output is shown on the image, and the detected label and extracted text are also displayed separately for clarity."
+
+"This is useful because the project is not only a research comparison platform, but also a working end-to-end application."
+
+==================================================
+4. SHORTER CLOSING OPTION
+==================================================
+
+This project shows that hybrid quantum machine learning can be evaluated meaningfully inside a practical vision pipeline. Classical models currently remain the strongest deployment choice, while hybrid quantum models provide important research and innovation value. That balance is the main outcome of my internship.

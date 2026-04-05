@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid QML OCR Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ui.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Quantum Vision Control Room</p>
+                <h1>Hybrid Quantum-Enhanced Object Detection, OCR, and Benchmark Studio</h1>
+                <p class="hero-text">
+                    Upload object images, inspect each stage of the pipeline, compare benchmark winners, and
+                    route inference through the strongest available detector, classifier, and OCR stack.
+                </p>
+                <div class="chip-row">
+                    {% for name in supported_classes %}
+                    <span class="chip">{{ name }}</span>
+                    {% endfor %}
+                    <span class="chip accent">others -> unidentified object detected</span>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <p class="panel-kicker">Best Pipeline Mode</p>
+                <h2>{{ recommendation.detector_backend or 'No detector' }} + {{ recommendation.classifier_name }} + {{ recommendation.ocr_backend }}</h2>
+                <p class="hero-note">
+                    {% if recommendation.source == 'benchmark_report' %}
+                    Recommendation comes from `artifacts/benchmark_report.json`.
+                    {% else %}
+                    Recommendation falls back to the best available local artifacts and the OCR ensemble.
+                    {% endif %}
+                </p>
+                <div class="hero-stats">
+                    <div>
+                        <span>Inference Ready</span>
+                        <strong>{{ 'Yes' if recommendation.ready else 'Not yet' }}</strong>
+                    </div>
+                    <div>
+                        <span>Detector Weights</span>
+                        <strong>{{ inventory.detector_weights|length }}</strong>
+                    </div>
+                    <div>
+                        <span>Classifier Artifacts</span>
+                        <strong>{{ inventory.classifier_artifacts|length }}</strong>
+                    </div>
+                    <div>
+                        <span>Benchmark Report</span>
+                        <strong>{{ 'Loaded' if benchmark.has_report else 'Missing' }}</strong>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <section class="flash-stack">
+            {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        {% endwith %}
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">UI Flow</p>
+                    <h2>Complete Browser-Only Workflow</h2>
+                </div>
+                <p class="panel-copy">
+                    This dashboard is now designed so training, benchmark generation, and inference can all be driven from the UI.
+                </p>
+            </div>
+            <div class="grid five-up flow-grid">
+                {% for step in flow_steps %}
+                <article class="subpanel flow-card">
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.text }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="grid two-up">
+            <article class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Upload & Infer</p>
+                        <h2>Analyze an Object Image</h2>
+                    </div>
+                    <p class="panel-copy">
+                        Upload a product image to run preprocessing, object detection, hybrid QML classification,
+                        OCR, and runtime benchmarking in one pass.
+                    </p>
+                </div>
+                <form class="upload-form" action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+                    <label class="file-drop">
+                        <span class="file-title">Choose image</span>
+                        <span class="file-subtitle">PNG, JPG, JPEG, BMP, or WEBP</span>
+                        <input type="file" name="image" accept=".png,.jpg,.jpeg,.bmp,.webp" required {% if training_status.training or not recommendation.ready %}disabled{% endif %}>
+                    </label>
+                    <button class="primary-btn" type="submit" {% if training_status.training or not recommendation.ready %}disabled{% endif %}>Run Best Pipeline</button>
+                </form>
+                <div class="rule-list">
+                    <div class="rule-item">`chip_packet`, `medicine_box`, and `bottle` are the supported classes.</div>
+                    <div class="rule-item">If text is readable, OCR returns it. If not, the UI returns `No label`.</div>
+                    <div class="rule-item">If the detector/classifier falls outside the supported taxonomy, the result becomes `unidentified object detected`.</div>
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Artifact Status</p>
+                        <h2>Pipeline Readiness</h2>
+                    </div>
+                    <p class="panel-copy">The dashboard stays online even when optional artifacts are missing.</p>
+                </div>
+                <div class="status-grid">
+                    <div class="status-card {{ 'good' if recommendation.ready else 'warn' }}">
+                        <span class="status-label">Current Mode</span>
+                        <strong>{{ 'Ready for inference' if recommendation.ready else 'Artifacts missing' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Detector</span>
+                        <strong>{{ recommendation.detector_weights or 'Not found' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Classifier</span>
+                        <strong>{{ recommendation.classifier_artifact or 'Not found' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">OCR</span>
+                        <strong>{{ recommendation.ocr_backend }}</strong>
+                    </div>
+                </div>
+                {% if recommendation.notes %}
+                <div class="mini-list">
+                    {% for note in recommendation.notes %}
+                    <div class="mini-list-item">{{ note }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </article>
+        </section>
+
+        <section class="grid two-up">
+            <article class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Training</p>
+                        <h2>Train Detector from UI</h2>
+                    </div>
+                    <p class="panel-copy">Use your object detection dataset YAML and train YOLO without leaving the dashboard.</p>
+                </div>
+                <form class="stacked-form" action="{{ url_for('train_detector') }}" method="post">
+                    <label>
+                        <span>Dataset YAML</span>
+                        <input type="text" name="dataset_yaml" value="{{ path_hints.detector_dataset_yaml }}" required>
+                    </label>
+                    <div class="grid two-up compact-grid">
+                        <label>
+                            <span>Base Model</span>
+                            <input type="text" name="model" value="{{ path_hints.detector_base_model }}">
+                        </label>
+                        <label>
+                            <span>Device</span>
+                            <input type="text" name="device" value="cpu">
+                        </label>
+                        <label>
+                            <span>Epochs</span>
+                            <input type="number" name="epochs" value="50" min="1">
+                        </label>
+                        <label>
+                            <span>Image Size</span>
+                            <input type="number" name="imgsz" value="960" min="64">
+                        </label>
+                        <label>
+                            <span>Batch Size</span>
+                            <input type="number" name="batch" value="8" min="1">
+                        </label>
+                        <label>
+                            <span>Run Name</span>
+                            <input type="text" name="name" value="{{ path_hints.detector_name }}">
+                        </label>
+                    </div>
+                    <label>
+                        <span>Project Folder</span>
+                        <input type="text" name="project" value="{{ path_hints.detector_project }}">
+                    </label>
+                    <label>
+                        <span>Summary JSON</span>
+                        <input type="text" name="summary_path" value="artifacts/qml_ocr_detector.summary.json">
+                    </label>
+                    <button class="secondary-btn" type="submit" {% if training_status.training %}disabled{% endif %}>Start Detector Training</button>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Training</p>
+                        <h2>Train Hybrid Classifier from UI</h2>
+                    </div>
+                    <p class="panel-copy">Train QSVC or VQC on cropped ROI images directly from the browser.</p>
+                </div>
+                <form class="stacked-form" action="{{ url_for('train_classifier') }}" method="post">
+                    <label>
+                        <span>ROI Dataset Directory</span>
+                        <input type="text" name="dataset_dir" value="{{ path_hints.classifier_dataset_dir }}" required>
+                    </label>
+                    <div class="grid two-up compact-grid">
+                        <label>
+                            <span>Model Type</span>
+                            <select name="model_type">
+                                <option value="qsvc">QSVC</option>
+                                <option value="vqc">VQC</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Encoding</span>
+                            <select name="encoding">
+                                <option value="angle">Angle</option>
+                                <option value="amplitude">Amplitude</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Qubits</span>
+                            <input type="number" name="n_qubits" value="6" min="1">
+                        </label>
+                        <label>
+                            <span>Test Split</span>
+                            <input type="number" step="0.05" name="test_size" value="0.2" min="0.05" max="0.9">
+                        </label>
+                        <label>
+                            <span>Device</span>
+                            <input type="text" name="device" value="cpu">
+                        </label>
+                        <label>
+                            <span>Artifact Path</span>
+                            <input type="text" name="artifact_path" value="{{ path_hints.classifier_artifact_path }}">
+                        </label>
+                    </div>
+                    <label>
+                        <span>Summary JSON</span>
+                        <input type="text" name="summary_path" value="{{ path_hints.classifier_summary_path }}">
+                    </label>
+                    <button class="secondary-btn" type="submit" {% if training_status.training %}disabled{% endif %}>Start Classifier Training</button>
+                </form>
+            </article>
+        </section>
+
+        <section class="grid two-up">
+            <article class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Benchmark</p>
+                        <h2>Generate Benchmark Report</h2>
+                    </div>
+                    <p class="panel-copy">
+                        Aggregate detector and classifier summaries into `artifacts/benchmark_report.json` for best-pipeline selection.
+                    </p>
+                </div>
+                <form class="stacked-form" action="{{ url_for('generate_benchmark') }}" method="post">
+                    <button class="secondary-btn" type="submit" {% if training_status.training %}disabled{% endif %}>Build Benchmark Report</button>
+                </form>
+                <div class="rule-list">
+                    <div class="rule-item">Detector training writes `.summary.json` with mAP metrics.</div>
+                    <div class="rule-item">Classifier training writes `.summary.json` with accuracy and F1.</div>
+                    <div class="rule-item">Benchmark generation combines those files and recommends the best available pipeline.</div>
+                </div>
+            </article>
+
+            <article class="panel status-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Live Status</p>
+                        <h2>Training and Benchmark Logs</h2>
+                    </div>
+                    <p class="panel-copy">The UI polls job status automatically while background commands are running.</p>
+                </div>
+                <div class="status-grid">
+                    <div class="status-card {{ 'warn' if training_status.training else 'good' }}">
+                        <span class="status-label">Current Job</span>
+                        <strong id="job-title">{{ training_status.title or 'Idle' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Job Type</span>
+                        <strong id="job-type">{{ training_status.job_type or 'none' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Running</span>
+                        <strong id="job-running">{{ 'Yes' if training_status.training else 'No' }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">Exit Code</span>
+                        <strong id="job-code">{{ training_status.return_code if training_status.return_code is not none else 'n/a' }}</strong>
+                    </div>
+                </div>
+                <div class="status-log" id="status-log">
+                    {% for line in training_status.status_messages %}
+                    <div class="status-entry">{{ line }}</div>
+                    {% endfor %}
+                </div>
+            </article>
+        </section>
+
+        <section class="grid three-up">
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Dependencies</p>
+                        <h2>Runtime Stack</h2>
+                    </div>
+                </div>
+                <div class="dependency-list">
+                    {% for dep in dependency_status %}
+                    <div class="dependency-card {{ 'good' if dep.available else 'warn' }}">
+                        <div>
+                            <strong>{{ dep.name }}</strong>
+                            <span>{{ 'Available' if dep.available else 'Unavailable' }}</span>
+                        </div>
+                        {% if dep.detail %}
+                        <small>{{ dep.detail }}</small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Detector Weights</p>
+                        <h2>Available Files</h2>
+                    </div>
+                </div>
+                {% if inventory.detector_weights %}
+                <div class="artifact-list">
+                    {% for item in inventory.detector_weights %}
+                    <div class="artifact-row">
+                        <strong>{{ item.name }}</strong>
+                        <span>{{ item.backend }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="empty-copy">Add `.pt` detector weights to `weights/` or `artifacts/`.</p>
+                {% endif %}
+            </article>
+
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Classifier Artifacts</p>
+                        <h2>Available Files</h2>
+                    </div>
+                </div>
+                {% if inventory.classifier_artifacts %}
+                <div class="artifact-list">
+                    {% for item in inventory.classifier_artifacts %}
+                    <div class="artifact-row">
+                        <strong>{{ item.name }}</strong>
+                        <span>pickle</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="empty-copy">Train the ROI classifier and place the `.pkl` artifact in `artifacts/`.</p>
+                {% endif %}
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Benchmark Center</p>
+                    <h2>Accuracy and Model Selection</h2>
+                </div>
+                <p class="panel-copy">
+                    The UI uses `artifacts/benchmark_report.json` when available. That report can rank detector,
+                    hybrid classifier, OCR, and full-pipeline combinations by measured validation performance.
+                </p>
+            </div>
+
+            {% if benchmark.has_report %}
+            <div class="grid three-up benchmark-grid">
+                <div class="subpanel">
+                    <h3>Detector Benchmarks</h3>
+                    {% if benchmark.detectors %}
+                    <div class="table-list">
+                        {% for row in benchmark.detectors %}
+                        <div class="table-row">
+                            <div>
+                                <strong>{{ row.name or row.model }}</strong>
+                                <span>{{ row.notes or 'detector benchmark' }}</span>
+                            </div>
+                            <span>{{ '%.2f'|format((row.accuracy or row.Accuracy or 0) * 100) }}%</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-copy">No detector benchmark rows were found.</p>
+                    {% endif %}
+                </div>
+                <div class="subpanel">
+                    <h3>Overall Leaderboard</h3>
+                    {% if benchmark.overall %}
+                    <div class="table-list">
+                        {% for row in benchmark.overall %}
+                        <div class="table-row">
+                            <div>
+                                <strong>{{ row.pipeline or row.name or row.model }}</strong>
+                                <span>{{ row.notes or row.source or 'validated pipeline' }}</span>
+                            </div>
+                            <span>{{ '%.2f'|format((row.accuracy or row.Accuracy or 0) * 100) }}%</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-copy">No overall leaderboard rows were found in the benchmark report.</p>
+                    {% endif %}
+                </div>
+                <div class="subpanel">
+                    <h3>Classifier Benchmarks</h3>
+                    {% if benchmark.classifiers %}
+                    <div class="table-list">
+                        {% for row in benchmark.classifiers %}
+                        <div class="table-row">
+                            <div>
+                                <strong>{{ row.name or row.model }}</strong>
+                                <span>{{ row.encoding or row.notes or 'classifier benchmark' }}</span>
+                            </div>
+                            <span>{{ '%.2f'|format((row.accuracy or row.Accuracy or 0) * 100) }}%</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-copy">No classifier benchmark rows were found.</p>
+                    {% endif %}
+                </div>
+                <div class="subpanel">
+                    <h3>OCR Benchmarks</h3>
+                    {% if benchmark.ocr %}
+                    <div class="table-list">
+                        {% for row in benchmark.ocr %}
+                        <div class="table-row">
+                            <div>
+                                <strong>{{ row.name or row.model }}</strong>
+                                <span>{{ row.metric or row.notes or 'ocr benchmark' }}</span>
+                            </div>
+                            <span>{{ row.score or row.accuracy or row.Accuracy or 'n/a' }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="empty-copy">No OCR benchmark rows were found.</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% if benchmark.notes %}
+            <div class="mini-list top-gap">
+                {% for note in benchmark.notes %}
+                <div class="mini-list-item">{{ note }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% else %}
+            <div class="empty-state">
+                <h3>No benchmark report loaded</h3>
+                <p>
+                    Place a benchmark summary at `hybrid_qml_ocr_pipeline/artifacts/benchmark_report.json`.
+                    The dashboard will automatically use it to select the highest-performing local pipeline.
+                </p>
+            </div>
+            {% endif %}
+        </section>
+
+        {% if analysis %}
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Pipeline Walkthrough</p>
+                    <h2>Step-by-Step Visual Output</h2>
+                </div>
+                <p class="panel-copy">{{ analysis.upload_name }} processed through the current best pipeline.</p>
+            </div>
+            <div class="step-grid">
+                {% for step in analysis.steps %}
+                <article class="step-card">
+                    <img src="{{ step.image }}" alt="{{ step.name }}">
+                    <div class="step-meta">
+                        <div class="step-title-row">
+                            <h3>{{ step.name }}</h3>
+                            <span>{{ '%.2f'|format(step.duration_ms) }} ms</span>
+                        </div>
+                        <p>{{ step.summary }}</p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="grid two-up">
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Runtime Benchmarks</p>
+                        <h2>Latency by Stage</h2>
+                    </div>
+                </div>
+                <div class="runtime-bars">
+                    {% set max_value = analysis.runtime_benchmarks | map(attribute='value_ms') | max %}
+                    {% for item in analysis.runtime_benchmarks %}
+                    <div class="runtime-row">
+                        <div class="runtime-label">
+                            <strong>{{ item.label }}</strong>
+                            <span>{{ item.value_ms }} ms</span>
+                        </div>
+                        <div class="runtime-track">
+                            <div class="runtime-fill" style="width: {{ ((item.value_ms / (max_value or 1)) * 100) | round(2) }}%;"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Pipeline Used</p>
+                        <h2>Active Inference Stack</h2>
+                    </div>
+                </div>
+                <div class="status-grid">
+                    <div class="status-card">
+                        <span class="status-label">Detector</span>
+                        <strong>{{ analysis.pipeline_used.detector_backend }}</strong>
+                    </div>
+                    <div class="status-card">
+                        <span class="status-label">OCR</span>
+                        <strong>{{ analysis.pipeline_used.ocr_backend }}</strong>
+                    </div>
+                    <div class="status-card wide">
+                        <span class="status-label">Classifier</span>
+                        <strong>{{ analysis.pipeline_used.classifier_name }}</strong>
+                    </div>
+                    <div class="status-card wide">
+                        <span class="status-label">Saved JSON</span>
+                        <strong>{{ analysis.saved_json }}</strong>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Detected Objects</p>
+                    <h2>Per-ROI Predictions and OCR</h2>
+                </div>
+                <p class="panel-copy">
+                    Final labels, OCR candidates, and quantum-stage metadata are shown for each detected object.
+                </p>
+            </div>
+            {% if analysis.roi_results %}
+            <div class="roi-grid">
+                {% for item in analysis.roi_results %}
+                <article class="roi-card">
+                    <img src="{{ item.roi_preview }}" alt="Detected ROI">
+                    <div class="roi-body">
+                        <div class="roi-title-row">
+                            <h3>{{ item.object_label }}</h3>
+                            <span>{{ '%.2f'|format(item.detector_confidence * 100) }}%</span>
+                        </div>
+                        <div class="meta-pills">
+                            <span>detector: {{ item.detector_label }}</span>
+                            <span>ocr: {{ item.ocr_backend }}</span>
+                        </div>
+                        <p class="result-text">{{ item.extracted_text }}</p>
+                        <div class="subpanel muted">
+                            <h4>Quantum Stage</h4>
+                            {% if item.quantum_summary.status == 'completed' %}
+                            <div class="mini-kv"><span>Model</span><strong>{{ item.quantum_summary.model_type }}</strong></div>
+                            <div class="mini-kv"><span>Encoding</span><strong>{{ item.quantum_summary.encoding }}</strong></div>
+                            <div class="mini-kv"><span>Qubits</span><strong>{{ item.quantum_summary.n_qubits }}</strong></div>
+                            <div class="mini-kv"><span>Target Dim</span><strong>{{ item.quantum_summary.target_dimension }}</strong></div>
+                            {% else %}
+                            <p class="empty-copy">{{ item.quantum_summary.reason }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="subpanel muted">
+                            <h4>OCR Candidates</h4>
+                            {% for ocr_item in item.ocr_candidates %}
+                            <div class="mini-kv">
+                                <span>{{ ocr_item.backend }}</span>
+                                <strong>{{ ocr_item.text if ocr_item.text else 'No label' }}</strong>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">
+                <h3>No objects detected</h3>
+                <p>Try a clearer image, larger object region, or a detector weight trained on your custom classes.</p>
+            </div>
+            {% endif %}
+        </section>
+        {% endif %}
+    </div>
+
+    <script>
+        async function pollStatus() {
+            try {
+                const response = await fetch("{{ url_for('status') }}", { cache: "no-store" });
+                if (!response.ok) {
+                    return;
+                }
+                const data = await response.json();
+                document.getElementById("job-title").textContent = data.title || "Idle";
+                document.getElementById("job-type").textContent = data.job_type || "none";
+                document.getElementById("job-running").textContent = data.training ? "Yes" : "No";
+                document.getElementById("job-code").textContent = data.return_code === null ? "n/a" : data.return_code;
+                const statusLog = document.getElementById("status-log");
+                statusLog.innerHTML = "";
+                (data.status_messages || []).slice().reverse().forEach((line) => {
+                    const div = document.createElement("div");
+                    div.className = "status-entry";
+                    div.textContent = line;
+                    statusLog.appendChild(div);
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        setInterval(pollStatus, 2500);
+        pollStatus();
+    </script>
+</body>
+</html>

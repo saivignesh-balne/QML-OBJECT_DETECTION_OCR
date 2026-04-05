@@ -1,0 +1,429 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  pdftitle={Hybrid Quantum-Enhanced Object Detection and OCR Pipeline},
+  pdfauthor={Project Report}
+}
+
+\setstretch{1.2}
+\setlist[itemize]{noitemsep, topsep=4pt}
+\setlist[enumerate]{noitemsep, topsep=4pt}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+
+\title{\textbf{Full Project Report}\\Hybrid Quantum-Enhanced Object Detection, Classification, and OCR Pipeline}
+\author{Prepared from the current implementation and benchmark outputs}
+\date{April 5, 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Abstract}
+
+This report documents an end-to-end system for detecting bottles, chip packets, and medicine boxes, classifying them with classical and hybrid quantum machine learning models, and extracting printed text using OCR. The pipeline integrates OpenCV preprocessing, YOLO-based detection, ROI extraction, engineered visual features, quantum feature encoding, multiple classifier families, and OCR backends using Tesseract and TrOCR. A React and Flask interface supports training, benchmarking, and inference from a single UI.
+
+The central project question is whether hybrid quantum models add measurable value compared with strong classical baselines. On the current ROI dataset, the best classical models and one amplitude-encoding quantum kernel model all achieve \(99.5\%\) held-out classification accuracy. However, classical models remain substantially faster to train on average, and the current production recommendation is therefore a classical stack. Hybrid quantum models remain valuable as the innovation and research branch of the project.
+
+\section{Introduction}
+
+Packaging recognition is a practical computer-vision task that combines detection, classification, and text extraction. A useful system must identify where the object is, what it is, and what text is visible on it. This project addresses that requirement by combining a detector, a classifier, and OCR in one benchmarked system.
+
+\section{Problem Statement}
+
+The system must process an image and produce:
+\begin{itemize}
+  \item the object label
+  \item the extracted text if readable
+  \item a clean visual output with label and text-region annotation
+\end{itemize}
+
+The supported classes are:
+\begin{itemize}
+  \item \texttt{chip\_packet}
+  \item \texttt{medicine\_box}
+  \item \texttt{bottle}
+\end{itemize}
+
+\section{Objectives}
+
+\begin{enumerate}
+  \item Build a production-style vision and OCR pipeline.
+  \item Implement angle encoding and amplitude encoding.
+  \item Compare classical and hybrid quantum models fairly.
+  \item Provide a UI for training, benchmarking, and inference.
+  \item Produce a presentation-ready and defensible project outcome.
+\end{enumerate}
+
+\section{System Overview}
+
+The high-level system flow is:
+
+\begin{verbatim}
+Input Image
+  -> OpenCV Preprocessing
+  -> Object Detection
+  -> ROI Extraction
+  -> Feature Extraction
+  -> Classical or Quantum-Aware Classification
+  -> OCR
+  -> Full-Image Output + Structured JSON
+\end{verbatim}
+
+The system supports two modes:
+\begin{itemize}
+  \item ROI upload mode for already-cropped single-object images
+  \item Full pipeline mode for full-scene images using the detector
+\end{itemize}
+
+\section{Dataset Design}
+
+The project uses two datasets:
+\begin{itemize}
+  \item a YOLO detection dataset for localization
+  \item an ROI classifier dataset for cropped object images
+\end{itemize}
+
+\subsection{ROI Dataset Statistics}
+
+The current ROI classifier dataset statistics are:
+\begin{itemize}
+  \item Total samples: \(997\)
+  \item Training samples before balancing: \(797\)
+  \item Test samples: \(200\)
+  \item Balanced training samples: \(1047\)
+\end{itemize}
+
+Class counts before balancing:
+\begin{itemize}
+  \item bottle: \(246\)
+  \item chip\_packet: \(202\)
+  \item medicine\_box: \(349\)
+\end{itemize}
+
+\section{Preprocessing}
+
+Detection preprocessing includes:
+\begin{itemize}
+  \item noise reduction
+  \item contrast enhancement
+  \item binarization
+\end{itemize}
+
+OCR preprocessing includes:
+\begin{itemize}
+  \item grayscale conversion
+  \item upscaling
+  \item bilateral filtering
+  \item CLAHE enhancement
+  \item sharpening
+  \item adaptive and Otsu thresholding
+  \item morphological cleanup
+\end{itemize}
+
+\section{Object Detection}
+
+The current detector was trained using:
+\begin{itemize}
+  \item Base model: \texttt{yolov8n.pt}
+  \item Epochs: \(30\)
+  \item Image size: \(640\)
+  \item Batch size: \(8\)
+  \item Device: CPU
+\end{itemize}
+
+\subsection{Detector Metrics}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Precision & 0.90054 \\
+Recall & 0.94974 \\
+mAP@50 & 0.95593 \\
+mAP@50--95 & 0.61159 \\
+\bottomrule
+\end{tabular}
+\caption{Current YOLO detector metrics}
+\end{table}
+
+\section{Feature Extraction}
+
+The classification branch uses engineered ROI features rather than raw images. This is necessary because current near-term quantum models cannot practically process full-resolution image tensors directly. The feature stack includes combinations of CNN embeddings, HOG, texture features, and color histograms.
+
+\section{Quantum Feature Encoding}
+
+\subsection{Angle Encoding}
+
+Angle encoding maps reduced features to rotations:
+\[
+\theta_i \in [0,\pi]
+\]
+with each qubit receiving a rotation such as:
+\[
+R_y(\theta_i)
+\]
+
+\subsection{Amplitude Encoding}
+
+Amplitude encoding prepares a quantum state:
+\[
+\lvert \psi \rangle = \sum_{i=0}^{2^n - 1} a_i \lvert i \rangle
+\]
+subject to:
+\[
+\sum_i |a_i|^2 = 1
+\]
+
+\section{Model Families}
+
+\subsection{Classical Models}
+
+\begin{itemize}
+  \item Classical SVM (RBF)
+  \item Logistic Regression
+  \item Random Forest
+  \item MLP
+\end{itemize}
+
+\subsection{Quantum Kernel Models}
+
+\begin{itemize}
+  \item QSVM ZZ linear
+  \item QSVM ZZ full
+  \item QSVM Pauli
+  \item QSVM amplitude encoding
+\end{itemize}
+
+\subsection{Variational Quantum Models}
+
+\begin{itemize}
+  \item VQC RealAmplitudes
+  \item VQC EfficientSU2
+\end{itemize}
+
+\section{OCR Layer}
+
+The OCR subsystem uses:
+\begin{itemize}
+  \item Tesseract
+  \item TrOCR
+  \item ensemble selection of the best non-empty output
+\end{itemize}
+
+\section{Benchmark Methodology}
+
+Classifier evaluation uses:
+\begin{itemize}
+  \item accuracy
+  \item macro F1
+  \item weighted F1
+  \item training time
+\end{itemize}
+
+Detector evaluation uses:
+\begin{itemize}
+  \item precision
+  \item recall
+  \item mAP@50
+  \item mAP@50--95
+\end{itemize}
+
+The current full-pipeline leaderboard uses a proxy composite score:
+\[
+\text{Composite Score} = \frac{\text{Detector mAP@50-95} + \text{Classifier Accuracy}}{2}
+\]
+
+This must be presented honestly as a ranking proxy rather than a true field-validated end-to-end metric.
+
+\section{Results}
+
+\subsection{Recommended Pipeline}
+
+The current recommended pipeline is:
+\begin{itemize}
+  \item Detector: YOLO
+  \item Classifier: Classical SVM (RBF)
+  \item OCR: Ensemble
+\end{itemize}
+
+\subsection{Classifier Results}
+
+\begin{longtable}{p{4.3cm}p{1.8cm}p{1.8cm}p{1.5cm}p{1.5cm}p{1.8cm}}
+\toprule
+Model & Family & Encoding & Accuracy & Macro F1 & Train Time (s) \\
+\midrule
+\endfirsthead
+\toprule
+Model & Family & Encoding & Accuracy & Macro F1 & Train Time (s) \\
+\midrule
+\endhead
+Classical SVM (RBF) & Classical & Classical & 0.995 & 0.99543 & 54.49 \\
+Logistic Regression & Classical & Classical & 0.995 & 0.99543 & 54.62 \\
+MLP Classifier & Classical & Classical & 0.995 & 0.99543 & 54.97 \\
+QSVM ZZ Kernel Linear & Quantum & Amplitude & 0.995 & 0.99543 & 519.16 \\
+Random Forest & Classical & Classical & 0.990 & 0.99088 & 61.87 \\
+QSVM Pauli Kernel & Quantum & Angle & 0.900 & 0.89910 & 513.67 \\
+QSVM ZZ Kernel Linear & Quantum & Angle & 0.810 & 0.81339 & 468.06 \\
+QSVM ZZ Kernel Full & Quantum & Angle & 0.745 & 0.74539 & 920.36 \\
+VQC RealAmplitudes & Quantum & Angle & 0.440 & 0.43485 & 131.27 \\
+VQC EfficientSU2 & Quantum & Angle & 0.430 & 0.42986 & 141.86 \\
+\bottomrule
+\end{longtable}
+
+\subsection{Family Summary}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Family & Count & Best Accuracy & Average Accuracy \\
+\midrule
+Classical & 4 & 0.995 & 0.99375 \\
+Quantum & 6 & 0.995 & 0.72000 \\
+\bottomrule
+\end{tabular}
+\caption{Classifier family summary}
+\end{table}
+
+\section{Interpretation}
+
+The results support three main conclusions:
+
+\begin{enumerate}
+  \item The strongest production baseline is currently classical.
+  \item The strongest quantum-side model is the amplitude-encoding QSVM.
+  \item The average quantum family remains below the classical family average, so quantum should currently be presented as an innovation branch rather than the default deployment path.
+\end{enumerate}
+
+An especially important result is that the amplitude-encoding QSVM matches the best classical accuracy at \(99.5\%\), but its training time is much higher:
+
+\begin{itemize}
+  \item Classical SVM: approximately \(54.49\) seconds
+  \item Amplitude QSVM: approximately \(519.16\) seconds
+\end{itemize}
+
+\section{Classical vs Hybrid Quantum vs Pure Quantum}
+
+\begin{longtable}{p{2.2cm}p{3.4cm}p{3.4cm}p{3.4cm}p{2.2cm}}
+\toprule
+Approach & How It Works Here & Advantages & Disadvantages & Best Use \\
+\midrule
+\endfirsthead
+\toprule
+Approach & How It Works Here & Advantages & Disadvantages & Best Use \\
+\midrule
+\endhead
+Classical & OpenCV + ROI features + classical classifier & Fast, strong baselines, easier deployment, lower complexity & Lower research novelty & Production \\
+Hybrid Quantum & Classical preprocessing + compressed features + quantum kernel or VQC & Strong innovation value, realistic near-term setup, fair comparison & Higher complexity, slower training, gains must be justified & Research and innovation \\
+Pure Quantum & Direct quantum image encoding and classification & High novelty and strategic future value & Not practical today for this image task & Future direction \\
+\bottomrule
+\end{longtable}
+
+\section{Advantages}
+
+The implemented project provides:
+\begin{itemize}
+  \item a full pipeline from detection to OCR
+  \item saved and reusable artifacts
+  \item benchmark-driven model selection
+  \item a UI for training and inference
+  \item a direct comparison between classical and quantum-oriented approaches
+\end{itemize}
+
+\section{Limitations}
+
+\begin{itemize}
+  \item The leaderboard uses a composite proxy score rather than true end-to-end validation.
+  \item OCR remains sensitive to difficult packaging conditions.
+  \item Quantum models are simulated, not deployed on hardware in production conditions.
+  \item Pure quantum image processing is not practical for this task today.
+\end{itemize}
+
+\section{Recommendations}
+
+\subsection{Production Recommendation}
+
+Use the current recommended stack:
+\begin{itemize}
+  \item YOLO detector
+  \item Classical SVM (RBF)
+  \item OCR Ensemble
+\end{itemize}
+
+\subsection{Research Recommendation}
+
+Retain the hybrid quantum track, especially:
+\begin{itemize}
+  \item QSVM amplitude encoding
+  \item QSVM Pauli kernel
+\end{itemize}
+
+\subsection{Evaluation Recommendation}
+
+The next major step should be a true end-to-end validation benchmark using full-scene test images and measured combined task performance.
+
+\section{Future Work}
+
+\begin{enumerate}
+  \item Add true end-to-end field validation.
+  \item Improve OCR robustness for challenging labels.
+  \item Add stronger unsupported-object handling.
+  \item Explore richer quantum kernels and better compression strategies.
+  \item Add exportable reports for management review.
+\end{enumerate}
+
+\section{Conclusion}
+
+This project successfully demonstrates a complete detection, classification, and OCR workflow while also answering a meaningful research question about quantum value in a practical vision pipeline. The strongest current production result is classical, the strongest quantum-side result is amplitude-encoding QSVM, and pure quantum processing remains a future concept for this task.
+
+This is a strong project outcome because it delivers both:
+\begin{itemize}
+  \item a credible deployment path
+  \item a measurable innovation path
+\end{itemize}
+
+\section{References}
+
+\begin{thebibliography}{9}
+\bibitem{yolo}
+Ultralytics YOLO documentation and implementation.
+
+\bibitem{qiskit}
+Qiskit and Qiskit Machine Learning documentation.
+
+\bibitem{opencv}
+OpenCV documentation.
+
+\bibitem{pytorch}
+PyTorch documentation.
+
+\bibitem{tesseract}
+Tesseract OCR documentation.
+
+\bibitem{trocr}
+Microsoft TrOCR documentation.
+\end{thebibliography}
+
+\end{document}

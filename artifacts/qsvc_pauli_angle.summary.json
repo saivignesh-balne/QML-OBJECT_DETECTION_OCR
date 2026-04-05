@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-04-05T16:11:58.696037",
+  "kind": "classifier",
+  "artifact_path": "artifacts\\qsvc_pauli_angle.pkl",
+  "summary_path": "artifacts\\qsvc_pauli_angle.summary.json",
+  "dataset_dir": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\data\\roi_classifier",
+  "num_samples": 997,
+  "num_classes": 3,
+  "class_names": [
+    "bottle",
+    "chip_packet",
+    "medicine_box"
+  ],
+  "train_samples_original": 797,
+  "train_samples_balanced": 1047,
+  "test_samples": 200,
+  "train_class_counts_original": {
+    "bottle": 246,
+    "medicine_box": 349,
+    "chip_packet": 202
+  },
+  "train_class_counts_augmented": {
+    "bottle": 103,
+    "medicine_box": 0,
+    "chip_packet": 147
+  },
+  "model_name": "QSVM Pauli Kernel (angle)",
+  "model_family": "quantum",
+  "model_type": "qsvc_pauli",
+  "encoding": "angle",
+  "n_qubits": 4,
+  "feature_map_reps": 1,
+  "ansatz_reps": 2,
+  "maxiter": 50,
+  "preselect_dim": 64,
+  "classical_feature_dim": 128,
+  "kernel_name": "Fidelity Quantum Kernel",
+  "feature_map_name": "PauliFeatureMap",
+  "feature_map_detail": "paulis=['Z','ZZ','XX']",
+  "ansatz_name": "none",
+  "model_summary": "Quantum kernel SVM using a Pauli feature map with mixed operators.",
+  "model_strengths": "More expressive than plain ZZ kernels for research comparison.",
+  "model_limitations": "More expensive and not always better on compact ROI datasets.",
+  "test_size": 0.2,
+  "device": "cpu",
+  "tta_views": 3,
+  "artifact_reused": false,
+  "accuracy": 0.9,
+  "macro_precision": 0.9003004772714044,
+  "macro_recall": 0.9003176930596286,
+  "macro_f1": 0.8991019290623262,
+  "weighted_precision": 0.9047643836214422,
+  "weighted_recall": 0.9,
+  "weighted_f1": 0.9011797122759643,
+  "train_time_seconds": 513.6677362000046,
+  "classification_report": {
+    "bottle": {
+      "precision": 0.8115942028985508,
+      "recall": 0.9032258064516129,
+      "f1-score": 0.8549618320610687,
+      "support": 62.0
+    },
+    "chip_packet": {
+      "precision": 0.9375,
+      "recall": 0.9,
+      "f1-score": 0.9183673469387755,
+      "support": 50.0
+    },
+    "medicine_box": {
+      "precision": 0.9518072289156626,
+      "recall": 0.8977272727272727,
+      "f1-score": 0.9239766081871345,
+      "support": 88.0
+    },
+    "accuracy": 0.9,
+    "macro avg": {
+      "precision": 0.9003004772714044,
+      "recall": 0.9003176930596286,
+      "f1-score": 0.8991019290623262,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.9047643836214422,
+      "recall": 0.9,
+      "f1-score": 0.9011797122759643,
+      "support": 200.0
+    }
+  }
+}

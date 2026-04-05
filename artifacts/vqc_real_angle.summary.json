@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-04-05T16:14:27.943042",
+  "kind": "classifier",
+  "artifact_path": "artifacts\\vqc_real_angle.pkl",
+  "summary_path": "artifacts\\vqc_real_angle.summary.json",
+  "dataset_dir": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\data\\roi_classifier",
+  "num_samples": 997,
+  "num_classes": 3,
+  "class_names": [
+    "bottle",
+    "chip_packet",
+    "medicine_box"
+  ],
+  "train_samples_original": 797,
+  "train_samples_balanced": 1047,
+  "test_samples": 200,
+  "train_class_counts_original": {
+    "bottle": 246,
+    "medicine_box": 349,
+    "chip_packet": 202
+  },
+  "train_class_counts_augmented": {
+    "bottle": 103,
+    "medicine_box": 0,
+    "chip_packet": 147
+  },
+  "model_name": "VQC RealAmplitudes (angle)",
+  "model_family": "quantum",
+  "model_type": "vqc_real",
+  "encoding": "angle",
+  "n_qubits": 4,
+  "feature_map_reps": 1,
+  "ansatz_reps": 1,
+  "maxiter": 20,
+  "preselect_dim": 32,
+  "classical_feature_dim": 64,
+  "kernel_name": "variational",
+  "feature_map_name": "ZZFeatureMap",
+  "feature_map_detail": "trainable classifier",
+  "ansatz_name": "RealAmplitudes",
+  "model_summary": "Variational quantum classifier with RealAmplitudes ansatz.",
+  "model_strengths": "Reasonable first trainable quantum classifier for presentations.",
+  "model_limitations": "Optimization noise and local minima can reduce consistency.",
+  "test_size": 0.2,
+  "device": "cpu",
+  "tta_views": 3,
+  "artifact_reused": false,
+  "accuracy": 0.44,
+  "macro_precision": 0.47493734335839594,
+  "macro_recall": 0.473010752688172,
+  "macro_f1": 0.4348462879533254,
+  "weighted_precision": 0.5002631578947369,
+  "weighted_recall": 0.44,
+  "weighted_f1": 0.4239111128372431,
+  "train_time_seconds": 131.27432900000713,
+  "classification_report": {
+    "bottle": {
+      "precision": 0.4105263157894737,
+      "recall": 0.6290322580645161,
+      "f1-score": 0.4968152866242038,
+      "support": 62.0
+    },
+    "chip_packet": {
+      "precision": 0.38571428571428573,
+      "recall": 0.54,
+      "f1-score": 0.45,
+      "support": 50.0
+    },
+    "medicine_box": {
+      "precision": 0.6285714285714286,
+      "recall": 0.25,
+      "f1-score": 0.35772357723577236,
+      "support": 88.0
+    },
+    "accuracy": 0.44,
+    "macro avg": {
+      "precision": 0.47493734335839594,
+      "recall": 0.473010752688172,
+      "f1-score": 0.4348462879533254,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.5002631578947369,
+      "recall": 0.44,
+      "f1-score": 0.4239111128372431,
+      "support": 200.0
+    }
+  }
+}

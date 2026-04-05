@@ -1,0 +1,94 @@
+3-MINUTE PROJECT DEMO SCRIPT
+Project: Hybrid Quantum Machine Learning for Object Detection, Classification, and OCR
+
+Use this for a screen-recorded product demo.
+Target length: around 3 minutes
+
+--------------------------------------------------
+FULL DEMO SCRIPT
+--------------------------------------------------
+
+Hello everyone.
+
+In this demo, I will show my internship project, which is a hybrid quantum machine learning pipeline for object detection, classification, and OCR.
+
+The main purpose of this project is to compare classical and quantum-oriented models in a practical computer-vision workflow. The system works on packaging-related objects such as chip packets, medicine boxes, and bottles.
+
+This is the main dashboard of the application. The UI is built to support the complete workflow, including model training, benchmarking, and inference. It also stores trained models so that we do not need to retrain them every time.
+
+First, in the training section, I can train the detector and the ROI classifiers. The detector is responsible for finding the object in the image, and the classifier is responsible for identifying whether the object is a chip packet, medicine box, or bottle. I can also train multiple models for comparison, including classical models and hybrid quantum models.
+
+Next, in the benchmark section, the system compares all trained models and shows their performance using graphs and tables. This is one of the important parts of the project, because the goal is not just to build one working model, but to evaluate how classical methods and quantum-based methods perform under the same pipeline.
+
+Now I will show the inference flow.
+
+Here in the Inference Lab, I upload a new image. Once the image is uploaded, the system processes it through several stages. It first performs preprocessing such as noise reduction, contrast enhancement, and binarization. Then the detector identifies the object region. After that, the ROI is passed to the classifier, and the OCR module extracts any visible printed text.
+
+The output is shown directly on the image. Here, we can see the predicted object label, and we can also see the extracted text recognized from the package. If text is not clearly visible, the system still returns the object prediction and marks the text output accordingly.
+
+Another useful part of this project is that the inference lab can compare multiple models on the same image. That means I can evaluate how a classical model behaves compared with a hybrid quantum model, and then use the benchmark section to decide which approach is best for production and which is more useful for research.
+
+From the current results, the classical models are the strongest and most stable for immediate deployment. However, the hybrid quantum models are important in this project because they show how QML can be integrated into a realistic application and compared fairly against strong classical baselines.
+
+So this project is not only a demo application. It is also a research and benchmarking platform. It helps answer an important question: where does quantum machine learning provide value, and where do classical models still remain the better choice?
+
+To conclude, this demo shows a complete end-to-end system that combines object detection, ROI classification, OCR, model benchmarking, and a user-friendly interface. The final outcome of the project is both practical and research-oriented: classical models are the current production winners, while hybrid quantum models provide the main innovation and experimentation value.
+
+Thank you.
+
+--------------------------------------------------
+SIMPLE SCREEN FLOW
+--------------------------------------------------
+
+0:00 to 0:20
+Show the dashboard home screen.
+Say:
+- what the project is
+- what problem it solves
+
+0:20 to 0:50
+Show the training area.
+Say:
+- detector training
+- ROI classifier training
+- classical and quantum model support
+
+0:50 to 1:20
+Show the benchmark page.
+Say:
+- graphs and tables
+- comparison between classical and quantum models
+- saved model reuse
+
+1:20 to 2:25
+Show the Inference Lab.
+Do:
+- upload an image
+- wait for result
+- show final image with label and text
+Say:
+- preprocessing
+- detection
+- classification
+- OCR
+
+2:25 to 3:00
+Show final result and benchmark summary.
+Say:
+- classical is best for production
+- hybrid quantum is valuable for research
+- this project gives both engineering and innovation value
+
+--------------------------------------------------
+SHORTER NATURAL VERSION
+--------------------------------------------------
+
+Hello everyone. In this demo, I am showing my internship project on hybrid quantum machine learning for object detection, classification, and OCR. The system is designed for packaging-related objects such as chip packets, medicine boxes, and bottles.
+
+This interface supports the full workflow. In the training section, I can train the detector and multiple ROI classifiers, including both classical and quantum-oriented models. In the benchmark section, I can compare their performance through graphs and tables.
+
+Now in the inference lab, I upload a new image. The system preprocesses the image, detects the object, classifies it, and extracts visible text using OCR. The final result is displayed on the image with the predicted label and the extracted text.
+
+The key value of this project is that it is not only a working application but also a research platform. It allows a fair comparison between classical and hybrid quantum approaches in the same pipeline. Based on the current results, classical models are stronger for production, while hybrid quantum models provide strong research and innovation value.
+
+Thank you.

@@ -1,0 +1,206 @@
+6 TO 7 MINUTE VIDEO VOICEOVER SCRIPT
+Project: Hybrid Quantum Machine Learning for Object Detection, Classification, and OCR
+
+Purpose:
+This script is written as a proper video narration script, not as a first-person speech.
+It is meant for screen recording plus background voiceover.
+
+Suggested duration: 6 to 7 minutes
+Style: professional, technical, clean, presentation-ready
+
+==================================================
+VIDEO FORMAT
+==================================================
+
+Each section includes:
+- Visual: what should appear on screen
+- Voiceover: what the audio should say
+
+==================================================
+1. OPENING
+Time: 0:00 to 0:30
+==================================================
+
+Visual:
+- Title slide
+- Project name
+- Subtitle: Classical vs Hybrid Quantum Machine Learning for Vision and OCR
+- Optional background: UI dashboard or architecture visual
+
+Voiceover:
+
+This project presents a hybrid quantum machine learning pipeline for object detection, classification, and optical character recognition. The system is designed to analyze packaging-related objects such as chip packets, medicine boxes, and bottles. Beyond building a working application, the main focus of the project is to study how classical and quantum-oriented models compare within the same practical AI workflow.
+
+==================================================
+2. PROBLEM CONTEXT
+Time: 0:30 to 1:00
+==================================================
+
+Visual:
+- Example images of bottles, medicine boxes, and chip packets
+- A few challenging examples with different backgrounds or lighting
+
+Voiceover:
+
+Packaging images create a meaningful real-world computer-vision challenge. Objects may appear under different lighting conditions, with reflections, cluttered backgrounds, variable orientations, and partially visible printed text. A useful solution must not only identify the object correctly, but also locate it within the image and extract readable text from the visible label or package surface.
+
+==================================================
+3. PROJECT OBJECTIVE
+Time: 1:00 to 1:35
+==================================================
+
+Visual:
+- Slide with two blocks:
+  - Practical application
+  - QML research comparison
+- Optional icons for detection, classification, OCR, and benchmarking
+
+Voiceover:
+
+The objective of the project is twofold. First, it builds a complete end-to-end vision pipeline that performs preprocessing, object detection, ROI extraction, classification, and OCR. Second, it uses this pipeline as a benchmark platform for comparing classical machine-learning models with hybrid quantum models. This makes the project both application-oriented and research-oriented.
+
+==================================================
+4. PIPELINE OVERVIEW
+Time: 1:35 to 2:20
+==================================================
+
+Visual:
+- Architecture flow diagram
+- Input Image -> Preprocessing -> YOLO Detection -> ROI Extraction -> Classification -> OCR -> Final Output
+
+Voiceover:
+
+The system begins with image preprocessing. OpenCV-based operations are used for noise reduction, contrast enhancement, and binarization. These steps improve the input quality before further analysis. The processed image is then passed to a YOLO-based detector, which identifies the object location and generates bounding boxes. The detected region of interest, or ROI, is then extracted and passed into two branches: the classification branch and the OCR branch.
+
+==================================================
+5. CLASSIFICATION APPROACH
+Time: 2:20 to 3:10
+==================================================
+
+Visual:
+- Split slide:
+  - Classical models
+  - Hybrid quantum models
+- Show labels like SVM, Logistic Regression, Random Forest, MLP, QSVM, VQC
+
+Voiceover:
+
+The classification branch is where the main research comparison takes place. Classical feature extraction is first used to convert the ROI into a compact feature representation. On top of these features, multiple classifier families are evaluated. The classical group includes models such as Support Vector Machine, Logistic Regression, Random Forest, and MLP. The quantum-oriented group includes Quantum Support Vector Machines with different kernels and variational quantum classifiers.
+
+==================================================
+6. WHY HYBRID QUANTUM
+Time: 3:10 to 3:45
+==================================================
+
+Visual:
+- Comparison panel:
+  - Classical
+  - Hybrid Quantum
+  - Pure Quantum
+- Highlight Hybrid Quantum
+
+Voiceover:
+
+This project uses a hybrid quantum design rather than a pure quantum image-processing pipeline. That decision is important. Raw images are too high-dimensional for direct practical quantum handling in the current near-term setting. A hybrid design is more realistic: preprocessing and feature extraction remain classical, while the classification stage becomes the point where quantum models can be introduced and evaluated fairly.
+
+==================================================
+7. QUANTUM ENCODING
+Time: 3:45 to 4:20
+==================================================
+
+Visual:
+- Simple circuit or encoding diagram
+- Labels: Angle Encoding, Amplitude Encoding
+
+Voiceover:
+
+To support quantum classification, the project implements two feature-encoding methods. In angle encoding, classical feature values are mapped to quantum rotation angles. In amplitude encoding, classical data is normalized and embedded into the amplitudes of a quantum state. These encodings allow classical image-derived features to be transformed into quantum-compatible representations before model evaluation.
+
+==================================================
+8. OCR BRANCH
+Time: 4:20 to 4:45
+==================================================
+
+Visual:
+- OCR flow with Tesseract and TrOCR
+- Example output showing object label and extracted text
+
+Voiceover:
+
+Alongside classification, the OCR branch extracts visible printed text from the detected object. The system integrates both Tesseract OCR and TrOCR. This improves robustness because different OCR methods can perform differently depending on font style, contrast, or image quality. If text is readable, the extracted label is returned. If text is not clearly available, the system still reports the predicted object and marks the text output accordingly.
+
+==================================================
+9. USER INTERFACE
+Time: 4:45 to 5:20
+==================================================
+
+Visual:
+- Show dashboard
+- Sidebar navigation
+- Training page
+- Benchmark page
+- Inference Lab
+
+Voiceover:
+
+To make the workflow complete and easy to demonstrate, the project includes a React and Flask based interface. Through the UI, models can be trained, saved, reused, compared through benchmark charts, and evaluated on uploaded images. This turns the project into a repeatable experimental environment rather than a one-time script execution.
+
+==================================================
+10. BENCHMARK RESULTS
+Time: 5:20 to 6:00
+==================================================
+
+Visual:
+- Benchmark charts and tables
+- Highlight classical top models and top quantum model
+
+Voiceover:
+
+The benchmark results show a clear pattern. The strongest classical models achieve about 99.5 percent ROI classification accuracy. At the same time, one hybrid quantum model, the amplitude-encoding QSVM, also reaches 99.5 percent on the same ROI benchmark. However, the broader model family comparison shows that classical methods remain more stable overall, while quantum models vary more depending on the chosen kernel, encoding, and circuit structure.
+
+==================================================
+11. LIVE DEMO FLOW
+Time: 6:00 to 6:40
+==================================================
+
+Visual:
+- Open Inference Lab
+- Upload an image
+- Show result image
+- Show predicted label and extracted text
+
+Voiceover:
+
+In the final demonstration, a new image is uploaded into the inference lab. The system preprocesses the image, detects the object, extracts the ROI, predicts the object label, and performs OCR to read visible text. The result is shown directly on the image, along with the predicted label and extracted text. This demonstrates that the project is not only a benchmark platform, but also a functioning end-to-end application.
+
+==================================================
+12. CONCLUSION
+Time: 6:40 to 7:00
+==================================================
+
+Visual:
+- Closing slide
+- Summary points:
+  - Working AI pipeline
+  - Fair classical vs quantum comparison
+  - Production recommendation and research value
+
+Voiceover:
+
+The final outcome of the project is both practical and analytical. Classical models currently provide the strongest production-ready performance, while hybrid quantum models offer meaningful research value and show how QML can be integrated into realistic AI systems. The project therefore serves both as a usable computer-vision application and as a structured framework for understanding the practical role of quantum machine learning.
+
+==================================================
+SHORT READY-TO-RECORD VERSION
+==================================================
+
+This project presents a hybrid quantum machine learning pipeline for object detection, classification, and OCR. It is designed to analyze packaging-related objects such as chip packets, medicine boxes, and bottles, while also comparing classical and quantum-oriented models within the same practical workflow.
+
+The pipeline begins with image preprocessing using OpenCV for noise reduction, contrast enhancement, and binarization. A YOLO-based detector then identifies the object location, and the detected region is extracted as the region of interest. That ROI is passed into two branches: a classification branch and an OCR branch.
+
+In the classification branch, classical image features are extracted and then evaluated using both classical and hybrid quantum models. The classical group includes SVM, Logistic Regression, Random Forest, and MLP. The quantum group includes QSVM variants and variational quantum classifiers implemented with Qiskit. To support quantum processing, the project uses both angle encoding and amplitude encoding to transform classical features into quantum-compatible representations.
+
+In parallel, the OCR branch uses Tesseract and TrOCR to extract visible printed text from the object surface. The final output shows the predicted object label and the extracted text.
+
+The project also includes a full user interface for training, benchmarking, and inference. This allows models to be saved, reused, compared, and demonstrated visually.
+
+The benchmark results show that classical models remain the strongest and most stable production choice, while at least one hybrid quantum model, the amplitude-encoding QSVM, achieves competitive performance on the ROI benchmark. This makes the project valuable not only as a working application, but also as a realistic research platform for evaluating the strengths and limitations of QML in practice.

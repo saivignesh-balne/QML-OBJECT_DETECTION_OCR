@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-04-05T16:19:27.034834",
+  "kind": "classifier",
+  "artifact_path": "artifacts\\random_forest.pkl",
+  "summary_path": "artifacts\\random_forest.summary.json",
+  "dataset_dir": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\data\\roi_classifier",
+  "num_samples": 997,
+  "num_classes": 3,
+  "class_names": [
+    "bottle",
+    "chip_packet",
+    "medicine_box"
+  ],
+  "train_samples_original": 797,
+  "train_samples_balanced": 1047,
+  "test_samples": 200,
+  "train_class_counts_original": {
+    "bottle": 246,
+    "medicine_box": 349,
+    "chip_packet": 202
+  },
+  "train_class_counts_augmented": {
+    "bottle": 103,
+    "medicine_box": 0,
+    "chip_packet": 147
+  },
+  "model_name": "Random Forest",
+  "model_family": "classical",
+  "model_type": "random_forest",
+  "encoding": "classical_projection",
+  "n_qubits": 6,
+  "feature_map_reps": 2,
+  "ansatz_reps": 2,
+  "maxiter": 50,
+  "preselect_dim": 256,
+  "classical_feature_dim": 128,
+  "kernel_name": "ensemble trees",
+  "feature_map_name": "PCA feature encoder",
+  "feature_map_detail": "classical baseline",
+  "ansatz_name": "none",
+  "model_summary": "Tree-ensemble baseline using the same classical ROI features.",
+  "model_strengths": "Robust and interpretable feature-importance style baseline.",
+  "model_limitations": "Can plateau on subtle visual differences compared with SVM/MLP.",
+  "test_size": 0.2,
+  "device": "cpu",
+  "tta_views": 3,
+  "artifact_reused": true,
+  "accuracy": 0.99,
+  "macro_precision": 0.9895833333333334,
+  "macro_recall": 0.9924242424242425,
+  "macro_f1": 0.9908775770844737,
+  "weighted_precision": 0.9903125,
+  "weighted_recall": 0.99,
+  "weighted_f1": 0.9900218938149973,
+  "train_time_seconds": 61.87418109999271,
+  "classification_report": {
+    "bottle": {
+      "precision": 0.96875,
+      "recall": 1.0,
+      "f1-score": 0.9841269841269841,
+      "support": 62.0
+    },
+    "chip_packet": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 50.0
+    },
+    "medicine_box": {
+      "precision": 1.0,
+      "recall": 0.9772727272727273,
+      "f1-score": 0.9885057471264368,
+      "support": 88.0
+    },
+    "accuracy": 0.99,
+    "macro avg": {
+      "precision": 0.9895833333333334,
+      "recall": 0.9924242424242425,
+      "f1-score": 0.9908775770844737,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.9903125,
+      "recall": 0.99,
+      "f1-score": 0.9900218938149973,
+      "support": 200.0
+    }
+  }
+}

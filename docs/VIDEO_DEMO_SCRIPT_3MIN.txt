@@ -1,0 +1,84 @@
+3-MINUTE VIDEO SCRIPT
+Project: Hybrid Quantum Machine Learning for Object Detection, Classification, and OCR
+
+Suggested duration: about 3 minutes
+Style: clear, confident, research-focused, with a short product demo
+
+--------------------------------------------------
+FULL VIDEO SCRIPT
+--------------------------------------------------
+
+Hello everyone.
+
+My internship project is focused on Quantum Machine Learning, or QML, and how it can be evaluated in a practical AI application instead of only in theory.
+
+To study that, I built an end-to-end vision pipeline that works on packaging images. The system takes an input image, detects the object, classifies it, and extracts printed text from it. The main object categories used in this project are chip packets, medicine boxes, and bottles.
+
+The core objective of this internship was not just to build an object recognition system. The main objective was to research and compare classical machine-learning models, hybrid quantum models, and quantum-oriented classifiers in the same workflow, under the same evaluation setup.
+
+The pipeline begins with image preprocessing using OpenCV. This includes noise reduction, contrast enhancement, and binarization so that both detection and OCR become more reliable. After preprocessing, a YOLO-based detector identifies the object region. That detected region is then passed to the classification stage and the OCR stage.
+
+For classification, I used a benchmark-driven comparison approach. On the classical side, I evaluated models such as SVM, Logistic Regression, Random Forest, and MLP. On the quantum side, I evaluated hybrid approaches such as QSVM with different kernels and encodings, along with variational quantum classifiers. I implemented both angle encoding and amplitude encoding using Qiskit so that classical image features could be mapped into quantum representations before classification.
+
+This is important because it lets us answer a practical research question: in a real computer-vision pipeline, where does quantum help, and where do classical models still perform better?
+
+One of the key outcomes of this project is that the classical models are currently the strongest and most stable choice for production. In my current benchmark results, the best classical models reach around 99.5 percent ROI classification accuracy. At the same time, one quantum-oriented model, the amplitude-encoding QSVM, also reached 99.5 percent on the same ROI benchmark, which makes the hybrid quantum branch a meaningful research result rather than just a theoretical add-on.
+
+So the honest conclusion of this project is that classical AI is still the best default for immediate deployment, but hybrid quantum machine learning is highly valuable for research, experimentation, and future innovation. That balance between practical engineering and QML exploration is the main contribution of this internship.
+
+Now I will briefly show the demo.
+
+In the user interface, I can train and compare multiple models, view benchmark graphs, and run inference on a new image. When I upload an image, the system detects the object, predicts the label, and extracts any visible printed text. The final output is shown on the image itself, along with the predicted object label and the extracted text. The interface also lets me compare how different classical and quantum models behave on the same task.
+
+This makes the project useful in two ways. First, it works as a practical packaging-analysis system. Second, it works as a research platform for understanding the strengths and limitations of QML in a realistic pipeline.
+
+To conclude, this internship helped me study QML in a real-world context, compare it fairly against strong classical baselines, and build a complete benchmarked system around that comparison. The final takeaway is clear: classical models are the current production leaders, while hybrid quantum models provide the strongest research and innovation direction.
+
+Thank you.
+
+--------------------------------------------------
+RECORDING FLOW
+--------------------------------------------------
+
+0:00 to 0:20
+Show title screen or project name.
+Narration focus:
+- internship objective
+- QML research in a practical pipeline
+
+0:20 to 0:55
+Show architecture or UI overview.
+Narration focus:
+- preprocessing
+- detection
+- classification
+- OCR
+
+0:55 to 1:35
+Show benchmark section.
+Narration focus:
+- classical vs quantum comparison
+- why hybrid QML was tested
+- honest performance conclusion
+
+1:35 to 2:35
+Show live demo in the UI.
+Narration focus:
+- upload image
+- detector identifies object
+- classifier predicts label
+- OCR extracts text
+- result displayed on image
+
+2:35 to 3:00
+Show closing summary slide or dashboard.
+Narration focus:
+- production winner is classical
+- hybrid quantum is valuable for research
+- internship contribution
+
+--------------------------------------------------
+SHORT CLOSING LINE OPTION
+--------------------------------------------------
+
+This project demonstrates that QML can be studied meaningfully inside a practical AI system, while strong classical baselines remain essential for honest evaluation and real deployment decisions.

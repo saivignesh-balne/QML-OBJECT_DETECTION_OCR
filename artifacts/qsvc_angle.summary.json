@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-04-05T16:29:28.534873",
+  "kind": "classifier",
+  "artifact_path": "artifacts\\qsvc_angle.pkl",
+  "summary_path": "artifacts\\qsvc_angle.summary.json",
+  "dataset_dir": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\data\\roi_classifier",
+  "num_samples": 997,
+  "num_classes": 3,
+  "class_names": [
+    "bottle",
+    "chip_packet",
+    "medicine_box"
+  ],
+  "train_samples_original": 797,
+  "train_samples_balanced": 1047,
+  "test_samples": 200,
+  "train_class_counts_original": {
+    "bottle": 246,
+    "medicine_box": 349,
+    "chip_packet": 202
+  },
+  "train_class_counts_augmented": {
+    "bottle": 103,
+    "medicine_box": 0,
+    "chip_packet": 147
+  },
+  "model_name": "QSVM ZZ Kernel Linear (angle)",
+  "model_family": "quantum",
+  "model_type": "qsvc",
+  "encoding": "angle",
+  "n_qubits": 6,
+  "feature_map_reps": 2,
+  "ansatz_reps": 2,
+  "maxiter": 50,
+  "preselect_dim": 256,
+  "classical_feature_dim": 128,
+  "kernel_name": "Fidelity Quantum Kernel",
+  "feature_map_name": "ZZFeatureMap",
+  "feature_map_detail": "linear entanglement",
+  "ansatz_name": "none",
+  "model_summary": "Baseline quantum kernel SVM with linear ZZ entanglement.",
+  "model_strengths": "Simple quantum-kernel benchmark and easy presentation baseline.",
+  "model_limitations": "Often weaker than strong classical baselines on rich image features.",
+  "test_size": 0.2,
+  "device": "cpu",
+  "tta_views": 3,
+  "artifact_reused": true,
+  "accuracy": 0.81,
+  "macro_precision": 0.8187751004016065,
+  "macro_recall": 0.8129765395894428,
+  "macro_f1": 0.8133891943789822,
+  "weighted_precision": 0.8161997991967871,
+  "weighted_recall": 0.81,
+  "weighted_f1": 0.8108379156847342,
+  "train_time_seconds": 468.06155600000056,
+  "classification_report": {
+    "bottle": {
+      "precision": 0.7361111111111112,
+      "recall": 0.8548387096774194,
+      "f1-score": 0.7910447761194029,
+      "support": 62.0
+    },
+    "chip_packet": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8,
+      "f1-score": 0.8421052631578947,
+      "support": 50.0
+    },
+    "medicine_box": {
+      "precision": 0.8313253012048193,
+      "recall": 0.7840909090909091,
+      "f1-score": 0.8070175438596491,
+      "support": 88.0
+    },
+    "accuracy": 0.81,
+    "macro avg": {
+      "precision": 0.8187751004016065,
+      "recall": 0.8129765395894428,
+      "f1-score": 0.8133891943789822,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.8161997991967871,
+      "recall": 0.81,
+      "f1-score": 0.8108379156847342,
+      "support": 200.0
+    }
+  }
+}

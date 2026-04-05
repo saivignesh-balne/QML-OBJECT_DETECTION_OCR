@@ -1,0 +1,622 @@
+{
+  "generated_at": "2026-04-05T16:56:10.855637",
+  "recommended_pipeline": {
+    "mode": "full_pipeline",
+    "detector_backend": "yolo",
+    "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+    "classifier_artifact": "artifacts\\classical_svm_rbf.pkl",
+    "classifier_name": "Classical SVM (RBF)",
+    "classifier_family": "classical",
+    "ocr_backend": "ensemble"
+  },
+  "leaderboard": [
+    {
+      "pipeline": "qml_ocr_detector_best.pt + Classical SVM (RBF) + OCR Ensemble",
+      "accuracy": 0.803295,
+      "macro_f1": 0.9954285714285714,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\classical_svm_rbf.pkl",
+      "classifier_name": "Classical SVM (RBF)",
+      "classifier_family": "classical",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + Logistic Regression + OCR Ensemble",
+      "accuracy": 0.803295,
+      "macro_f1": 0.9954285714285714,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\logistic_regression.pkl",
+      "classifier_name": "Logistic Regression",
+      "classifier_family": "classical",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + MLP Classifier + OCR Ensemble",
+      "accuracy": 0.803295,
+      "macro_f1": 0.9954285714285714,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\mlp_classifier.pkl",
+      "classifier_name": "MLP Classifier",
+      "classifier_family": "classical",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + QSVM ZZ Kernel Linear (amplitude) + OCR Ensemble",
+      "accuracy": 0.803295,
+      "macro_f1": 0.9954285714285714,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\qsvc_amplitude.pkl",
+      "classifier_name": "QSVM ZZ Kernel Linear (amplitude)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + Random Forest + OCR Ensemble",
+      "accuracy": 0.800795,
+      "macro_f1": 0.9908775770844737,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\random_forest.pkl",
+      "classifier_name": "Random Forest",
+      "classifier_family": "classical",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + QSVM Pauli Kernel (angle) + OCR Ensemble",
+      "accuracy": 0.755795,
+      "macro_f1": 0.8991019290623262,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\qsvc_pauli_angle.pkl",
+      "classifier_name": "QSVM Pauli Kernel (angle)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + QSVM ZZ Kernel Linear (angle) + OCR Ensemble",
+      "accuracy": 0.710795,
+      "macro_f1": 0.8133891943789822,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\qsvc_angle.pkl",
+      "classifier_name": "QSVM ZZ Kernel Linear (angle)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + QSVM ZZ Kernel Full (angle) + OCR Ensemble",
+      "accuracy": 0.678295,
+      "macro_f1": 0.7453947368421053,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\qsvc_zz_full_angle.pkl",
+      "classifier_name": "QSVM ZZ Kernel Full (angle)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + VQC RealAmplitudes (angle) + OCR Ensemble",
+      "accuracy": 0.525795,
+      "macro_f1": 0.4348462879533254,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\vqc_real_angle.pkl",
+      "classifier_name": "VQC RealAmplitudes (angle)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    },
+    {
+      "pipeline": "qml_ocr_detector_best.pt + VQC EfficientSU2 (angle) + OCR Ensemble",
+      "accuracy": 0.520795,
+      "macro_f1": 0.4298634943610469,
+      "detector_backend": "yolo",
+      "detector_weights": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "classifier_artifact": "artifacts\\vqc_efficient_angle.pkl",
+      "classifier_name": "VQC EfficientSU2 (angle)",
+      "classifier_family": "quantum",
+      "ocr_backend": "ensemble",
+      "mode": "full_pipeline",
+      "notes": "Composite proxy score = mean(detector mAP50-95, classifier accuracy)."
+    }
+  ],
+  "detector_benchmarks": [
+    {
+      "name": "qml_ocr_detector",
+      "model": "yolov8n.pt",
+      "accuracy": 0.61159,
+      "mAP50": 0.95593,
+      "mAP50_95": 0.61159,
+      "precision": 0.90054,
+      "recall": 0.94974,
+      "weights_path": "C:\\Users\\Vyshnavi\\Desktop\\Infosys Internship\\hybrid_qml_ocr_pipeline\\weights\\qml_ocr_detector_best.pt",
+      "notes": "Detector ranking uses mAP50-95 when available."
+    }
+  ],
+  "classifier_benchmarks": [
+    {
+      "name": "Classical SVM (RBF)",
+      "model": "svc_rbf",
+      "model_family": "classical",
+      "encoding": "classical_projection",
+      "accuracy": 0.995,
+      "macro_f1": 0.9954285714285714,
+      "weighted_f1": 0.9950057142857142,
+      "artifact_path": "artifacts\\classical_svm_rbf.pkl",
+      "n_qubits": 6,
+      "artifact_reused": true,
+      "train_time_seconds": 54.48540070001036,
+      "kernel_name": "rbf",
+      "feature_map_name": "PCA feature encoder",
+      "feature_map_detail": "classical baseline",
+      "ansatz_name": "none",
+      "summary": "Strong classical large-margin baseline on engineered ROI features.",
+      "strengths": "Usually very strong on compact, well-separated feature spaces.",
+      "limitations": "No quantum component, so it serves as the bar to beat.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "Logistic Regression",
+      "model": "logreg",
+      "model_family": "classical",
+      "encoding": "classical_projection",
+      "accuracy": 0.995,
+      "macro_f1": 0.9954285714285714,
+      "weighted_f1": 0.9950057142857142,
+      "artifact_path": "artifacts\\logistic_regression.pkl",
+      "n_qubits": 6,
+      "artifact_reused": true,
+      "train_time_seconds": 54.62046220000775,
+      "kernel_name": "linear",
+      "feature_map_name": "PCA feature encoder",
+      "feature_map_detail": "classical baseline",
+      "ansatz_name": "none",
+      "summary": "Linear classical baseline for a clean performance floor.",
+      "strengths": "Fast to train and easy to explain to non-technical audiences.",
+      "limitations": "Limited nonlinear capacity compared with richer baselines.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "MLP Classifier",
+      "model": "mlp",
+      "model_family": "classical",
+      "encoding": "classical_projection",
+      "accuracy": 0.995,
+      "macro_f1": 0.9954285714285714,
+      "weighted_f1": 0.9950057142857142,
+      "artifact_path": "artifacts\\mlp_classifier.pkl",
+      "n_qubits": 6,
+      "artifact_reused": true,
+      "train_time_seconds": 54.97080619999906,
+      "kernel_name": "neural network",
+      "feature_map_name": "PCA feature encoder",
+      "feature_map_detail": "classical baseline",
+      "ansatz_name": "none",
+      "summary": "Compact neural baseline over ROI feature vectors.",
+      "strengths": "Can model nonlinearities without quantum overhead.",
+      "limitations": "Still depends entirely on classical feature engineering.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "QSVM ZZ Kernel Linear (amplitude)",
+      "model": "qsvc",
+      "model_family": "quantum",
+      "encoding": "amplitude",
+      "accuracy": 0.995,
+      "macro_f1": 0.9954285714285714,
+      "weighted_f1": 0.9950057142857142,
+      "artifact_path": "artifacts\\qsvc_amplitude.pkl",
+      "n_qubits": 6,
+      "artifact_reused": false,
+      "train_time_seconds": 519.1649616000068,
+      "kernel_name": "Fidelity Quantum Kernel",
+      "feature_map_name": "ZZFeatureMap",
+      "feature_map_detail": "linear entanglement",
+      "ansatz_name": "none",
+      "summary": "Baseline quantum kernel SVM with linear ZZ entanglement.",
+      "strengths": "Simple quantum-kernel benchmark and easy presentation baseline.",
+      "limitations": "Often weaker than strong classical baselines on rich image features.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "Random Forest",
+      "model": "random_forest",
+      "model_family": "classical",
+      "encoding": "classical_projection",
+      "accuracy": 0.99,
+      "macro_f1": 0.9908775770844737,
+      "weighted_f1": 0.9900218938149973,
+      "artifact_path": "artifacts\\random_forest.pkl",
+      "n_qubits": 6,
+      "artifact_reused": true,
+      "train_time_seconds": 61.87418109999271,
+      "kernel_name": "ensemble trees",
+      "feature_map_name": "PCA feature encoder",
+      "feature_map_detail": "classical baseline",
+      "ansatz_name": "none",
+      "summary": "Tree-ensemble baseline using the same classical ROI features.",
+      "strengths": "Robust and interpretable feature-importance style baseline.",
+      "limitations": "Can plateau on subtle visual differences compared with SVM/MLP.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "QSVM Pauli Kernel (angle)",
+      "model": "qsvc_pauli",
+      "model_family": "quantum",
+      "encoding": "angle",
+      "accuracy": 0.9,
+      "macro_f1": 0.8991019290623262,
+      "weighted_f1": 0.9011797122759643,
+      "artifact_path": "artifacts\\qsvc_pauli_angle.pkl",
+      "n_qubits": 4,
+      "artifact_reused": false,
+      "train_time_seconds": 513.6677362000046,
+      "kernel_name": "Fidelity Quantum Kernel",
+      "feature_map_name": "PauliFeatureMap",
+      "feature_map_detail": "paulis=['Z','ZZ','XX']",
+      "ansatz_name": "none",
+      "summary": "Quantum kernel SVM using a Pauli feature map with mixed operators.",
+      "strengths": "More expressive than plain ZZ kernels for research comparison.",
+      "limitations": "More expensive and not always better on compact ROI datasets.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "QSVM ZZ Kernel Linear (angle)",
+      "model": "qsvc",
+      "model_family": "quantum",
+      "encoding": "angle",
+      "accuracy": 0.81,
+      "macro_f1": 0.8133891943789822,
+      "weighted_f1": 0.8108379156847342,
+      "artifact_path": "artifacts\\qsvc_angle.pkl",
+      "n_qubits": 6,
+      "artifact_reused": true,
+      "train_time_seconds": 468.06155600000056,
+      "kernel_name": "Fidelity Quantum Kernel",
+      "feature_map_name": "ZZFeatureMap",
+      "feature_map_detail": "linear entanglement",
+      "ansatz_name": "none",
+      "summary": "Baseline quantum kernel SVM with linear ZZ entanglement.",
+      "strengths": "Simple quantum-kernel benchmark and easy presentation baseline.",
+      "limitations": "Often weaker than strong classical baselines on rich image features.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "QSVM ZZ Kernel Full (angle)",
+      "model": "qsvc_zz_full",
+      "model_family": "quantum",
+      "encoding": "angle",
+      "accuracy": 0.745,
+      "macro_f1": 0.7453947368421053,
+      "weighted_f1": 0.7473421052631579,
+      "artifact_path": "artifacts\\qsvc_zz_full_angle.pkl",
+      "n_qubits": 6,
+      "artifact_reused": false,
+      "train_time_seconds": 920.3559365999972,
+      "kernel_name": "Fidelity Quantum Kernel",
+      "feature_map_name": "ZZFeatureMap",
+      "feature_map_detail": "full entanglement",
+      "ansatz_name": "none",
+      "summary": "Quantum kernel SVM with denser ZZ entanglement across qubits.",
+      "strengths": "Tests whether richer entanglement improves separability.",
+      "limitations": "Higher circuit complexity and slower similarity evaluation.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "VQC RealAmplitudes (angle)",
+      "model": "vqc_real",
+      "model_family": "quantum",
+      "encoding": "angle",
+      "accuracy": 0.44,
+      "macro_f1": 0.4348462879533254,
+      "weighted_f1": 0.4239111128372431,
+      "artifact_path": "artifacts\\vqc_real_angle.pkl",
+      "n_qubits": 4,
+      "artifact_reused": false,
+      "train_time_seconds": 131.27432900000713,
+      "kernel_name": "variational",
+      "feature_map_name": "ZZFeatureMap",
+      "feature_map_detail": "trainable classifier",
+      "ansatz_name": "RealAmplitudes",
+      "summary": "Variational quantum classifier with RealAmplitudes ansatz.",
+      "strengths": "Reasonable first trainable quantum classifier for presentations.",
+      "limitations": "Optimization noise and local minima can reduce consistency.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    },
+    {
+      "name": "VQC EfficientSU2 (angle)",
+      "model": "vqc_efficient",
+      "model_family": "quantum",
+      "encoding": "angle",
+      "accuracy": 0.43,
+      "macro_f1": 0.4298634943610469,
+      "weighted_f1": 0.41984747200410893,
+      "artifact_path": "artifacts\\vqc_efficient_angle.pkl",
+      "n_qubits": 4,
+      "artifact_reused": false,
+      "train_time_seconds": 141.85998589999508,
+      "kernel_name": "variational",
+      "feature_map_name": "ZZFeatureMap",
+      "feature_map_detail": "trainable classifier",
+      "ansatz_name": "EfficientSU2",
+      "summary": "Variational quantum classifier with an EfficientSU2 ansatz.",
+      "strengths": "Higher expressivity for studying trainable quantum circuits.",
+      "limitations": "Usually slower and more complex than simpler VQC variants.",
+      "notes": "Classifier score uses held-out test accuracy and macro F1."
+    }
+  ],
+  "ocr_benchmarks": [
+    {
+      "name": "OCR Ensemble",
+      "score": "policy default",
+      "notes": "Uses both Tesseract and TrOCR and selects the best non-empty output."
+    },
+    {
+      "name": "TrOCR",
+      "score": "policy fallback",
+      "notes": "Transformer OCR for difficult packaging text."
+    },
+    {
+      "name": "Tesseract",
+      "score": "policy fallback",
+      "notes": "Fast OCR baseline for clean printed text."
+    }
+  ],
+  "classifier_family_summary": [
+    {
+      "family": "classical",
+      "count": 4,
+      "best_model": "Classical SVM (RBF)",
+      "best_accuracy": 0.995,
+      "avg_accuracy": 0.99375,
+      "avg_macro_f1": 0.994290822842547
+    },
+    {
+      "family": "quantum",
+      "count": 6,
+      "best_model": "QSVM ZZ Kernel Linear (amplitude)",
+      "best_accuracy": 0.995,
+      "avg_accuracy": 0.72,
+      "avg_macro_f1": 0.7196707023377262
+    }
+  ],
+  "chart_series": {
+    "classifier_accuracy_pct": [
+      {
+        "label": "Classical SVM (RBF)",
+        "value": 99.5,
+        "family": "classical",
+        "artifact_path": "artifacts\\classical_svm_rbf.pkl"
+      },
+      {
+        "label": "Logistic Regression",
+        "value": 99.5,
+        "family": "classical",
+        "artifact_path": "artifacts\\logistic_regression.pkl"
+      },
+      {
+        "label": "MLP Classifier",
+        "value": 99.5,
+        "family": "classical",
+        "artifact_path": "artifacts\\mlp_classifier.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (amplitude)",
+        "value": 99.5,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_amplitude.pkl"
+      },
+      {
+        "label": "Random Forest",
+        "value": 99.0,
+        "family": "classical",
+        "artifact_path": "artifacts\\random_forest.pkl"
+      },
+      {
+        "label": "QSVM Pauli Kernel (angle)",
+        "value": 90.0,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_pauli_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (angle)",
+        "value": 81.0,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Full (angle)",
+        "value": 74.5,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_zz_full_angle.pkl"
+      },
+      {
+        "label": "VQC RealAmplitudes (angle)",
+        "value": 44.0,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_real_angle.pkl"
+      },
+      {
+        "label": "VQC EfficientSU2 (angle)",
+        "value": 43.0,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_efficient_angle.pkl"
+      }
+    ],
+    "classifier_macro_f1_pct": [
+      {
+        "label": "Classical SVM (RBF)",
+        "value": 99.5429,
+        "family": "classical",
+        "artifact_path": "artifacts\\classical_svm_rbf.pkl"
+      },
+      {
+        "label": "Logistic Regression",
+        "value": 99.5429,
+        "family": "classical",
+        "artifact_path": "artifacts\\logistic_regression.pkl"
+      },
+      {
+        "label": "MLP Classifier",
+        "value": 99.5429,
+        "family": "classical",
+        "artifact_path": "artifacts\\mlp_classifier.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (amplitude)",
+        "value": 99.5429,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_amplitude.pkl"
+      },
+      {
+        "label": "Random Forest",
+        "value": 99.0878,
+        "family": "classical",
+        "artifact_path": "artifacts\\random_forest.pkl"
+      },
+      {
+        "label": "QSVM Pauli Kernel (angle)",
+        "value": 89.9102,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_pauli_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (angle)",
+        "value": 81.3389,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Full (angle)",
+        "value": 74.5395,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_zz_full_angle.pkl"
+      },
+      {
+        "label": "VQC RealAmplitudes (angle)",
+        "value": 43.4846,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_real_angle.pkl"
+      },
+      {
+        "label": "VQC EfficientSU2 (angle)",
+        "value": 42.9863,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_efficient_angle.pkl"
+      }
+    ],
+    "classifier_train_time_s": [
+      {
+        "label": "Classical SVM (RBF)",
+        "value": 54.4854,
+        "family": "classical",
+        "artifact_path": "artifacts\\classical_svm_rbf.pkl"
+      },
+      {
+        "label": "Logistic Regression",
+        "value": 54.6205,
+        "family": "classical",
+        "artifact_path": "artifacts\\logistic_regression.pkl"
+      },
+      {
+        "label": "MLP Classifier",
+        "value": 54.9708,
+        "family": "classical",
+        "artifact_path": "artifacts\\mlp_classifier.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (amplitude)",
+        "value": 519.165,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_amplitude.pkl"
+      },
+      {
+        "label": "Random Forest",
+        "value": 61.8742,
+        "family": "classical",
+        "artifact_path": "artifacts\\random_forest.pkl"
+      },
+      {
+        "label": "QSVM Pauli Kernel (angle)",
+        "value": 513.6677,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_pauli_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Linear (angle)",
+        "value": 468.0616,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_angle.pkl"
+      },
+      {
+        "label": "QSVM ZZ Kernel Full (angle)",
+        "value": 920.3559,
+        "family": "quantum",
+        "artifact_path": "artifacts\\qsvc_zz_full_angle.pkl"
+      },
+      {
+        "label": "VQC RealAmplitudes (angle)",
+        "value": 131.2743,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_real_angle.pkl"
+      },
+      {
+        "label": "VQC EfficientSU2 (angle)",
+        "value": 141.86,
+        "family": "quantum",
+        "artifact_path": "artifacts\\vqc_efficient_angle.pkl"
+      }
+    ],
+    "detector_map_pct": [
+      {
+        "label": "qml_ocr_detector",
+        "value": 61.159,
+        "family": "unknown",
+        "artifact_path": ""
+      }
+    ],
+    "family_avg_accuracy_pct": [
+      {
+        "label": "classical",
+        "value": 99.375,
+        "family": "classical",
+        "artifact_path": ""
+      },
+      {
+        "label": "quantum",
+        "value": 72.0,
+        "family": "quantum",
+        "artifact_path": ""
+      }
+    ]
+  },
+  "notes": [
+    "Detector ranking uses mAP50-95 when available.",
+    "Classifier ranking uses held-out test accuracy, macro F1, and training-time metadata.",
+    "Quantum entries now include distinct kernel maps and variational ansatz choices for fairer comparison.",
+    "Classical baselines are retained because they define the performance bar quantum models must beat or complement.",
+    "Overall leaderboard still uses a proxy composite score unless you replace it with true end-to-end validation results.",
+    "If detector summaries are missing, the report falls back to classifier-only ROI upload mode."
+  ]
+}

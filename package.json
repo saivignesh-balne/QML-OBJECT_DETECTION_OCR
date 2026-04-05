@@ -1,0 +1,19 @@
+{
+  "name": "hybrid_qml_ocr_pipeline",
+  "version": "1.0.0",
+  "description": "This folder is a production-style scaffold for:",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "esbuild ./frontend/src/main.jsx --bundle --outfile=./ui_static/react-app.js --format=iife --platform=browser --jsx=automatic",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "esbuild": "^0.28.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
