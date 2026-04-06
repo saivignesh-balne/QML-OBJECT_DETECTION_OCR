@@ -86,16 +86,16 @@ PROJECT_BRIEF = {
     "executive_summary": {
         "title": "Executive Summary",
         "points": [
-            "This project detects bottles, chip packets, and medicine boxes, classifies them, and extracts printed text from the same uploaded image.",
-            "The key research value is not only building the pipeline, but comparing classical, hybrid quantum, and quantum-oriented classifiers under one shared evaluation workflow.",
-            "The practical business question is simple: which approach gives the best tradeoff between accuracy, cost, speed, and innovation value.",
+            "This project is a QML object-detection research and development platform with detection, classification, OCR, and benchmarking in one workflow.",
+            "The current benchmark domain uses bottles, chip packets, and medicine boxes as experimental object classes, not as the project definition itself.",
+            "The main research question is which approach gives the best tradeoff between accuracy, cost, speed, and innovation value when classical and hybrid quantum models are compared fairly.",
         ],
     },
     "problem_statement": {
         "title": "Problem Statement",
         "points": [
-            "Packaging images are visually noisy: lighting changes, reflections, cluttered backgrounds, and small printed text all reduce reliability.",
-            "A production-ready solution must localize the object, classify it correctly, and extract readable text while staying fast enough for demo and deployment use.",
+            "Real object-detection images are visually noisy: lighting changes, reflections, cluttered backgrounds, and small printed text all reduce reliability.",
+            "A useful solution must localize the object, classify it correctly, and extract readable text while staying measurable enough for research comparison.",
             "Because raw images are high-dimensional, any realistic quantum experiment in this domain must currently be hybrid rather than purely quantum.",
         ],
     },
@@ -1354,12 +1354,12 @@ def analyze_image(
         "steps": [
             {
                 "name": "Noise Reduction",
-                "summary": "Fast non-local means denoising to stabilize packaging surfaces and small text regions.",
+                "summary": "Fast non-local means denoising to stabilize object surfaces and small text regions.",
                 "duration_ms": round(preprocess_ms, 2),
             },
             {
                 "name": "Contrast Enhancement",
-                "summary": "CLAHE-based contrast enhancement to make packaging structure and printed text more distinct.",
+                "summary": "CLAHE-based contrast enhancement to make object structure and printed text more distinct.",
                 "duration_ms": round(preprocess_ms, 2),
             },
             {

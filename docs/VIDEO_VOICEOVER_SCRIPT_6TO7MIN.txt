@@ -29,7 +29,7 @@ Visual:
 
 Voiceover:
 
-This project presents a hybrid quantum machine learning pipeline for object detection, classification, and optical character recognition. The system is designed to analyze packaging-related objects such as chip packets, medicine boxes, and bottles. Beyond building a working application, the main focus of the project is to study how classical and quantum-oriented models compare within the same practical AI workflow.
+This project presents a hybrid quantum machine learning pipeline for object detection, classification, and optical character recognition. The current benchmark uses chip packets, medicine boxes, and bottles as the experimental object classes. Beyond building a working application, the main focus of the project is to study how classical and quantum-oriented models compare within the same practical AI workflow.
 
 ==================================================
 2. PROBLEM CONTEXT
@@ -193,7 +193,7 @@ The final outcome of the project is both practical and analytical. Classical mod
 SHORT READY-TO-RECORD VERSION
 ==================================================
 
-This project presents a hybrid quantum machine learning pipeline for object detection, classification, and OCR. It is designed to analyze packaging-related objects such as chip packets, medicine boxes, and bottles, while also comparing classical and quantum-oriented models within the same practical workflow.
+This project presents a hybrid quantum machine learning pipeline for object detection, classification, and OCR. It uses chip packets, medicine boxes, and bottles as the current benchmark objects while comparing classical and quantum-oriented models within the same practical workflow.
 
 The pipeline begins with image preprocessing using OpenCV for noise reduction, contrast enhancement, and binarization. A YOLO-based detector then identifies the object location, and the detected region is extracted as the region of interest. That ROI is passed into two branches: a classification branch and an OCR branch.
 

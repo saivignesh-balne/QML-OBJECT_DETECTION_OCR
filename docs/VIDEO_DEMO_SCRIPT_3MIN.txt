@@ -12,7 +12,7 @@ Hello everyone.
 
 My internship project is focused on Quantum Machine Learning, or QML, and how it can be evaluated in a practical AI application instead of only in theory.
 
-To study that, I built an end-to-end vision pipeline that works on packaging images. The system takes an input image, detects the object, classifies it, and extracts printed text from it. The main object categories used in this project are chip packets, medicine boxes, and bottles.
+To study that, I built an end-to-end vision pipeline for object detection, classification, and OCR. The system takes an input image, detects the object, classifies it, and extracts printed text from it. The current benchmark categories used in this project are chip packets, medicine boxes, and bottles.
 
 The core objective of this internship was not just to build an object recognition system. The main objective was to research and compare classical machine-learning models, hybrid quantum models, and quantum-oriented classifiers in the same workflow, under the same evaluation setup.
 
@@ -30,7 +30,7 @@ Now I will briefly show the demo.
 
 In the user interface, I can train and compare multiple models, view benchmark graphs, and run inference on a new image. When I upload an image, the system detects the object, predicts the label, and extracts any visible printed text. The final output is shown on the image itself, along with the predicted object label and the extracted text. The interface also lets me compare how different classical and quantum models behave on the same task.
 
-This makes the project useful in two ways. First, it works as a practical packaging-analysis system. Second, it works as a research platform for understanding the strengths and limitations of QML in a realistic pipeline.
+This makes the project useful in two ways. First, it works as a practical object-detection and OCR system. Second, it works as a research platform for understanding the strengths and limitations of QML in a realistic pipeline.
 
 To conclude, this internship helped me study QML in a real-world context, compare it fairly against strong classical baselines, and build a complete benchmarked system around that comparison. The final takeaway is clear: classical models are the current production leaders, while hybrid quantum models provide the strongest research and innovation direction.
 

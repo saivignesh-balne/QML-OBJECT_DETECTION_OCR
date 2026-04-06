@@ -15,11 +15,11 @@ My name is [Your Name], and in this video I am presenting my internship project 
 
 The main theme of my internship was Quantum Machine Learning, or QML. My goal was not just to study QML theoretically, but to understand how it can be applied in a realistic AI workflow and how it compares against strong classical machine-learning models.
 
-To do that, I built a complete end-to-end vision pipeline for packaging analysis. The system works on three object categories: chip packets, medicine boxes, and bottles. Given an input image, the pipeline detects the object, extracts the relevant region, classifies the object, and reads any printed text visible on it.
+To do that, I built a complete end-to-end vision pipeline for object detection, classification, and OCR. The current benchmark works on three object categories: chip packets, medicine boxes, and bottles. Given an input image, the pipeline detects the object, extracts the relevant region, classifies the object, and reads any printed text visible on it.
 
 So this project has two important dimensions. The first is the application dimension, which is the working computer-vision and OCR pipeline. The second is the research dimension, which is the comparison between classical and hybrid quantum approaches within the same system.
 
-The reason I selected this problem is because packaging images are realistic and challenging. These images may contain cluttered backgrounds, multiple colors, reflections, different orientations, and partially visible text. Because of these variations, this is a meaningful problem for evaluating whether quantum-oriented models can contribute useful value in practice.
+The reason I selected this problem is because real object-detection images are realistic and challenging. These images may contain cluttered backgrounds, multiple colors, reflections, different orientations, and partially visible text. Because of these variations, this is a meaningful problem for evaluating whether quantum-oriented models can contribute useful value in practice.
 
 Let me explain the overall pipeline.
 
@@ -67,7 +67,7 @@ This part is important because it demonstrates that the project is not only a be
 
 From a business and engineering perspective, the current recommendation from the benchmark is to use the classical winner for deployment, because it is strong, stable, and efficient. From a research perspective, the hybrid quantum branch is valuable because it shows where QML can become competitive and how it can be integrated into a real pipeline in a measurable way.
 
-So the final contribution of this internship is not only the working packaging-analysis system. The deeper contribution is a benchmarked framework that helps answer an important question: when we compare classical and quantum-oriented models fairly in the same environment, what do we learn about their practical strengths and limitations?
+So the final contribution of this internship is not only the working object-detection system. The deeper contribution is a benchmarked framework that helps answer an important question: when we compare classical and quantum-oriented models fairly in the same environment, what do we learn about their practical strengths and limitations?
 
 To conclude, this internship helped me work across computer vision, OCR, machine learning, Qiskit, benchmarking, UI design, and documentation. It gave me practical experience in building a complete AI system, and it also helped me understand QML more realistically.
 

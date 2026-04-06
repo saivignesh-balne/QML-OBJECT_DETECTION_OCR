@@ -8,13 +8,24 @@ import InferenceView from "./views/InferenceView.jsx";
 import FutureLabView from "./views/FutureLabView.jsx";
 
 const NAV_ITEMS = [
-  { id: "overview", label: "Overview", short: "OV" },
-  { id: "workflow", label: "Workflow", short: "WF" },
-  { id: "training", label: "Training", short: "TR" },
-  { id: "benchmarks", label: "Benchmarks", short: "BM" },
-  { id: "inference", label: "Inference Lab", short: "IN" },
-  { id: "future", label: "Project Brief", short: "PB" },
+  { id: "overview", label: "Overview", short: "01", description: "Research dashboard and executive snapshot" },
+  { id: "workflow", label: "Workflow", short: "02", description: "Step-by-step operating flow" },
+  { id: "training", label: "Training", short: "03", description: "Detector and ROI model training control" },
+  { id: "benchmarks", label: "Benchmarks", short: "04", description: "Classical, quantum, and hybrid comparison" },
+  { id: "inference", label: "Inference Lab", short: "05", description: "Upload, detect, classify, and extract text" },
+  { id: "future", label: "Research Brief", short: "06", description: "Presentation-ready project notes" },
 ];
+
+function formatPercent(value) {
+  return Number.isFinite(Number(value)) ? `${(Number(value) * 100).toFixed(2)}%` : "N/A";
+}
+
+function formatDateTime(value) {
+  if (!value) return "Not generated yet";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleString();
+}
 
 export default function App() {
   const [dashboard, setDashboard] = useState(null);
@@ -104,9 +115,7 @@ export default function App() {
       try {
         const status = await fetchJson("/api/status");
         setDashboard((current) => {
-          if (!current) {
-            return current;
-          }
+          if (!current) return current;
           return { ...current, training_status: status };
         });
         if (previousTraining.current && !status.training) {
@@ -169,15 +178,21 @@ export default function App() {
       <div className="app-loading">
         <div className="loading-orb" />
         <div>
-          <p className="eyebrow">Quantum Vision Studio</p>
-          <h1>Preparing workspace</h1>
+          <p className="eyebrow">QML Vision Research Console</p>
+          <h1>Preparing the workspace</h1>
         </div>
       </div>
     );
   }
 
   const trainingStatus = dashboard.training_status || { training: false, status_messages: [] };
-  const recommendation = dashboard.recommendation;
+  const recommendation = dashboard.recommendation || {};
+  const benchmark = dashboard.benchmark || {};
+  const familySummary = benchmark.family_summary || [];
+  const classicalSummary = familySummary.find((item) => item.family === "classical");
+  const quantumSummary = familySummary.find((item) => item.family === "quantum");
+  const activeNav = NAV_ITEMS.find((item) => item.id === activeView) || NAV_ITEMS[0];
+  const benchmarkGeneratedAt = formatDateTime(benchmark.generated_at);
 
   return (
     <div className="app-shell">
@@ -185,9 +200,19 @@ export default function App() {
         <div className="brand-block">
           <div className="brand-mark">QV</div>
           <div>
-            <p className="eyebrow">React Control Room</p>
+            <p className="eyebrow">Research UI</p>
             <h1>Quantum Vision Studio</h1>
+            <p className="brand-copy">QML object-detection, benchmarking, and OCR research workspace</p>
           </div>
+        </div>
+
+        <div className="sidebar-card sidebar-highlight">
+          <span className="sidebar-label">Research Focus</span>
+          <strong>Hybrid quantum vs classical comparison for object detection workflows</strong>
+          <p>
+            The UI is organized around model training, measurable benchmarking, and presentation-ready inference
+            results.
+          </p>
         </div>
 
         <nav className="side-nav">
@@ -199,49 +224,75 @@ export default function App() {
               type="button"
             >
               <span className="nav-badge">{item.short}</span>
-              <span>{item.label}</span>
+              <span className="nav-text">
+                <strong>{item.label}</strong>
+                <small>{item.description}</small>
+              </span>
             </button>
           ))}
         </nav>
 
+        <div className="sidebar-metric-grid">
+          <div className="sidebar-stat">
+            <span>Saved ROI Models</span>
+            <strong>{dashboard.available_models?.length || 0}</strong>
+          </div>
+          <div className="sidebar-stat">
+            <span>Detector Runs</span>
+            <strong>{dashboard.inventory?.detector_weights?.length || 0}</strong>
+          </div>
+          <div className="sidebar-stat">
+            <span>Best Classical</span>
+            <strong>{classicalSummary ? formatPercent(classicalSummary.best_accuracy) : "N/A"}</strong>
+          </div>
+          <div className="sidebar-stat">
+            <span>Best Quantum</span>
+            <strong>{quantumSummary ? formatPercent(quantumSummary.best_accuracy) : "N/A"}</strong>
+          </div>
+        </div>
+
         <div className="sidebar-card">
-          <span className="sidebar-label">Best Available Stack</span>
+          <span className="sidebar-label">Recommended Stack</span>
           <strong>{`${recommendation.detector_backend || "pending"} + ${recommendation.classifier_name} + ${recommendation.ocr_backend}`}</strong>
           <p>
             {recommendation.mode === "classifier_only"
-              ? "ROI upload mode is ready. Cropped single-object uploads are supported now."
+              ? "ROI-only upload mode is available now. Add detector weights for full-scene operation."
               : recommendation.ready
-                ? "Ready for full upload inference."
-                : "Train or add artifacts to unlock inference."}
+                ? "Full pipeline inference is ready with benchmark-guided model selection."
+                : "Train models or add artifacts to unlock inference."}
           </p>
-          <p>{`Classifier family: ${recommendation.classifier_family || "unknown"}`}</p>
+          <p>{`Benchmark report: ${benchmarkGeneratedAt}`}</p>
         </div>
 
         <div className="sidebar-card muted">
           <span className="sidebar-label">Supported Classes</span>
           <div className="stacked-chips">
-            {dashboard.supported_classes.map((item) => (
+            {(dashboard.supported_classes || []).map((item) => (
               <span key={item} className="chip">
                 {item}
               </span>
             ))}
-            <span className="chip ghost">others -&gt; unidentified</span>
+            <span className="chip ghost">others = unidentified</span>
           </div>
         </div>
       </aside>
 
       <main className="workspace">
         <header className="topbar">
-          <div>
-            <p className="eyebrow">Professional QML + OCR Workspace</p>
-            <h2>{NAV_ITEMS.find((item) => item.id === activeView)?.label}</h2>
+          <div className="topbar-copy">
+            <p className="eyebrow">QML Object Detection Research and Development</p>
+            <h2>{activeNav.label}</h2>
+            <p>{activeNav.description}</p>
           </div>
           <div className="topbar-status">
+            <div className={`status-pill ${benchmark.has_report ? "good" : "warn"}`}>
+              {benchmark.has_report ? "Benchmark Ready" : "Benchmark Pending"}
+            </div>
             <div className={`status-pill ${trainingStatus.training ? "warn" : "good"}`}>
-              {trainingStatus.training ? "Training Running" : "System Ready"}
+              {trainingStatus.training ? "Training Running" : "System Idle"}
             </div>
             <button className="ghost-btn" type="button" onClick={() => loadDashboard()}>
-              Refresh
+              Refresh Data
             </button>
           </div>
         </header>
@@ -259,7 +310,7 @@ export default function App() {
           <OverviewView
             dashboard={dashboard}
             recommendation={recommendation}
-            benchmark={dashboard.benchmark}
+            benchmark={benchmark}
             projectBrief={dashboard.project_brief}
             onJump={setActiveView}
           />
@@ -296,7 +347,7 @@ export default function App() {
         ) : null}
 
         {activeView === "benchmarks" ? (
-          <BenchmarksView benchmark={dashboard.benchmark} recommendation={recommendation} projectBrief={dashboard.project_brief} />
+          <BenchmarksView benchmark={benchmark} recommendation={recommendation} projectBrief={dashboard.project_brief} />
         ) : null}
 
         {activeView === "inference" ? (
@@ -318,7 +369,7 @@ export default function App() {
           <FutureLabView
             projectBrief={dashboard.project_brief}
             recommendation={recommendation}
-            benchmark={dashboard.benchmark}
+            benchmark={benchmark}
             modelCatalog={dashboard.model_catalog}
           />
         ) : null}

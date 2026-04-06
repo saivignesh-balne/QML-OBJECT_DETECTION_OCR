@@ -4,7 +4,7 @@
   "description": "This folder is a production-style scaffold for:",
   "main": "index.js",
   "scripts": {
-    "build:ui": "esbuild ./frontend/src/main.jsx --bundle --outfile=./ui_static/react-app.js --format=iife --platform=browser --jsx=automatic",
+    "build:ui": "node build_ui.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

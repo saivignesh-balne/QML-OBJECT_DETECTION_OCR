@@ -1,66 +1,66 @@
 INTERNSHIP EVALUATION PRESENTATION SCRIPT
-Project: Research on Hybrid Quantum Machine Learning for Object Classification and OCR
+Project: Hybrid Quantum Machine Learning for Object Detection Research and OCR
 Date: 10 April 2026
 
 Slide 1. Title
 Script:
-Good morning. My internship project is about researching Quantum Machine Learning, or QML, in a practical computer-vision setting. To do that, I built a hybrid pipeline for object detection, classification, and OCR, and then used it as a benchmark platform to compare classical and quantum-oriented models on the same task.
+Good morning. This internship project focuses on Quantum Machine Learning, or QML, in a practical object-detection setting. To study that properly, I built a complete pipeline for object detection, classification, and OCR, and then used it as a benchmark platform to compare strong classical models with hybrid quantum models under the same workflow.
 
-Slide 2. Agenda and Introduction
+Slide 2. Agenda and Presentation Context
 Script:
-In this presentation, I will first explain the project context and the QML research objective. Then I will cover the system overview, the methods and technologies used, the internship goals I achieved, the results of the classical versus quantum comparison, and finally the future scope. The core idea of the project is not only to detect packaging objects, but to study whether hybrid quantum machine learning can provide measurable value compared with strong classical baselines.
+This presentation covers the project background, the research objective, the system architecture, the methods and technologies used, the internship objectives achieved, the benchmark findings, and the final recommendation. The central idea is not to assume that quantum is better, but to measure where QML is useful and where classical methods still remain stronger.
 
-Slide 3. Project Overview
+Slide 3. Project Context and Problem Definition
 Script:
-The project problem is practical: given an image of a bottle, chip packet, or medicine box, the system must detect the object, classify it, and extract the printed text. But in the context of my internship, this practical task becomes a research platform. I used this problem to evaluate how QML behaves in a realistic pipeline instead of studying it only in isolation.
+The project is best described as QML object-detection research and development. The current benchmark uses three object categories, namely bottles, chip packets, and medicine boxes, but these are the experimental classes rather than the project identity. The real objective is to evaluate QML inside a realistic object-detection and classification pipeline.
 
-Slide 4. Research Objective and System Architecture
+Slide 4. End-to-End System Architecture
 Script:
-The main research objective was to compare classical and hybrid quantum classifiers fairly. The image first goes through preprocessing and object detection. Then the ROI is extracted and converted into classical feature vectors. At that point, the pipeline branches into different classifier families, including classical baselines and QML models. OCR then extracts text from the same ROI. So the vision pipeline acts as a controlled experimental environment for QML research.
+The pipeline begins with preprocessing, followed by object detection, ROI extraction, classification, and OCR. The most important research decision is that the comparison happens at the classifier stage. That means the same computer-vision front end is preserved while classical and hybrid quantum models are evaluated fairly on the same ROI features.
 
-Slide 5. Why a Hybrid Quantum Design Was Chosen
+Slide 5. Experimental Workflow and User Interface
 Script:
-A pure quantum image pipeline is not practical for this problem today because image data is too high-dimensional for near-term quantum hardware and simulation. So I used a hybrid design. Preprocessing, detection, and feature extraction remain classical, while the classifier stage is where QML is introduced. This makes the project realistic, measurable, and aligned with the current state of quantum computing.
+The project includes a complete UI for training, benchmarking, and inference. This makes the system reproducible and presentation-ready. It also supports saved-model reuse, multi-model comparison, and end-to-end demonstrations. So the project is not only a technical prototype, but a structured evaluation environment for QML R&D.
 
-Slide 6. Experimental Setup and Benchmark Flow
+Slide 6. Dataset Design and Evaluation Setup
 Script:
-To support the research comparison, I created a benchmark workflow with separate datasets for detection and ROI classification. The detector uses full-scene labeled images, while the classifier uses cropped object images. The UI allows me to train model families, generate benchmark reports, and compare them under the same evaluation logic. This is important because the project objective is comparison, not just model building.
+Separate datasets were used for detection and ROI classification. The detector was trained on full-scene images with YOLO annotations, while the classifier was trained on cropped ROI images organized by class. This separation is important because detection and classification solve different problems, and it helps keep the comparison technically correct.
 
-Slide 7. QML Methods Used
+Slide 7. Pipeline Methods and Implementation Blocks
 Script:
-The key QML methods I implemented were angle encoding and amplitude encoding for quantum feature preparation. I then tested multiple model families, including quantum-kernel SVMs and variational quantum classifiers. These models were compared against strong classical baselines such as classical SVM, logistic regression, random forest, and MLP. This allowed me to study both the strengths and the practical limits of QML.
+The pipeline uses OpenCV for preprocessing, YOLO for detection, ROI extraction for object isolation, and Tesseract plus TrOCR for OCR. On the classifier side, the project compares both classical and quantum-oriented models using the same evaluation logic. This creates a clear and fair benchmark setup.
 
-Slide 8. Classical vs Hybrid Quantum vs Pure Quantum
+Slide 8. Hybrid QML Design and Feature Encoding
 Script:
-In this project, the classical approach keeps the full decision process in standard machine learning. The hybrid quantum approach uses classical preprocessing and features, but replaces the final classifier with a QML model. The pure quantum approach would require direct quantum processing of image data, which is not practical here. So the real comparison in this internship is classical versus hybrid quantum, with pure quantum discussed as a future direction.
+The project uses a hybrid quantum design rather than a pure quantum pipeline. That is because direct quantum handling of raw object images is not practical for this research setting today. Instead, preprocessing and feature extraction remain classical, while the classifier stage becomes the point where QML is introduced. Both angle encoding and amplitude encoding were implemented so classical features could be transformed into quantum-compatible representations.
 
-Slide 9. Skills and Technologies Used
+Slide 9. Comparison Framework
 Script:
-This project involved a combination of computer vision, machine learning, quantum machine learning, OCR, frontend development, and documentation. The main technologies were Python, OpenCV, PyTorch, Ultralytics YOLO, Qiskit, Qiskit Machine Learning, Tesseract, TrOCR, Flask, and React. The most important skill I developed was learning how to position QML inside a practical engineering workflow and evaluate it with evidence.
+The classical approach keeps the full decision path in standard machine learning. The hybrid quantum approach keeps the pipeline classical up to feature extraction, then introduces quantum models at the classifier stage. Pure quantum image handling is treated as a future direction because it is not practical for this image task in the current setting.
 
-Slide 10. Internship Learning and Execution
+Slide 10. Technologies Used and Skills Developed
 Script:
-During the internship, I worked on dataset structuring, feature extraction, QML model implementation, classical baseline comparison, OCR integration, benchmarking, UI design, and documentation. This gave me both engineering experience and research experience. More importantly, it taught me how to ask a useful QML question: not “can I use QML?”, but “where does QML actually help, and where does classical still perform better?”
+The project combines object detection, computer vision, OCR, machine learning, quantum machine learning, UI development, and reporting. The main technologies used were Python, OpenCV, PyTorch, Ultralytics YOLO, Qiskit, Qiskit Machine Learning, Tesseract, TrOCR, Flask, and React. The most important skill developed during the internship was learning how to evaluate QML inside a real engineering workflow rather than in isolation.
 
-Slide 11. Internship Goals and Objectives I
+Slide 11. Achievement of Internship Objectives I
 Script:
-For application, I applied AI concepts in a complete working system. For knowledge, I learned how QML models such as QSVM and VQC operate inside a hybrid pipeline. For exploration, I tested multiple encodings and model families. For identification, I identified where QML is competitive and where classical methods are still stronger and more efficient.
+In terms of application, I built a complete working pipeline. In terms of knowledge, I learned how quantum feature encoding and QML classifiers fit into a practical hybrid design. In terms of exploration, I tested multiple model families, encodings, and kernels. In terms of identification, I determined where QML is competitive and where classical methods remain stronger.
 
-Slide 12. Internship Goals and Objectives II
+Slide 12. Achievement of Internship Objectives II
 Script:
-For innovation, I created a benchmark platform that compares classical and quantum-oriented approaches in one system. For engagement, I worked across vision, OCR, QML, UI, and reporting. For evaluation, I used held-out benchmarks instead of assumptions. For demonstration, I produced a presentation-ready UI, documentation, and results story that can be shown to mentors and panel members.
+In terms of innovation, I created a hybrid classical-quantum benchmark platform rather than a single-model solution. In terms of engagement, I worked across detection, OCR, QML, UI, benchmarking, and documentation. In terms of evaluation, I used the same benchmark logic across all models. In terms of demonstration, I prepared a presentation-ready workflow with saved artifacts, charts, tables, and a usable interface.
 
-Slide 13. Results Summary
+Slide 13. Detector Performance and All-Model Accuracy Comparison
 Script:
-The detector achieved strong metrics, including precision of 0.90054, recall of 0.94974, mAP at 50 of 0.95593, and mAP at 50 to 95 of 0.61159. For ROI classification, the best classical models and one quantum amplitude-encoding QSVM each reached 99.5 percent accuracy. This is an important QML result because it shows that a quantum-oriented model can be competitive. But it also shows that QML does not automatically outperform the best classical baselines.
+The detector achieved strong performance, including precision of 0.90054, recall of 0.94974, mAP at 50 of 0.95593, and mAP at 50 to 95 of 0.61159. The classifier chart on this slide shows every available model currently benchmarked in the project. The strongest classical models achieved 99.5 percent accuracy, and the amplitude-encoding QSVM also achieved 99.5 percent. This is one of the most important findings of the internship.
 
-Slide 14. Research Conclusion and Recommendation
+Slide 14. Formal Benchmark Table and Recommendation
 Script:
-The benchmark comparison gives a clear conclusion. For immediate production, the best choice is still the classical stack, specifically YOLO plus Classical SVM with OCR ensemble. For QML research, the strongest result is the amplitude-encoding QSVM, which matches the top classical accuracy but takes much longer to train. So in this internship context, the correct conclusion is that classical is the best production option today, while hybrid QML is the most valuable innovation and research direction.
+This slide provides the complete model table rather than only the top performers. It shows the full comparison across accuracy, macro F1, and training time. The benchmark leads to a balanced conclusion. For deployment, the strongest current recommendation is the classical stack, specifically YOLO with Classical SVM and OCR ensemble. For research, the strongest quantum result is the amplitude-encoding QSVM, which is highly competitive in accuracy but much slower to train.
 
-Slide 15. Future Scope
+Slide 15. Conclusion and Future Scope
 Script:
-The future scope is to continue improving the project as a QML research platform. This includes end-to-end validation on harder full-scene images, more robust OCR, further testing of quantum kernels and encodings, and continuing QML only where it provides measurable value. In conclusion, the project helped me understand not just how to build with QML, but how to evaluate QML responsibly in a practical AI system.
+The final conclusion is that this internship successfully delivered both a working AI system and a rigorous QML comparison platform. Classical models currently remain the best deployment choice, while hybrid QML remains the most important research and innovation direction. Future work includes stronger end-to-end validation, improved OCR robustness, and deeper evaluation of additional quantum kernels, encodings, and feature-compression strategies.
 
 Closing Line
-Thank you. I will be happy to answer questions on the QML methods, the classical versus quantum comparison, the benchmark interpretation, or the system architecture.
+Thank you. I will be happy to answer questions on the architecture, benchmark design, classical versus hybrid quantum comparison, or the key findings of the QML experiments.

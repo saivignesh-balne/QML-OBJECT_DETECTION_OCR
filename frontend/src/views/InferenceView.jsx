@@ -32,6 +32,12 @@ export default function InferenceView({
     family: item.family,
     artifact_path: item.label,
   }));
+  const pipelineRuntimeItems = (analysis?.runtime_benchmarks || []).map((item) => ({
+    label: item.label,
+    value: Number(item.value_ms || 0),
+    family: "neutral",
+    artifact_path: item.label,
+  }));
   const modelTableRows = modelComparison.map((item) => {
     const predictions = objectResults
       .map((result, index) => {
@@ -44,20 +50,26 @@ export default function InferenceView({
       .join(" | ");
     return {
       ...item,
-      predictions: predictions || "—",
+      predictions: predictions || "N/A",
     };
   });
 
   return (
     <div className="page-grid">
-      <section className="panel-card">
-        <p className="eyebrow">Upload Inference</p>
-        <h3>Run the best model, a selected model, or every saved model</h3>
+      <section className="panel-card inference-control-card">
+        <div className="panel-title-row">
+          <div>
+            <p className="eyebrow">Upload Inference</p>
+            <h3>Run one model or compare every saved model on the same image</h3>
+          </div>
+          <span className="chip">{recommendation.ready ? "inference ready" : "locked"}</span>
+        </div>
         <p>
           {recommendation.mode === "classifier_only"
-            ? "Upload a cropped single-object image. The app can score the benchmark winner, a chosen saved model, or the full saved classifier roster."
-            : "Upload a product image and inspect preprocessing, detection, OCR, and per-model classification comparisons on the same detected ROIs."}
+            ? "Upload a cropped single-object image. The system will classify the object, extract text, and compare the saved ROI models."
+            : "Upload a full image. The pipeline will detect objects, classify them, draw the final output, and compare selected models on the same detected regions."}
         </p>
+
         <div className="control-grid">
           <label className="field">
             <span>Inference Mode</span>
@@ -86,6 +98,7 @@ export default function InferenceView({
             </select>
           </label>
         </div>
+
         <label className="upload-zone">
           <span>{uploadFile ? uploadFile.name : "Choose an image file"}</span>
           <input
@@ -95,65 +108,110 @@ export default function InferenceView({
             disabled={trainingRunning || !recommendation.ready}
           />
         </label>
-        <button
-          className="primary-btn"
-          type="button"
-          onClick={onAnalyze}
-          disabled={busyAction === "analysis" || trainingRunning || !recommendation.ready}
-        >
-          {busyAction === "analysis" ? "Analyzing..." : "Analyze Image"}
-        </button>
-        {!recommendation.ready ? <p className="hint-text">Train or add artifacts to unlock inference.</p> : null}
-        {recommendation.mode === "classifier_only" ? (
-          <p className="hint-text">Current mode: ROI upload mode. Full-scene detection is used automatically once detector weights are available.</p>
-        ) : null}
+
+        <div className="button-stack">
+          <button
+            className="primary-btn"
+            type="button"
+            onClick={onAnalyze}
+            disabled={busyAction === "analysis" || trainingRunning || !recommendation.ready}
+          >
+            {busyAction === "analysis" ? "Analyzing..." : "Analyze Image"}
+          </button>
+          {!recommendation.ready ? <p className="hint-text">Train or add artifacts to unlock inference.</p> : null}
+        </div>
       </section>
 
       {analysis ? (
         <>
-          <section className="card-grid one">
-            <article className="step-card">
+          <section className="inference-result-layout">
+            <article className="panel-card image-focus-card">
+              <div className="panel-title-row">
+                <div>
+                  <p className="eyebrow">Final Output</p>
+                  <h3>Rendered prediction image</h3>
+                </div>
+                <span className="chip">{`${analysis.num_detections} object(s)`}</span>
+              </div>
               <img
+                className="result-hero-image"
                 src={analysis.final_output_preview || analysis.text_overlay_preview || analysis.annotated_preview}
                 alt="Final full-image prediction output"
               />
-              <div>
-                <div className="step-row">
-                  <strong>Output Result</strong>
-                  <span>{`${analysis.num_detections} object(s)`}</span>
+            </article>
+
+            <div className="result-side-stack">
+              <div className="panel-card">
+                <p className="eyebrow">Result Summary</p>
+                <h3>{analysis.pipeline_used?.classifier_name || recommendation.classifier_name}</h3>
+                <div className="detail-list">
+                  <div>
+                    <span>Comparison Mode</span>
+                    <strong>{analysis.comparison_mode}</strong>
+                  </div>
+                  <div>
+                    <span>OCR Backend</span>
+                    <strong>{analysis.pipeline_used?.ocr_backend || recommendation.ocr_backend}</strong>
+                  </div>
+                  <div>
+                    <span>Evaluated Models</span>
+                    <strong>{analysis.pipeline_used?.evaluated_models?.length || modelComparison.length}</strong>
+                  </div>
+                  <div>
+                    <span>Saved JSON</span>
+                    <strong>{analysis.saved_json ? "available" : "not saved"}</strong>
+                  </div>
                 </div>
-                <p>Full image with predicted labels, extracted text, and highlighted text regions.</p>
-                <div className="flow-chip-row">
-                  {technicalStages.map((step) => (
-                    <span className="flow-chip" key={step.name}>
-                      {step.name}
-                    </span>
+              </div>
+
+              <div className="panel-card">
+                <p className="eyebrow">Technical Flow</p>
+                <h3>Pipeline stages</h3>
+                <div className="timeline-list compact">
+                  {technicalStages.map((step, index) => (
+                    <div className="timeline-item" key={step.name}>
+                      <span className="timeline-index">{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        <strong>{step.name}</strong>
+                        <p>{step.summary}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
-            </article>
+            </div>
           </section>
 
-          <section className="card-grid two">
+          <section className="card-grid three">
             <BarChartCard
-              title="Model Benchmark Accuracy"
-              subtitle="Held-out accuracy"
+              title="Benchmark Accuracy"
+              subtitle="Saved model quality"
               items={accuracyChartItems}
               suffix="%"
+              limit={10}
               emptyText="Accuracy chart appears after analysis."
             />
             <BarChartCard
-              title="Model Runtime"
+              title="Live Model Runtime"
               subtitle="Per-image classification runtime"
               items={runtimeChartItems}
               suffix=" ms"
+              limit={10}
               emptyText="Model runtime comparison appears after analysis."
+            />
+            <BarChartCard
+              title="Pipeline Stage Runtime"
+              subtitle="End-to-end timing"
+              items={pipelineRuntimeItems}
+              suffix=" ms"
+              limit={10}
+              emptyText="Stage runtime appears after analysis."
             />
           </section>
 
           <section className="panel-card">
             <p className="eyebrow">Detected Objects</p>
-            <h3>Predicted label and extracted text</h3>
+            <h3>Predicted labels and extracted text</h3>
             <div className="table-wrap">
               <table className="result-table">
                 <thead>
@@ -161,7 +219,7 @@ export default function InferenceView({
                     <th>#</th>
                     <th>Predicted Label</th>
                     <th>Extracted Text</th>
-                    <th>OCR</th>
+                    <th>OCR Backend</th>
                     <th>Text Boxes</th>
                   </tr>
                 </thead>

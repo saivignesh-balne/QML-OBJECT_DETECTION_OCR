@@ -12,7 +12,7 @@ Hello everyone.
 
 In this demo, I will show my internship project, which is a hybrid quantum machine learning pipeline for object detection, classification, and OCR.
 
-The main purpose of this project is to compare classical and quantum-oriented models in a practical computer-vision workflow. The system works on packaging-related objects such as chip packets, medicine boxes, and bottles.
+The main purpose of this project is to compare classical and quantum-oriented models in a practical object-detection workflow. The current benchmark uses chip packets, medicine boxes, and bottles as experimental object classes.
 
 This is the main dashboard of the application. The UI is built to support the complete workflow, including model training, benchmarking, and inference. It also stores trained models so that we do not need to retrain them every time.
 
@@ -83,7 +83,7 @@ Say:
 SHORTER NATURAL VERSION
 --------------------------------------------------
 
-Hello everyone. In this demo, I am showing my internship project on hybrid quantum machine learning for object detection, classification, and OCR. The system is designed for packaging-related objects such as chip packets, medicine boxes, and bottles.
+Hello everyone. In this demo, I am showing my internship project on hybrid quantum machine learning for object detection, classification, and OCR. The current benchmark is built on chip packets, medicine boxes, and bottles, but the wider goal of the project is QML object-detection research and development.
 
 This interface supports the full workflow. In the training section, I can train the detector and multiple ROI classifiers, including both classical and quantum-oriented models. In the benchmark section, I can compare their performance through graphs and tables.
 

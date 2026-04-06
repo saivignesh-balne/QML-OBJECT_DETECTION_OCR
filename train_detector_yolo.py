@@ -11,7 +11,7 @@ from ultralytics import YOLO
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Train a YOLO detector for custom package/object detection.")
+    parser = argparse.ArgumentParser(description="Train a YOLO detector for custom object detection research.")
     parser.add_argument("--dataset-yaml", required=True, help="Path to Ultralytics dataset YAML.")
     parser.add_argument("--model", default="yolov8n.pt", help="Base YOLO checkpoint.")
     parser.add_argument("--epochs", type=int, default=50)

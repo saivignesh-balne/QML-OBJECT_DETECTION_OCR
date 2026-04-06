@@ -1332,7 +1332,7 @@
           return dispatcher;
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React12 = require_react(), Internals = {
+        var React13 = require_react(), Internals = {
           d: {
             f: noop,
             r: function() {
@@ -1350,7 +1350,7 @@
           },
           p: 0,
           findDOMNode: null
-        }, REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), ReactSharedInternals = React12.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+        }, REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), ReactSharedInternals = React13.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
         "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
           "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
         );
@@ -2885,7 +2885,7 @@
           "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
         }
         function validateOptionProps(element, props) {
-          null == props.value && ("object" === typeof props.children && null !== props.children ? React12.Children.forEach(props.children, function(child) {
+          null == props.value && ("object" === typeof props.children && null !== props.children ? React13.Children.forEach(props.children, function(child) {
             null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
               "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
             ));
@@ -18517,14 +18517,14 @@
           ));
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var Scheduler = require_scheduler(), React12 = require_react(), ReactDOM = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.element"), REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = /* @__PURE__ */ Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = /* @__PURE__ */ Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = /* @__PURE__ */ Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = /* @__PURE__ */ Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = /* @__PURE__ */ Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = /* @__PURE__ */ Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = /* @__PURE__ */ Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = /* @__PURE__ */ Symbol.for("react.memo"), REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy");
+        var Scheduler = require_scheduler(), React13 = require_react(), ReactDOM = require_react_dom(), assign = Object.assign, REACT_LEGACY_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.element"), REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = /* @__PURE__ */ Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = /* @__PURE__ */ Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = /* @__PURE__ */ Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = /* @__PURE__ */ Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = /* @__PURE__ */ Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = /* @__PURE__ */ Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = /* @__PURE__ */ Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = /* @__PURE__ */ Symbol.for("react.memo"), REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy");
         /* @__PURE__ */ Symbol.for("react.scope");
         var REACT_ACTIVITY_TYPE = /* @__PURE__ */ Symbol.for("react.activity");
         /* @__PURE__ */ Symbol.for("react.legacy_hidden");
         /* @__PURE__ */ Symbol.for("react.tracing_marker");
         var REACT_MEMO_CACHE_SENTINEL = /* @__PURE__ */ Symbol.for("react.memo_cache_sentinel");
         /* @__PURE__ */ Symbol.for("react.view_transition");
-        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = /* @__PURE__ */ Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React12.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
+        var MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = /* @__PURE__ */ Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, ReactSharedInternals = React13.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, NotPending = Object.freeze({
           pending: false,
           data: null,
           method: null,
@@ -21312,7 +21312,7 @@
           }
         };
         (function() {
-          var isomorphicReactPackageVersion = React12.version;
+          var isomorphicReactPackageVersion = React13.version;
           if ("19.2.4" !== isomorphicReactPackageVersion)
             throw Error(
               'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.2.4\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -21680,18 +21680,18 @@
         function isValidElement(object) {
           return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
         }
-        var React12 = require_react(), REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = /* @__PURE__ */ Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = /* @__PURE__ */ Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = /* @__PURE__ */ Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = /* @__PURE__ */ Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = /* @__PURE__ */ Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = /* @__PURE__ */ Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = /* @__PURE__ */ Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = /* @__PURE__ */ Symbol.for("react.memo"), REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = /* @__PURE__ */ Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = /* @__PURE__ */ Symbol.for("react.client.reference"), ReactSharedInternals = React12.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        var React13 = require_react(), REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = /* @__PURE__ */ Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = /* @__PURE__ */ Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = /* @__PURE__ */ Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = /* @__PURE__ */ Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = /* @__PURE__ */ Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = /* @__PURE__ */ Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = /* @__PURE__ */ Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = /* @__PURE__ */ Symbol.for("react.memo"), REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = /* @__PURE__ */ Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = /* @__PURE__ */ Symbol.for("react.client.reference"), ReactSharedInternals = React13.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
           return null;
         };
-        React12 = {
+        React13 = {
           react_stack_bottom_frame: function(callStackForError) {
             return callStackForError();
           }
         };
         var specialPropKeyWarningShown;
         var didWarnAboutElementRef = {};
-        var unknownOwnerDebugStack = React12.react_stack_bottom_frame.bind(
-          React12,
+        var unknownOwnerDebugStack = React13.react_stack_bottom_frame.bind(
+          React13,
           UnknownOwner
         )();
         var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
@@ -21738,7 +21738,10 @@
   // frontend/src/shared/ActionCard.jsx
   function ActionCard({ title, subtitle, text, onClick }) {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { className: "action-card", type: "button", onClick, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "eyebrow", children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "action-card-head", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "eyebrow", children: title }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "action-card-arrow", children: "Open" })
+      ] }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: subtitle }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: text })
     ] });
@@ -21751,151 +21754,474 @@
     }
   });
 
+  // frontend/src/shared/BarChartCard.jsx
+  function familyClass(family) {
+    return family === "quantum" ? "quantum" : family === "classical" ? "classical" : "neutral";
+  }
+  function BarChartCard({
+    title,
+    subtitle,
+    items,
+    suffix = "",
+    emptyText,
+    limit = 8
+  }) {
+    const safeItems = Array.isArray(items) ? items.slice(0, limit) : [];
+    const maxValue = Math.max(...safeItems.map((item) => Number(item.value || 0)), 1);
+    const lead = safeItems[0];
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "panel-card chart-card", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "chart-header", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: subtitle || "Benchmark Chart" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: title })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "chart-count", children: `${safeItems.length} item(s)` })
+      ] }),
+      lead ? /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: `chart-feature ${familyClass(lead.family)}`, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "chart-feature-label", children: "Top Performer" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: lead.label })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: "chart-feature-value", children: `${Number(lead.value || 0).toFixed(2)}${suffix}` })
+      ] }) : null,
+      safeItems.length ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "chart-list", children: safeItems.map((item, index) => {
+        const value = Number(item.value || 0);
+        return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "chart-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "chart-meta", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "chart-title-block", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { className: `chart-rank ${familyClass(item.family)}`, children: String(index + 1).padStart(2, "0") }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: item.label })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: `${value.toFixed(2)}${suffix}` })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "chart-track", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "div",
+            {
+              className: `chart-fill ${familyClass(item.family)}`,
+              style: { width: `${Math.max(6, value / maxValue * 100)}%` }
+            }
+          ) })
+        ] }, `${item.label}-${item.artifact_path || item.family || ""}`);
+      }) }) : /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "empty-text", children: emptyText || "No chart data available yet." })
+    ] });
+  }
+  var import_react2, import_jsx_runtime2;
+  var init_BarChartCard = __esm({
+    "frontend/src/shared/BarChartCard.jsx"() {
+      import_react2 = __toESM(require_react());
+      import_jsx_runtime2 = __toESM(require_jsx_runtime());
+    }
+  });
+
+  // frontend/src/shared/ScatterPlotCard.jsx
+  function familyColor(family) {
+    if (family === "quantum") return "#0f9b76";
+    if (family === "classical") return "#d38b24";
+    return "#6b7d84";
+  }
+  function ScatterPlotCard({
+    title,
+    subtitle,
+    items,
+    xLabel = "Training Time (s)",
+    yLabel = "Accuracy (%)",
+    emptyText
+  }) {
+    const safeItems = Array.isArray(items) ? items.filter((item) => Number.isFinite(Number(item.x)) && Number.isFinite(Number(item.y))) : [];
+    const width = 520;
+    const height = 300;
+    const padding = { top: 22, right: 18, bottom: 46, left: 54 };
+    const innerWidth = width - padding.left - padding.right;
+    const innerHeight = height - padding.top - padding.bottom;
+    const maxX = Math.max(...safeItems.map((item) => Number(item.x || 0)), 1);
+    const maxY = Math.max(...safeItems.map((item) => Number(item.y || 0)), 1);
+    function scaleX(value) {
+      return padding.left + Number(value || 0) / maxX * innerWidth;
+    }
+    function scaleY(value) {
+      return height - padding.bottom - Number(value || 0) / maxY * innerHeight;
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "panel-card chart-card", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "chart-header", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "eyebrow", children: subtitle || "Benchmark Scatter" }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: title })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "chart-count", children: `${safeItems.length} model(s)` })
+      ] }),
+      safeItems.length ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "scatter-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("svg", { className: "scatter-chart", viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": title, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "line",
+            {
+              x1: padding.left,
+              y1: height - padding.bottom,
+              x2: width - padding.right,
+              y2: height - padding.bottom,
+              className: "scatter-axis"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "line",
+            {
+              x1: padding.left,
+              y1: padding.top,
+              x2: padding.left,
+              y2: height - padding.bottom,
+              className: "scatter-axis"
+            }
+          ),
+          [0.25, 0.5, 0.75, 1].map((ratio) => {
+            const y = padding.top + (1 - ratio) * innerHeight;
+            return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("g", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                "line",
+                {
+                  x1: padding.left,
+                  y1: y,
+                  x2: width - padding.right,
+                  y2: y,
+                  className: "scatter-grid"
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("text", { x: padding.left - 10, y: y + 4, className: "scatter-tick", textAnchor: "end", children: (maxY * ratio).toFixed(0) })
+            ] }, `grid-${ratio}`);
+          }),
+          [0, 0.25, 0.5, 0.75, 1].map((ratio) => {
+            const x = padding.left + ratio * innerWidth;
+            return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("g", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                "line",
+                {
+                  x1: x,
+                  y1: padding.top,
+                  x2: x,
+                  y2: height - padding.bottom,
+                  className: "scatter-grid vertical"
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("text", { x, y: height - padding.bottom + 22, className: "scatter-tick", textAnchor: "middle", children: (maxX * ratio).toFixed(ratio === 0 || maxX >= 100 ? 0 : 1) })
+            ] }, `xtick-${ratio}`);
+          }),
+          safeItems.map((item) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("g", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "circle",
+            {
+              cx: scaleX(item.x),
+              cy: scaleY(item.y),
+              r: "7.5",
+              fill: familyColor(item.family),
+              fillOpacity: "0.88",
+              stroke: "#ffffff",
+              strokeWidth: "2",
+              children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("title", { children: `${item.label}: ${Number(item.y).toFixed(2)}% accuracy, ${Number(item.x).toFixed(2)} s` })
+            }
+          ) }, `${item.label}-${item.x}-${item.y}`)),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "text",
+            {
+              x: (padding.left + width - padding.right) / 2,
+              y: height - 8,
+              className: "scatter-label",
+              textAnchor: "middle",
+              children: xLabel
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            "text",
+            {
+              x: "16",
+              y: (padding.top + height - padding.bottom) / 2,
+              className: "scatter-label",
+              textAnchor: "middle",
+              transform: `rotate(-90 16 ${(padding.top + height - padding.bottom) / 2})`,
+              children: yLabel
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "chart-legend", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: "legend-item", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "legend-dot classical" }),
+            "Classical"
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: "legend-item", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "legend-dot quantum" }),
+            "Quantum / Hybrid"
+          ] })
+        ] })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "empty-text", children: emptyText || "No scatter data available yet." })
+    ] });
+  }
+  var import_react3, import_jsx_runtime3;
+  var init_ScatterPlotCard = __esm({
+    "frontend/src/shared/ScatterPlotCard.jsx"() {
+      import_react3 = __toESM(require_react());
+      import_jsx_runtime3 = __toESM(require_jsx_runtime());
+    }
+  });
+
   // frontend/src/views/OverviewView.jsx
+  function formatPercent(value) {
+    return Number.isFinite(Number(value)) ? `${(Number(value) * 100).toFixed(2)}%` : "N/A";
+  }
+  function bestByFamily(rows, family) {
+    return (rows || []).find((item) => item.model_family === family) || null;
+  }
   function OverviewView({ dashboard, recommendation, benchmark, projectBrief, onJump }) {
-    const briefingCards = Object.values(projectBrief || {}).filter((section) => Array.isArray(section?.points));
-    const approachComparison = projectBrief?.approach_comparison;
-    const topModels = (dashboard.available_models || []).slice(0, 3);
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "page-grid", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "hero-panel", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-main", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: "Presentation-Ready Vision + OCR Lab" }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: "Compare classical and quantum-ready models, then deploy the strongest pipeline from one UI." }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "The workspace now supports saved artifacts, benchmark-driven model selection, OCR visualization, and side-by-side comparison of classical baselines with hybrid quantum classifiers." }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-actions", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: "primary-btn", type: "button", onClick: () => onJump("training"), children: "Train Models" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: "secondary-btn", type: "button", onClick: () => onJump("inference"), children: "Open Inference Lab" })
+    const classifiers = benchmark.classifiers || [];
+    const detector = benchmark.detectors?.[0] || null;
+    const bestClassical = bestByFamily(classifiers, "classical");
+    const bestQuantum = bestByFamily(classifiers, "quantum");
+    const executiveSummary = projectBrief?.executive_summary?.points || [];
+    const problemStatement = projectBrief?.problem_statement?.points || [];
+    const quantumValue = projectBrief?.quantum_value?.points || [];
+    const quantumLimits = projectBrief?.quantum_limits?.points || [];
+    const overviewScatterItems = classifiers.map((item) => ({
+      label: item.name,
+      x: item.train_time_seconds,
+      y: Number(item.accuracy || 0) * 100,
+      family: item.model_family
+    }));
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "page-grid", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "hero-panel overview-hero", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-main", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Research Dashboard" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: "Hybrid quantum vs classical benchmarking for object detection and OCR pipelines" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "This workspace is designed as a research control room for QML object-detection experiments. It combines training, benchmarking, and inference into one presentation-ready interface so you can explain both the technical pipeline and the research findings clearly." }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-actions", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { className: "primary-btn", type: "button", onClick: () => onJump("benchmarks"), children: "Review Benchmarks" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { className: "secondary-btn", type: "button", onClick: () => onJump("inference"), children: "Open Demo Output" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-note-grid", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-note-card", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Production Recommendation" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: recommendation.classifier_name })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-note-card", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Research Best Quantum Entry" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: bestQuantum?.name || "Not available yet" })
+            ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "hero-side", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "metric-card", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Detector Weights" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: dashboard.inventory.detector_weights.length })
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "hero-side metric-stack", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "metric-card accent", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Benchmark Winner" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: recommendation.classifier_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: `${recommendation.classifier_family || "unknown"} family` })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "metric-card", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Classifier Artifacts" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: dashboard.inventory.classifier_artifacts.length })
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "metric-card", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Best Classical Accuracy" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: bestClassical ? formatPercent(bestClassical.accuracy) : "N/A" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: bestClassical?.name || "No model yet" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "metric-card", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Benchmark Ready" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: benchmark.has_report ? "Yes" : "No" })
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "metric-card", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Best Quantum Accuracy" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: bestQuantum ? formatPercent(bestQuantum.accuracy) : "N/A" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: bestQuantum?.name || "No model yet" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "metric-card accent", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Inference" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: recommendation.ready ? "Unlocked" : "Waiting" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "metric-card", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Saved Models" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: dashboard.available_models?.length || 0 })
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "metric-card", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Detector mAP50-95" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: detector ? formatPercent(detector.accuracy) : "N/A" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: detector?.name || "Detector pending" })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "card-grid three", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "overview-kpi-grid", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Total Saved ROI Models" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: dashboard.available_models?.length || 0 }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "Reusable trained artifacts available for comparison and inference." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Benchmark Coverage" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: classifiers.length }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "Classifier entries currently included in the benchmark report." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Detector Artifacts" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: dashboard.inventory?.detector_weights?.length || 0 }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "Saved detector weights available for full-scene object localization." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Inference Mode" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: recommendation.mode || "unavailable" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: recommendation.ready ? "Inference is enabled." : "Training or artifacts are still required." })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "card-grid three", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          BarChartCard,
+          {
+            title: "Top Accuracy Snapshot",
+            subtitle: "Best benchmark performers",
+            items: benchmark?.charts?.classifier_accuracy_pct || [],
+            suffix: "%",
+            limit: 6,
+            emptyText: "No classifier benchmark data yet."
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          BarChartCard,
+          {
+            title: "Family Average Accuracy",
+            subtitle: "Classical vs quantum",
+            items: benchmark?.charts?.family_avg_accuracy_pct || [],
+            suffix: "%",
+            limit: 4,
+            emptyText: "Family comparison appears after benchmarking."
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          BarChartCard,
+          {
+            title: "Detector Quality",
+            subtitle: "Detection benchmark",
+            items: benchmark?.charts?.detector_map_pct || [],
+            suffix: "%",
+            limit: 4,
+            emptyText: "Detector chart appears after detector training."
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          ScatterPlotCard,
+          {
+            title: "Accuracy vs Training Time",
+            subtitle: "Research tradeoff view",
+            items: overviewScatterItems,
+            emptyText: "Train ROI models to populate the comparison scatter."
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card insight-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Executive Research Notes" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: "How to explain the project in one minute" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "briefing-list", children: executiveSummary.map((point) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: point }, point)) })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "card-grid three", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
           ActionCard,
           {
             title: "Step 1",
-            subtitle: "Train comparison models",
-            text: "Train classical baselines and hybrid quantum classifiers from the UI, then reuse the saved artifacts.",
+            subtitle: "Train the experiment suite",
+            text: "Build detector and ROI classifier artifacts, or reuse the saved models already in the workspace.",
             onClick: () => onJump("training")
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
           ActionCard,
           {
             title: "Step 2",
-            subtitle: "Benchmark the stack",
-            text: "Generate a benchmark report so the app can automatically recommend the strongest pipeline.",
+            subtitle: "Read the benchmark board",
+            text: "Compare classical, hybrid quantum, and variational approaches with graphs, rankings, and research notes.",
             onClick: () => onJump("benchmarks")
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
           ActionCard,
           {
             title: "Step 3",
-            subtitle: "Run inference",
-            text: "Upload a cropped image now, or add detector training later for full-scene detection.",
+            subtitle: "Run the live demo",
+            text: "Upload an image, render the final output, and review extracted text with per-model comparison tables.",
             onClick: () => onJump("inference")
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("section", { className: "card-grid two", children: briefingCards.map((section) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "panel-card briefing-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: "Project Brief" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: section.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "briefing-list", children: section.points.map((point) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: point }, point)) })
-      ] }, section.title)) }),
-      approachComparison?.rows?.length ? /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: "Presentation Comparison" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: approachComparison.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("table", { className: "result-table", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("tr", { children: approachComparison.columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("th", { children: column }, column)) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("tbody", { children: approachComparison.rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("td", { children: row.approach }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("td", { children: row.how }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("td", { children: row.advantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("td", { children: row.disadvantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("td", { children: row.best_use })
-          ] }, row.approach)) })
-        ] }) })
-      ] }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: "Current Recommendation" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: recommendation.classifier_name }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: `Current classifier family: ${recommendation.classifier_family || "unknown"}. The benchmark board decides whether classical or quantum wins on the current dataset.` }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: benchmark.notes?.[0] || "Benchmark notes will appear here after report generation." })
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card briefing-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Problem Context" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: "Why this research matters" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "briefing-list", children: problemStatement.map((point) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: point }, point)) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card briefing-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Quantum Opportunity" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: "Where hybrid QML can add value" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "briefing-list", children: quantumValue.map((point) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: point }, point)) })
+        ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("section", { className: "card-grid three", children: topModels.map((item) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "eyebrow", children: "Top Saved Model" }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: item.display_name }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: item.summary }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "detail-list compact", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Accuracy" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: `${(item.accuracy * 100).toFixed(2)}%` })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: "Family" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: item.model_family })
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card briefing-card muted-surface", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Current Limits" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: "What still constrains quantum use today" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "briefing-list", children: quantumLimits.map((point) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: point }, point)) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card recommendation-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: "Current Recommendation" }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: recommendation.classifier_name }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "The current recommended stack is selected from measured benchmark results, not from assumptions. That makes the recommendation useful for both production decisions and research reporting." }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "detail-list", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Classifier Family" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: recommendation.classifier_family || "unknown" })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: "Inference Status" }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: recommendation.ready ? "Ready" : "Pending" })
+            ] })
           ] })
         ] })
-      ] }, item.artifact_path)) })
+      ] })
     ] });
   }
-  var import_react2, import_jsx_runtime2;
+  var import_react4, import_jsx_runtime4;
   var init_OverviewView = __esm({
     "frontend/src/views/OverviewView.jsx"() {
-      import_react2 = __toESM(require_react());
+      import_react4 = __toESM(require_react());
       init_ActionCard();
-      import_jsx_runtime2 = __toESM(require_jsx_runtime());
+      init_BarChartCard();
+      init_ScatterPlotCard();
+      import_jsx_runtime4 = __toESM(require_jsx_runtime());
     }
   });
 
   // frontend/src/views/WorkflowView.jsx
   function WorkflowView({ flowSteps, activeStep, setActiveStep }) {
     const step = flowSteps[activeStep] || flowSteps[0];
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "page-grid workflow-layout", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("section", { className: "workflow-list", children: flowSteps.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
-        "button",
-        {
-          type: "button",
-          className: `workflow-step ${activeStep === index ? "active" : ""}`,
-          onClick: () => setActiveStep(index),
-          children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "workflow-index", children: String(index + 1).padStart(2, "0") }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: item.title }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: item.text })
-            ] })
-          ]
-        },
-        item.title
-      )) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: "workflow-focus", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: "eyebrow", children: "Step by Step" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: step?.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: step?.text }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: "workflow-actions", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    const total = flowSteps.length || 1;
+    const progressPct = (activeStep + 1) / total * 100;
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "page-grid workflow-layout", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "workflow-list panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "panel-title-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Workflow Navigator" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: "Operating sequence" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "chip", children: `${activeStep + 1}/${total}` })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "workflow-progress", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "workflow-progress-bar", style: { width: `${progressPct}%` } }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "workflow-step-list", children: flowSteps.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
+          "button",
+          {
+            type: "button",
+            className: `workflow-step ${activeStep === index ? "active" : ""}`,
+            onClick: () => setActiveStep(index),
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "workflow-index", children: String(index + 1).padStart(2, "0") }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: item.title }),
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: item.text })
+              ] })
+            ]
+          },
+          item.title
+        )) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "workflow-focus panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Current Step" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: step?.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: step?.text }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "workflow-note-grid", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "workflow-note", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Current Stage" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: `${activeStep + 1} of ${total}` })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "workflow-note", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Best Practice" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: activeStep < 2 ? "prepare inputs carefully" : "validate with benchmarks" })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "workflow-actions", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: "secondary-btn",
@@ -21905,7 +22231,7 @@
               children: "Previous"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: "primary-btn",
@@ -21919,11 +22245,11 @@
       ] })
     ] });
   }
-  var import_react3, import_jsx_runtime3;
+  var import_react5, import_jsx_runtime5;
   var init_WorkflowView = __esm({
     "frontend/src/views/WorkflowView.jsx"() {
-      import_react3 = __toESM(require_react());
-      import_jsx_runtime3 = __toESM(require_jsx_runtime());
+      import_react5 = __toESM(require_react());
+      import_jsx_runtime5 = __toESM(require_jsx_runtime());
     }
   });
 
@@ -21947,12 +22273,12 @@
       }
       return option;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: "panel-card", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: "eyebrow", children: subtitle }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h3", { children: title }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: "form-grid", children: fields.map((field) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("label", { className: "field", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: field.label }),
-        field.type === "select" ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "panel-card", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "eyebrow", children: subtitle }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "form-grid", children: fields.map((field) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: "field", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { children: field.label }),
+        field.type === "select" ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
           "select",
           {
             value: data[field.key],
@@ -21960,10 +22286,10 @@
             onChange: (event) => onChange((current) => ({ ...current, [field.key]: event.target.value })),
             children: field.options.map((option) => {
               const normalized = normalizeOption(option);
-              return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("option", { value: normalized.value, children: normalized.label }, normalized.value);
+              return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: normalized.value, children: normalized.label }, normalized.value);
             })
           }
-        ) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+        ) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
           "input",
           {
             value: data[field.key],
@@ -21972,8 +22298,8 @@
           }
         )
       ] }, field.key)) }),
-      message ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { className: `form-note ${messageTone}`, children: message }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+      message ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: `form-note ${messageTone}`, children: message }) : null,
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
         "button",
         {
           className: "primary-btn",
@@ -21985,11 +22311,11 @@
       )
     ] });
   }
-  var import_react4, import_jsx_runtime4;
+  var import_react6, import_jsx_runtime6;
   var init_FormCard = __esm({
     "frontend/src/shared/FormCard.jsx"() {
-      import_react4 = __toESM(require_react());
-      import_jsx_runtime4 = __toESM(require_jsx_runtime());
+      import_react6 = __toESM(require_react());
+      import_jsx_runtime6 = __toESM(require_jsx_runtime());
     }
   });
 
@@ -22024,61 +22350,90 @@
     const suiteProgress = trainingStatus.progress_total > 0 ? `${trainingStatus.progress_current || 0}/${trainingStatus.progress_total}` : "not started";
     const activeTrainingLabel = trainingStatus.active_item || "waiting";
     const savedDetectorCount = detectorWeights?.length || 0;
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "page-grid", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: `panel-card dataset-card ${detectorReady ? "ready" : "warn"}`, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Detector Dataset Check" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: detectorReady ? "YOLO dataset ready" : "Detector dataset missing" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: detectorStatus.message }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "dataset-stats", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Train Images" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: detectorStatus.train_images || 0 })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Val Images" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: detectorStatus.val_images || 0 })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Train Labels" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: detectorStatus.train_labels || 0 })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Val Labels" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: detectorStatus.val_labels || 0 })
-            ] })
-          ] })
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "page-grid", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "training-hero", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Training Console" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: "Manage detector training, ROI model experiments, and saved benchmark suites" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: "The training view is organized for research iteration. You can keep the detector fixed, expand only the ROI model suite, reuse compatible saved artifacts, and regenerate the benchmark board when new results are ready." })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: `panel-card dataset-card ${classifierReady ? "ready" : "warn"}`, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "ROI Classifier Dataset Check" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: classifierReady ? "ROI dataset ready" : "ROI dataset incomplete" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: classifierStatus.message }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "dataset-stats", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "chip_packet" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: classifierStatus.class_counts?.chip_packet || 0 })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Live Status" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: trainingStatus.title || "No active job" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "detail-list compact", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Job Type" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: trainingStatus.job_type || "idle" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "medicine_box" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: classifierStatus.class_counts?.medicine_box || 0 })
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Active Item" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: activeTrainingLabel })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "bottle" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: classifierStatus.class_counts?.bottle || 0 })
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Suite Progress" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: suiteProgress })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Total ROI Images" }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: classifierStatus.total_images || 0 })
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Status" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: trainingStatus.progress_status || "idle" })
             ] })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: `panel-card dataset-card ${detectorReady ? "ready" : "warn"}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Detector Dataset" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: detectorReady ? "YOLO dataset ready" : "Detector dataset missing" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: detectorStatus.message }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "dataset-stats", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Train Images" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: detectorStatus.train_images || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Val Images" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: detectorStatus.val_images || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Train Labels" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: detectorStatus.train_labels || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Val Labels" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: detectorStatus.val_labels || 0 })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: `panel-card dataset-card ${classifierReady ? "ready" : "warn"}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "ROI Dataset" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: classifierReady ? "ROI classifier dataset ready" : "ROI dataset incomplete" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: classifierStatus.message }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "dataset-stats", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "chip_packet" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: classifierStatus.class_counts?.chip_packet || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "medicine_box" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: classifierStatus.class_counts?.medicine_box || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "bottle" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: classifierStatus.class_counts?.bottle || 0 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Total ROI Images" }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: classifierStatus.total_images || 0 })
+            ] })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
           FormCard,
           {
             title: "Detector Trainer",
-            subtitle: "Optional: full-scene YOLO detection dataset required",
+            subtitle: "Optional full-scene detector training",
             fields: [
               { key: "dataset_yaml", label: "Dataset YAML" },
               { key: "model", label: "Base Model" },
@@ -22101,11 +22456,11 @@
             messageTone: detectorReady ? "success" : "warning"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
           FormCard,
           {
-            title: "Single Model Trainer",
-            subtitle: "Train a specific classical or quantum-ready ROI classifier",
+            title: "Single ROI Model Trainer",
+            subtitle: "Train one classical or quantum-ready model",
             fields: [
               { key: "dataset_dir", label: "ROI Dataset Directory" },
               { key: "artifact_path", label: "Artifact Path" },
@@ -22120,20 +22475,20 @@
             data: classifierForm,
             onChange: setClassifierForm,
             onSubmit: onRunClassifier,
-            submitLabel: busyAction === "classifier" ? "Starting..." : classifierReady ? "Start Classifier Training" : "ROI Dataset Required",
+            submitLabel: busyAction === "classifier" ? "Starting..." : classifierReady ? "Start ROI Model Training" : "ROI Dataset Required",
             disabled: trainingStatus.training,
             submitDisabled: trainingStatus.training || !classifierReady,
-            message: "Choose a classical baseline, a quantum-kernel model, or a trainable VQC. Encoding mainly affects the quantum families.",
+            message: "Use this for targeted experiments when you want to study one model family or one encoding configuration.",
             messageTone: "success"
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
           FormCard,
           {
             title: "Comparison Suite Runner",
-            subtitle: "Run saved, reusable benchmark suites",
+            subtitle: "Benchmark suite execution",
             fields: [
               { key: "dataset_dir", label: "ROI Dataset Directory" },
               { key: "artifacts_dir", label: "Artifacts Directory" },
@@ -22145,8 +22500,8 @@
                   { value: "core", label: "core - strong baselines + one quantum reference" },
                   { value: "quantum", label: "quantum - kernel and VQC variants only" },
                   { value: "presentation", label: "presentation - clean manager-ready mix" },
-                  { value: "all_models", label: "all models - train every supported ROI model" },
-                  { value: "extended", label: "extended - broader classical + quantum grid" }
+                  { value: "all_models", label: "all_models - every supported ROI model" },
+                  { value: "extended", label: "extended - broader classical and quantum grid" }
                 ]
               },
               { key: "test_size", label: "Test Split" },
@@ -22159,16 +22514,16 @@
             submitLabel: busyAction === "suite" ? "Starting..." : classifierReady ? "Run Comparison Suite" : "ROI Dataset Required",
             disabled: trainingStatus.training,
             submitDisabled: trainingStatus.training || !classifierReady,
-            message: "Use suite runs to save a full benchmark pack. Reuse mode skips compatible artifacts so you do not retrain the same models repeatedly.",
+            message: "Suite runs save a full benchmark pack so the benchmark board and inference lab can reuse the results without retraining.",
             messageTone: "success"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Quick Actions" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: "Detector can stay saved while ROI models expand" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: savedDetectorCount > 0 ? `Saved detector weights found: ${savedDetectorCount}. You only need to train new ROI models unless you want to retrain detection.` : "No saved detector weights found yet. You can still train ROI models now and add or retrain detection later." }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "button-stack", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Quick Actions" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: "Fastest way to expand the benchmark board" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: savedDetectorCount > 0 ? `Saved detector weights found: ${savedDetectorCount}. You can keep detector training fixed and focus on ROI model comparisons.` : "No saved detector weights were found yet. ROI-only benchmarking is still available and full-scene detection can be added later." }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "button-stack", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
               "button",
               {
                 className: "primary-btn",
@@ -22178,7 +22533,7 @@
                 children: "Train All ROI Models"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
               "button",
               {
                 className: "secondary-btn",
@@ -22191,67 +22546,53 @@
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("section", { className: "card-grid one", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "panel-card log-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Live Job Status" }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: trainingStatus.title || "Idle" }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "status-line", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: trainingStatus.job_type || "no active job" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: trainingStatus.training ? "Running" : trainingStatus.return_code === 0 ? "Completed" : trainingStatus.return_code === 1 ? "Failed" : "Idle" })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "training-progress-grid", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "progress-pill", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Active Item" }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: activeTrainingLabel })
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card log-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Live Job Stream" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: trainingStatus.title || "Idle" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "status-line", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: trainingStatus.job_type || "no active job" }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: trainingStatus.training ? "Running" : trainingStatus.return_code === 0 ? "Completed" : trainingStatus.return_code === 1 ? "Failed" : "Idle" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "progress-pill", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Suite Progress" }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: suiteProgress })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "progress-pill", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { children: "Status" }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: trainingStatus.progress_status || "idle" })
-          ] })
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "log-stream", children: (trainingStatus.status_messages || []).slice().reverse().map((line, index) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "log-line", children: line }, `${line}-${index}`)) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "log-stream", children: (trainingStatus.status_messages || []).slice().reverse().map((line, index) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "log-line", children: line }, `${line}-${index}`)) })
-      ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Supported Models" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: "Comparison menu" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "catalog-grid", children: (modelCatalog || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: "catalog-card", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "step-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: item.display_name }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: `family-chip ${item.family}`, children: item.family })
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Model Inventory" }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: `${(availableModels || []).length} trained ROI artifacts available` }),
+          (availableModels || []).length ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "catalog-grid compact", children: availableModels.map((item) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("article", { className: "catalog-card compact", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "step-row", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: item.display_name }),
+              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: `family-chip ${item.model_family}`, children: item.model_family })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: item.summary }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "meta-chip-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "chip", children: item.kernel_name }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "chip", children: item.feature_map_name }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "chip", children: item.ansatz_name })
-            ] })
-          ] }, item.model_type)) })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "eyebrow", children: "Saved Models" }),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: `${(availableModels || []).length} trained artifacts available` }),
-          (availableModels || []).length ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "catalog-grid compact", children: availableModels.map((item) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: "catalog-card compact", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "step-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: item.display_name }),
-              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: `family-chip ${item.model_family}`, children: item.model_family })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: `${(item.accuracy * 100).toFixed(2)}% accuracy | ${(item.macro_f1 * 100).toFixed(2)}% macro F1` }),
-            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "hint-text", children: item.kernel_name })
-          ] }, item.artifact_path)) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: "empty-text", children: "No trained classifier artifacts yet. Train one model or run a suite to populate this area." })
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: `${(item.accuracy * 100).toFixed(2)}% accuracy | ${(item.macro_f1 * 100).toFixed(2)}% macro F1` }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "hint-text", children: item.kernel_name })
+          ] }, item.artifact_path)) }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "empty-text", children: "No trained classifier artifacts yet. Start one ROI model or run a full suite." })
         ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: "Supported ROI Model Families" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: "Available comparison menu" }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "catalog-grid", children: (modelCatalog || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("article", { className: "catalog-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "step-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: item.display_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: `family-chip ${item.family}`, children: item.family })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: item.summary }),
+          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "meta-chip-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "chip", children: item.kernel_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "chip", children: item.feature_map_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { className: "chip", children: item.ansatz_name })
+          ] })
+        ] }, item.model_type)) })
       ] })
     ] });
   }
-  var import_react5, import_jsx_runtime5;
+  var import_react7, import_jsx_runtime7;
   var init_TrainingView = __esm({
     "frontend/src/views/TrainingView.jsx"() {
-      import_react5 = __toESM(require_react());
+      import_react7 = __toESM(require_react());
       init_FormCard();
-      import_jsx_runtime5 = __toESM(require_jsx_runtime());
+      import_jsx_runtime7 = __toESM(require_jsx_runtime());
     }
   });
 
@@ -22269,181 +22610,250 @@
       if (row.artifact_reused) meta.push("reused");
       return meta;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: `panel-card ${fullWidth ? "full-width" : ""}`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "eyebrow", children: "Benchmark Data" }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { children: title }),
-      rows && rows.length ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "benchmark-list", children: rows.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "benchmark-row", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("strong", { children: row.pipeline || row.name || row.model }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: row.summary || row.notes || row.encoding || row.metric || "benchmark entry" }),
-          buildMeta(row).length ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "meta-chip-row", children: buildMeta(row).map((item) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: "chip benchmark-chip", children: item }, `${row.name || row.pipeline}-${item}`)) }) : null
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: `panel-card ${fullWidth ? "full-width" : ""}`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Benchmark Data" }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: title }),
+      rows && rows.length ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "benchmark-list", children: rows.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "benchmark-row", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: row.pipeline || row.name || row.model }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: row.summary || row.notes || row.encoding || row.metric || "benchmark entry" }),
+          buildMeta(row).length ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "meta-chip-row", children: buildMeta(row).map((item) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { className: "chip benchmark-chip", children: item }, `${row.name || row.pipeline}-${item}`)) }) : null
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "benchmark-score", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("strong", { children: typeof row.score === "string" ? row.score : `${((row.accuracy || row.Accuracy || 0) * 100).toFixed(2)}%` }),
-          row.macro_f1 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { children: `F1 ${(row.macro_f1 * 100).toFixed(2)}%` }) : null,
-          row.train_time_seconds ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { children: `${row.train_time_seconds.toFixed(1)} s` }) : null
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "benchmark-score", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: typeof row.score === "string" ? row.score : `${((row.accuracy || row.Accuracy || 0) * 100).toFixed(2)}%` }),
+          row.macro_f1 ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: `F1 ${(row.macro_f1 * 100).toFixed(2)}%` }) : null,
+          row.train_time_seconds ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: `${row.train_time_seconds.toFixed(1)} s` }) : null
         ] })
-      ] }, `${row.name || row.pipeline || row.model}-${index}`)) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "empty-text", children: emptyText })
+      ] }, `${row.name || row.pipeline || row.model}-${index}`)) }) : /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "empty-text", children: emptyText })
     ] });
   }
-  var import_react6, import_jsx_runtime6;
+  var import_react8, import_jsx_runtime8;
   var init_BenchmarkCard = __esm({
     "frontend/src/shared/BenchmarkCard.jsx"() {
-      import_react6 = __toESM(require_react());
-      import_jsx_runtime6 = __toESM(require_jsx_runtime());
-    }
-  });
-
-  // frontend/src/shared/BarChartCard.jsx
-  function familyClass(family) {
-    return family === "quantum" ? "quantum" : family === "classical" ? "classical" : "neutral";
-  }
-  function BarChartCard({ title, subtitle, items, suffix = "", emptyText }) {
-    const safeItems = Array.isArray(items) ? items.slice(0, 8) : [];
-    const maxValue = Math.max(...safeItems.map((item) => Number(item.value || 0)), 1);
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "panel-card", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "eyebrow", children: subtitle || "Benchmark Chart" }),
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("h3", { children: title }),
-      safeItems.length ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "chart-list", children: safeItems.map((item) => {
-        const value = Number(item.value || 0);
-        return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "chart-row", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "chart-meta", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("strong", { children: item.label }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: `${value.toFixed(2)}${suffix}` })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "chart-track", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-            "div",
-            {
-              className: `chart-fill ${familyClass(item.family)}`,
-              style: { width: `${Math.max(8, value / maxValue * 100)}%` }
-            }
-          ) })
-        ] }, `${item.label}-${item.artifact_path || item.family || ""}`);
-      }) }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "empty-text", children: emptyText || "No chart data available yet." })
-    ] });
-  }
-  var import_react7, import_jsx_runtime7;
-  var init_BarChartCard = __esm({
-    "frontend/src/shared/BarChartCard.jsx"() {
-      import_react7 = __toESM(require_react());
-      import_jsx_runtime7 = __toESM(require_jsx_runtime());
+      import_react8 = __toESM(require_react());
+      import_jsx_runtime8 = __toESM(require_jsx_runtime());
     }
   });
 
   // frontend/src/views/BenchmarksView.jsx
+  function formatPercent2(value) {
+    return Number.isFinite(Number(value)) ? `${(Number(value) * 100).toFixed(2)}%` : "N/A";
+  }
+  function findByFamily(rows, family) {
+    return (rows || []).find((item) => item.model_family === family) || null;
+  }
   function BenchmarksView({ benchmark, recommendation, projectBrief }) {
+    const classifiers = benchmark.classifiers || [];
+    const detectors = benchmark.detectors || [];
+    const overall = benchmark.overall || [];
     const quantumNotes = projectBrief?.quantum_value?.points || [];
     const limitNotes = projectBrief?.quantum_limits?.points || [];
     const decisionNotes = projectBrief?.decision_guidance?.points || [];
     const approachComparison = projectBrief?.approach_comparison;
-    const familySummary = benchmark?.family_summary || [];
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "page-grid", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "panel-card wide-callout", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Recommended Pipeline" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: `${recommendation.detector_backend || "pending"} + ${recommendation.classifier_name} + ${recommendation.ocr_backend}` }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: "The system picks this stack from the current benchmark report when available, otherwise it falls back to the best local artifacts." }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: `Winning classifier family: ${recommendation.classifier_family || "unknown"}` })
+    const detector = detectors[0] || null;
+    const bestOverall = overall[0] || null;
+    const bestClassical = findByFamily(classifiers, "classical");
+    const bestQuantum = findByFamily(classifiers, "quantum");
+    const scatterItems = classifiers.map((item) => ({
+      label: item.name,
+      x: item.train_time_seconds,
+      y: Number(item.accuracy || 0) * 100,
+      family: item.model_family
+    }));
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "page-grid", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card benchmark-hero", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Benchmark Control Board" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: `${recommendation.detector_backend || "pending"} + ${recommendation.classifier_name} + ${recommendation.ocr_backend}` }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: "The benchmark board compares every saved classifier model on the same ROI dataset and surfaces the current best stack for the end-to-end pipeline." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "benchmark-hero-meta", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: `family-chip ${recommendation.classifier_family || "neutral"}`, children: recommendation.classifier_family || "unknown" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: "chip", children: benchmark.generated_at ? "report ready" : "report pending" })
+        ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "card-grid three", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "overview-kpi-grid", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Best Overall Pipeline" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: bestOverall ? `${(Number(bestOverall.accuracy || 0) * 100).toFixed(2)}%` : "N/A" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: bestOverall?.classifier_name || "No ranked pipeline yet" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Best Classical Model" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: bestClassical ? formatPercent2(bestClassical.accuracy) : "N/A" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: bestClassical?.name || "No classical model yet" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Best Quantum Model" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: bestQuantum ? formatPercent2(bestQuantum.accuracy) : "N/A" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: bestQuantum?.name || "No quantum model yet" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "kpi-panel", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Detector mAP50-95" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: detector ? formatPercent2(detector.accuracy) : "N/A" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: detector?.name || "Detector benchmark pending" })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "card-grid three", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           BarChartCard,
           {
-            title: "Classifier Accuracy",
-            subtitle: "Top models by held-out accuracy",
+            title: "Accuracy by Model",
+            subtitle: "Held-out classifier accuracy",
             items: benchmark?.charts?.classifier_accuracy_pct || [],
             suffix: "%",
+            limit: 10,
             emptyText: "No classifier benchmark data yet."
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           BarChartCard,
           {
-            title: "Macro F1",
-            subtitle: "Balanced quality across classes",
+            title: "Macro F1 by Model",
+            subtitle: "Balanced class quality",
             items: benchmark?.charts?.classifier_macro_f1_pct || [],
             suffix: "%",
+            limit: 10,
             emptyText: "No macro F1 data yet."
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
           BarChartCard,
           {
-            title: "Training Time",
-            subtitle: "Saved for cost and presentation tradeoffs",
+            title: "Training Time by Model",
+            subtitle: "Cost and practicality",
             items: benchmark?.charts?.classifier_train_time_s || [],
             suffix: " s",
+            limit: 10,
             emptyText: "No training-time data yet."
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "card-grid three", children: (familySummary || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "panel-card family-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Family Summary" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: item.family }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "detail-list compact", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "Best Model" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: item.best_model })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "Best Accuracy" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: `${(item.best_accuracy * 100).toFixed(2)}%` })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "Average Accuracy" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: `${(item.avg_accuracy * 100).toFixed(2)}%` })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { children: "Models Count" }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("strong", { children: item.count })
-          ] })
-        ] })
-      ] }, item.family)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "card-grid three", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(BenchmarkCard, { title: "Overall Leaderboard", rows: benchmark.overall, emptyText: "No overall benchmark entries yet." }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(BenchmarkCard, { title: "Detector Benchmarks", rows: benchmark.detectors, emptyText: "No detector summary files yet." }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(BenchmarkCard, { title: "Classifier Benchmarks", rows: benchmark.classifiers, emptyText: "No classifier summary files yet." })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "card-grid three", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          BarChartCard,
+          {
+            title: "Family Average Accuracy",
+            subtitle: "High-level family comparison",
+            items: benchmark?.charts?.family_avg_accuracy_pct || [],
+            suffix: "%",
+            limit: 4,
+            emptyText: "Family summary appears after benchmarking."
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          BarChartCard,
+          {
+            title: "Detector Benchmark",
+            subtitle: "Localization quality",
+            items: benchmark?.charts?.detector_map_pct || [],
+            suffix: "%",
+            limit: 4,
+            emptyText: "Detector chart appears after detector training."
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          ScatterPlotCard,
+          {
+            title: "Accuracy vs Training Time",
+            subtitle: "Research tradeoff map",
+            items: scatterItems,
+            emptyText: "Train ROI models to populate the scatter plot."
+          }
+        )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Why Quantum Can Matter" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: "Use this in the presentation" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "briefing-list", children: quantumNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: note }, note)) })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Limits and Tradeoffs" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: "Be transparent about the research story" }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "briefing-list", children: limitNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: note }, note)) })
-        ] })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "All Classifier Models" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "Full comparison table" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("table", { className: "result-table", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Model" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Family" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Encoding" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Kernel / Ansatz" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Accuracy" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Macro F1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Train Time" })
+          ] }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tbody", { children: classifiers.map((row) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("td", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: row.name }),
+              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-subline", children: row.summary })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: `family-chip ${row.model_family}`, children: row.model_family }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.encoding }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.ansatz_name && row.ansatz_name !== "none" ? `${row.kernel_name} / ${row.ansatz_name}` : row.kernel_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(row.accuracy || 0) * 100).toFixed(2)}%` }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(row.macro_f1 || 0) * 100).toFixed(2)}%` }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${Number(row.train_time_seconds || 0).toFixed(1)} s` })
+          ] }, `${row.name}-${row.artifact_path}`)) })
+        ] }) })
       ] }),
-      approachComparison?.rows?.length ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Classical vs Hybrid vs Quantum" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: approachComparison.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("table", { className: "result-table", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("tr", { children: approachComparison.columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("th", { children: column }, column)) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("tbody", { children: approachComparison.rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("td", { children: row.approach }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("td", { children: row.how }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("td", { children: row.advantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("td", { children: row.disadvantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("td", { children: row.best_use })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Overall Pipeline Leaderboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "End-to-end ranking view" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("table", { className: "result-table", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Pipeline" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Family" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Composite Score" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Macro F1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Notes" })
+          ] }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tbody", { children: overall.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: row.pipeline }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: `family-chip ${row.classifier_family || "neutral"}`, children: row.classifier_family || "unknown" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(row.accuracy || 0) * 100).toFixed(2)}%` }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(row.macro_f1 || 0) * 100).toFixed(2)}%` }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.notes })
+          ] }, `${row.pipeline}-${index}`)) })
+        ] }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(BenchmarkCard, { title: "Detector Benchmarks", rows: detectors, emptyText: "No detector summary files yet." }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(BenchmarkCard, { title: "OCR Benchmarks", rows: benchmark.ocr, emptyText: "OCR benchmark entries are not available yet." })
+      ] }),
+      approachComparison?.rows?.length ? /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Approach Comparison" }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: approachComparison.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("table", { className: "result-table", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tr", { children: approachComparison.columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: column }, column)) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tbody", { children: approachComparison.rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.approach }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.how }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.advantages }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.disadvantages }),
+            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: row.best_use })
           ] }, row.approach)) })
         ] }) })
       ] }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { className: "eyebrow", children: "Recommendation Guidance" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("h3", { children: "What is better to do" }),
-        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "briefing-list", children: decisionNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: note }, note)) })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("section", { className: "card-grid one", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(BenchmarkCard, { title: "OCR Benchmarks", rows: benchmark.ocr, emptyText: "OCR benchmark entries are not available yet.", fullWidth: true }) })
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "card-grid three", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "panel-card insight-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Why Quantum Can Matter" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "Research justification" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "briefing-list", children: quantumNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: note }, note)) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "panel-card insight-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Limits and Tradeoffs" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "What to communicate honestly" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "briefing-list", children: limitNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: note }, note)) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "panel-card insight-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Recommended Direction" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "What is better to do next" }),
+          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "briefing-list", children: decisionNotes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: note }, note)) })
+        ] })
+      ] })
     ] });
   }
-  var import_react8, import_jsx_runtime8;
+  var import_react9, import_jsx_runtime9;
   var init_BenchmarksView = __esm({
     "frontend/src/views/BenchmarksView.jsx"() {
-      import_react8 = __toESM(require_react());
+      import_react9 = __toESM(require_react());
       init_BenchmarkCard();
       init_BarChartCard();
-      import_jsx_runtime8 = __toESM(require_jsx_runtime());
+      init_ScatterPlotCard();
+      import_jsx_runtime9 = __toESM(require_jsx_runtime());
     }
   });
 
@@ -22479,6 +22889,12 @@
       family: item.family,
       artifact_path: item.label
     }));
+    const pipelineRuntimeItems = (analysis?.runtime_benchmarks || []).map((item) => ({
+      label: item.label,
+      value: Number(item.value_ms || 0),
+      family: "neutral",
+      artifact_path: item.label
+    }));
     const modelTableRows = modelComparison.map((item) => {
       const predictions = objectResults.map((result, index) => {
         const matchedPrediction = (result.model_predictions || []).find(
@@ -22488,47 +22904,52 @@
       }).filter(Boolean).join(" | ");
       return {
         ...item,
-        predictions: predictions || "\u2014"
+        predictions: predictions || "N/A"
       };
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "page-grid", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Upload Inference" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "Run the best model, a selected model, or every saved model" }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: recommendation.mode === "classifier_only" ? "Upload a cropped single-object image. The app can score the benchmark winner, a chosen saved model, or the full saved classifier roster." : "Upload a product image and inspect preprocessing, detection, OCR, and per-model classification comparisons on the same detected ROIs." }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "control-grid", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("label", { className: "field", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Inference Mode" }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "page-grid", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card inference-control-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-title-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Upload Inference" }),
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "Run one model or compare every saved model on the same image" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "chip", children: recommendation.ready ? "inference ready" : "locked" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: recommendation.mode === "classifier_only" ? "Upload a cropped single-object image. The system will classify the object, extract text, and compare the saved ROI models." : "Upload a full image. The pipeline will detect objects, classify them, draw the final output, and compare selected models on the same detected regions." }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "control-grid", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("label", { className: "field", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "Inference Mode" }),
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
               "select",
               {
                 value: inferenceForm.mode,
                 onChange: (event) => setInferenceForm((current) => ({ ...current, mode: event.target.value })),
                 disabled: trainingRunning || !recommendation.ready,
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: "recommended", children: "recommended benchmark winner" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: "selected", children: "selected saved model" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: "all", children: "run all saved models" })
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: "recommended", children: "recommended benchmark winner" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: "selected", children: "selected saved model" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: "all", children: "run all saved models" })
                 ]
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("label", { className: "field", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: "Classifier Artifact" }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("label", { className: "field", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "Classifier Artifact" }),
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
               "select",
               {
                 value: inferenceForm.classifier_artifact,
                 onChange: (event) => setInferenceForm((current) => ({ ...current, classifier_artifact: event.target.value })),
                 disabled: trainingRunning || !recommendation.ready || inferenceForm.mode === "recommended",
-                children: modelOptions.map((option) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("option", { value: option.value, children: option.label }, option.value))
+                children: modelOptions.map((option) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("option", { value: option.value, children: option.label }, option.value))
               }
             )
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("label", { className: "upload-zone", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: uploadFile ? uploadFile.name : "Choose an image file" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("label", { className: "upload-zone", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: uploadFile ? uploadFile.name : "Choose an image file" }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             "input",
             {
               type: "file",
@@ -22538,110 +22959,161 @@
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
-          "button",
-          {
-            className: "primary-btn",
-            type: "button",
-            onClick: onAnalyze,
-            disabled: busyAction === "analysis" || trainingRunning || !recommendation.ready,
-            children: busyAction === "analysis" ? "Analyzing..." : "Analyze Image"
-          }
-        ),
-        !recommendation.ready ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "hint-text", children: "Train or add artifacts to unlock inference." }) : null,
-        recommendation.mode === "classifier_only" ? /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "hint-text", children: "Current mode: ROI upload mode. Full-scene detection is used automatically once detector weights are available." }) : null
-      ] }),
-      analysis ? /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(import_jsx_runtime9.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("section", { className: "card-grid one", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("article", { className: "step-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
-            "img",
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "button-stack", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+            "button",
             {
-              src: analysis.final_output_preview || analysis.text_overlay_preview || analysis.annotated_preview,
-              alt: "Final full-image prediction output"
+              className: "primary-btn",
+              type: "button",
+              onClick: onAnalyze,
+              disabled: busyAction === "analysis" || trainingRunning || !recommendation.ready,
+              children: busyAction === "analysis" ? "Analyzing..." : "Analyze Image"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: "step-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: "Output Result" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { children: `${analysis.num_detections} object(s)` })
+          !recommendation.ready ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "hint-text", children: "Train or add artifacts to unlock inference." }) : null
+        ] })
+      ] }),
+      analysis ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(import_jsx_runtime10.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "inference-result-layout", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("article", { className: "panel-card image-focus-card", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-title-row", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Final Output" }),
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "Rendered prediction image" })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "chip", children: `${analysis.num_detections} object(s)` })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: "Full image with predicted labels, extracted text, and highlighted text regions." }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "flow-chip-row", children: technicalStages.map((step) => /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: "flow-chip", children: step.name }, step.name)) })
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+              "img",
+              {
+                className: "result-hero-image",
+                src: analysis.final_output_preview || analysis.text_overlay_preview || analysis.annotated_preview,
+                alt: "Final full-image prediction output"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "result-side-stack", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-card", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Result Summary" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: analysis.pipeline_used?.classifier_name || recommendation.classifier_name }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "detail-list", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "Comparison Mode" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: analysis.comparison_mode })
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "OCR Backend" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: analysis.pipeline_used?.ocr_backend || recommendation.ocr_backend })
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "Evaluated Models" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: analysis.pipeline_used?.evaluated_models?.length || modelComparison.length })
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { children: "Saved JSON" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: analysis.saved_json ? "available" : "not saved" })
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-card", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Technical Flow" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "Pipeline stages" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "timeline-list compact", children: technicalStages.map((step, index) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "timeline-item", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "timeline-index", children: String(index + 1).padStart(2, "0") }),
+                /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: step.name }),
+                  /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: step.summary })
+                ] })
+              ] }, step.name)) })
+            ] })
           ] })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "card-grid two", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "card-grid three", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             BarChartCard,
             {
-              title: "Model Benchmark Accuracy",
-              subtitle: "Held-out accuracy",
+              title: "Benchmark Accuracy",
+              subtitle: "Saved model quality",
               items: accuracyChartItems,
               suffix: "%",
+              limit: 10,
               emptyText: "Accuracy chart appears after analysis."
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
             BarChartCard,
             {
-              title: "Model Runtime",
+              title: "Live Model Runtime",
               subtitle: "Per-image classification runtime",
               items: runtimeChartItems,
               suffix: " ms",
+              limit: 10,
               emptyText: "Model runtime comparison appears after analysis."
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
+            BarChartCard,
+            {
+              title: "Pipeline Stage Runtime",
+              subtitle: "End-to-end timing",
+              items: pipelineRuntimeItems,
+              suffix: " ms",
+              limit: 10,
+              emptyText: "Stage runtime appears after analysis."
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "Detected Objects" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: "Predicted label and extracted text" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("table", { className: "result-table", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "#" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Predicted Label" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Extracted Text" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "OCR" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Text Boxes" })
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Detected Objects" }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "Predicted labels and extracted text" }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("table", { className: "result-table", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("tr", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "#" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Predicted Label" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Extracted Text" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "OCR Backend" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Text Boxes" })
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tbody", { children: objectResults.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: index + 1 }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: item.object_label }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: item.extracted_text }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: item.ocr_backend }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: item.text_box_count ?? item.text_boxes?.length ?? 0 })
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("tbody", { children: objectResults.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("tr", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: index + 1 }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: item.object_label }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: item.extracted_text }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: item.ocr_backend }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: item.text_box_count ?? item.text_boxes?.length ?? 0 })
             ] }, `${item.object_label}-${index}`)) })
           ] }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("section", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { className: "eyebrow", children: "All Models Comparison" }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("h3", { children: `${modelTableRows.length} model(s) evaluated on this image` }),
-          /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("table", { className: "result-table", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Model" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Family" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Prediction(s)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Accuracy" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Macro F1" }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("th", { children: "Runtime" })
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "All Models Comparison" }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: `${modelTableRows.length} model(s) evaluated on this image` }),
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("table", { className: "result-table", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("tr", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Model" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Family" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Prediction(s)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Accuracy" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Macro F1" }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: "Runtime" })
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("tbody", { children: modelTableRows.map((item) => /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("tr", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("strong", { children: item.display_name }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("span", { className: `family-chip ${item.model_family}`, children: item.model_family }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: item.predictions }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(item.accuracy || 0) * 100).toFixed(2)}%` }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${(Number(item.macro_f1 || 0) * 100).toFixed(2)}%` }),
-              /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("td", { children: `${Number(item.avg_runtime_ms || 0).toFixed(2)} ms` })
+            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("tbody", { children: modelTableRows.map((item) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("tr", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: item.display_name }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: `family-chip ${item.model_family}`, children: item.model_family }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: item.predictions }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: `${(Number(item.accuracy || 0) * 100).toFixed(2)}%` }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: `${(Number(item.macro_f1 || 0) * 100).toFixed(2)}%` }),
+              /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: `${Number(item.avg_runtime_ms || 0).toFixed(2)} ms` })
             ] }, item.artifact_path)) })
           ] }) })
         ] })
       ] }) : null
     ] });
   }
-  var import_react9, import_jsx_runtime9;
+  var import_react10, import_jsx_runtime10;
   var init_InferenceView = __esm({
     "frontend/src/views/InferenceView.jsx"() {
-      import_react9 = __toESM(require_react());
+      import_react10 = __toESM(require_react());
       init_BarChartCard();
-      import_jsx_runtime9 = __toESM(require_jsx_runtime());
+      import_jsx_runtime10 = __toESM(require_jsx_runtime());
     }
   });
 
@@ -22649,77 +23121,88 @@
   function FutureLabView({ projectBrief, recommendation, benchmark, modelCatalog }) {
     const sections = Object.values(projectBrief || {}).filter((section) => Array.isArray(section?.points));
     const approachComparison = projectBrief?.approach_comparison;
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "page-grid", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Project Brief" }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "Presentation notes for the manager review" }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "This page explains the reasoning behind the system design, when quantum models can help, where they fall short, and how the benchmark board should be interpreted." })
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "page-grid", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Research Briefing" }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: "Presentation-ready notes for review, manager discussion, and project defense" }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "This page reframes the platform as a QML object-detection research and development project. It helps explain why hybrid quantum methods are being tested, where classical methods currently win, and how the comparison should be interpreted professionally." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("section", { className: "card-grid two", children: sections.map((section) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-card model-room", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h4", { children: section.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "briefing-list", children: section.points.map((point) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: point }, point)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: "room-tag", children: "briefing" })
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("section", { className: "card-grid two", children: sections.map((section) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "panel-card model-room", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "panel-title-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h4", { children: section.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "room-tag", children: "briefing" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "briefing-list", children: section.points.map((point) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: point }, point)) })
       ] }, section.title)) }),
-      approachComparison?.rows?.length ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Approach Comparison" }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: approachComparison.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("table", { className: "result-table", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("tr", { children: approachComparison.columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("th", { children: column }, column)) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("tbody", { children: approachComparison.rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: row.approach }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: row.how }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: row.advantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: row.disadvantages }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("td", { children: row.best_use })
+      approachComparison?.rows?.length ? /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Approach Matrix" }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: approachComparison.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "table-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("table", { className: "result-table", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("tr", { children: approachComparison.columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("th", { children: column }, column)) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("tbody", { children: approachComparison.rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("td", { children: row.approach }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("td", { children: row.how }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("td", { children: row.advantages }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("td", { children: row.disadvantages }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("td", { children: row.best_use })
           ] }, row.approach)) })
         ] }) })
       ] }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "card-grid two", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Current Winner" }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: recommendation.classifier_name }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: `Classifier family: ${recommendation.classifier_family || "unknown"}` }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: recommendation.classifier_family === "quantum" ? "The current benchmark winner is a quantum-ready model, so quantum methods are adding measurable value on this dataset." : "The current benchmark winner is a classical baseline, which is a useful finding because it sets the performance bar for the quantum experiments." })
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "card-grid two", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Current Winner" }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: recommendation.classifier_name }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: `Classifier family: ${recommendation.classifier_family || "unknown"}` }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: recommendation.classifier_family === "quantum" ? "The current benchmark winner is quantum-oriented, which means the research track is already providing measurable value on this dataset." : "The current benchmark winner is a classical baseline, which is still a strong research outcome because it defines the real bar that quantum methods must beat or complement." })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "panel-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Benchmark Narrative" }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "How to explain the comparison" }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "briefing-list", children: (benchmark.notes || []).map((note) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: note }, note)) })
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "panel-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Benchmark Narrative" }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: "How to present the findings" }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "briefing-list", children: (benchmark.notes || []).map((note) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: note }, note)) })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("section", { className: "panel-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "eyebrow", children: "Model Notes" }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { children: "How to explain the comparison families" }),
-        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: "catalog-grid", children: (modelCatalog || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("article", { className: "catalog-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: "step-row", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: item.display_name }),
-            /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: `family-chip ${item.family}`, children: item.family })
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("section", { className: "panel-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Model Family Notes" }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { children: "How to talk about the compared models" }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "catalog-grid", children: (modelCatalog || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("article", { className: "catalog-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "step-row", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: item.display_name }),
+            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: `family-chip ${item.family}`, children: item.family })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: item.summary }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "hint-text", children: `Strength: ${item.strengths}` }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: "hint-text", children: `Limit: ${item.limitations}` })
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: item.summary }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "hint-text", children: `Strength: ${item.strengths}` }),
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "hint-text", children: `Limit: ${item.limitations}` })
         ] }, item.model_type)) })
       ] })
     ] });
   }
-  var import_react10, import_jsx_runtime10;
+  var import_react11, import_jsx_runtime11;
   var init_FutureLabView = __esm({
     "frontend/src/views/FutureLabView.jsx"() {
-      import_react10 = __toESM(require_react());
-      import_jsx_runtime10 = __toESM(require_jsx_runtime());
+      import_react11 = __toESM(require_react());
+      import_jsx_runtime11 = __toESM(require_jsx_runtime());
     }
   });
 
   // frontend/src/App.jsx
+  function formatPercent3(value) {
+    return Number.isFinite(Number(value)) ? `${(Number(value) * 100).toFixed(2)}%` : "N/A";
+  }
+  function formatDateTime(value) {
+    if (!value) return "Not generated yet";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleString();
+  }
   function App() {
-    const [dashboard, setDashboard] = (0, import_react11.useState)(null);
-    const [analysis, setAnalysis] = (0, import_react11.useState)(null);
-    const [activeView, setActiveView] = (0, import_react11.useState)("overview");
-    const [activeStep, setActiveStep] = (0, import_react11.useState)(0);
-    const [notice, setNotice] = (0, import_react11.useState)(null);
-    const [busyAction, setBusyAction] = (0, import_react11.useState)("");
-    const [uploadFile, setUploadFile] = (0, import_react11.useState)(null);
-    const [detectorForm, setDetectorForm] = (0, import_react11.useState)({
+    const [dashboard, setDashboard] = (0, import_react12.useState)(null);
+    const [analysis, setAnalysis] = (0, import_react12.useState)(null);
+    const [activeView, setActiveView] = (0, import_react12.useState)("overview");
+    const [activeStep, setActiveStep] = (0, import_react12.useState)(0);
+    const [notice, setNotice] = (0, import_react12.useState)(null);
+    const [busyAction, setBusyAction] = (0, import_react12.useState)("");
+    const [uploadFile, setUploadFile] = (0, import_react12.useState)(null);
+    const [detectorForm, setDetectorForm] = (0, import_react12.useState)({
       dataset_yaml: "",
       model: "yolov8n.pt",
       epochs: "50",
@@ -22731,7 +23214,7 @@
       summary_path: "artifacts/qml_ocr_detector.summary.json",
       reuse_existing: "true"
     });
-    const [classifierForm, setClassifierForm] = (0, import_react11.useState)({
+    const [classifierForm, setClassifierForm] = (0, import_react12.useState)({
       dataset_dir: "",
       artifact_path: "artifacts/hybrid_qml_classifier.pkl",
       model_type: "qsvc",
@@ -22742,7 +23225,7 @@
       summary_path: "artifacts/hybrid_qml_classifier.summary.json",
       reuse_existing: "true"
     });
-    const [suiteForm, setSuiteForm] = (0, import_react11.useState)({
+    const [suiteForm, setSuiteForm] = (0, import_react12.useState)({
       dataset_dir: "",
       artifacts_dir: "artifacts",
       profile: "core",
@@ -22750,11 +23233,11 @@
       device: "cpu",
       reuse_existing: "true"
     });
-    const [inferenceForm, setInferenceForm] = (0, import_react11.useState)({
+    const [inferenceForm, setInferenceForm] = (0, import_react12.useState)({
       mode: "recommended",
       classifier_artifact: ""
     });
-    const previousTraining = (0, import_react11.useRef)(false);
+    const previousTraining = (0, import_react12.useRef)(false);
     async function loadDashboard() {
       const data = await fetchJson("/api/dashboard");
       setDashboard(data);
@@ -22783,17 +23266,15 @@
         }));
       }
     }
-    (0, import_react11.useEffect)(() => {
+    (0, import_react12.useEffect)(() => {
       loadDashboard().catch((error) => setNotice({ tone: "error", text: error.message }));
     }, []);
-    (0, import_react11.useEffect)(() => {
+    (0, import_react12.useEffect)(() => {
       const timer = window.setInterval(async () => {
         try {
           const status = await fetchJson("/api/status");
           setDashboard((current) => {
-            if (!current) {
-              return current;
-            }
+            if (!current) return current;
             return { ...current, training_status: status };
           });
           if (previousTraining.current && !status.training) {
@@ -22850,78 +23331,113 @@
       }
     }
     if (!dashboard) {
-      return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "app-loading", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "loading-orb" }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Quantum Vision Studio" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h1", { children: "Preparing workspace" })
+      return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "app-loading", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "loading-orb" }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "eyebrow", children: "QML Vision Research Console" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h1", { children: "Preparing the workspace" })
         ] })
       ] });
     }
     const trainingStatus = dashboard.training_status || { training: false, status_messages: [] };
-    const recommendation = dashboard.recommendation;
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "app-shell", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("aside", { className: "sidebar", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "brand-block", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "brand-mark", children: "QV" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "React Control Room" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h1", { children: "Quantum Vision Studio" })
+    const recommendation = dashboard.recommendation || {};
+    const benchmark = dashboard.benchmark || {};
+    const familySummary = benchmark.family_summary || [];
+    const classicalSummary = familySummary.find((item) => item.family === "classical");
+    const quantumSummary = familySummary.find((item) => item.family === "quantum");
+    const activeNav = NAV_ITEMS.find((item) => item.id === activeView) || NAV_ITEMS[0];
+    const benchmarkGeneratedAt = formatDateTime(benchmark.generated_at);
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "app-shell", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("aside", { className: "sidebar", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "brand-block", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "brand-mark", children: "QV" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "eyebrow", children: "Research UI" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h1", { children: "Quantum Vision Studio" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "brand-copy", children: "QML object-detection, benchmarking, and OCR research workspace" })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("nav", { className: "side-nav", children: NAV_ITEMS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-card sidebar-highlight", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sidebar-label", children: "Research Focus" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: "Hybrid quantum vs classical comparison for object detection workflows" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: "The UI is organized around model training, measurable benchmarking, and presentation-ready inference results." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("nav", { className: "side-nav", children: NAV_ITEMS.map((item) => /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(
           "button",
           {
             className: `side-nav-item ${activeView === item.id ? "active" : ""}`,
             onClick: () => setActiveView(item.id),
             type: "button",
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "nav-badge", children: item.short }),
-              /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { children: item.label })
+              /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "nav-badge", children: item.short }),
+              /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("span", { className: "nav-text", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: item.label }),
+                /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("small", { children: item.description })
+              ] })
             ]
           },
           item.id
         )) }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "sidebar-card", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "sidebar-label", children: "Best Available Stack" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("strong", { children: `${recommendation.detector_backend || "pending"} + ${recommendation.classifier_name} + ${recommendation.ocr_backend}` }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: recommendation.mode === "classifier_only" ? "ROI upload mode is ready. Cropped single-object uploads are supported now." : recommendation.ready ? "Ready for full upload inference." : "Train or add artifacts to unlock inference." }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: `Classifier family: ${recommendation.classifier_family || "unknown"}` })
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-metric-grid", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Saved ROI Models" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: dashboard.available_models?.length || 0 })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Detector Runs" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: dashboard.inventory?.detector_weights?.length || 0 })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Best Classical" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: classicalSummary ? formatPercent3(classicalSummary.best_accuracy) : "N/A" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-stat", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: "Best Quantum" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: quantumSummary ? formatPercent3(quantumSummary.best_accuracy) : "N/A" })
+          ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "sidebar-card muted", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "sidebar-label", children: "Supported Classes" }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "stacked-chips", children: [
-            dashboard.supported_classes.map((item) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "chip", children: item }, item)),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: "chip ghost", children: "others -> unidentified" })
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-card", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sidebar-label", children: "Recommended Stack" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("strong", { children: `${recommendation.detector_backend || "pending"} + ${recommendation.classifier_name} + ${recommendation.ocr_backend}` }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: recommendation.mode === "classifier_only" ? "ROI-only upload mode is available now. Add detector weights for full-scene operation." : recommendation.ready ? "Full pipeline inference is ready with benchmark-guided model selection." : "Train models or add artifacts to unlock inference." }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: `Benchmark report: ${benchmarkGeneratedAt}` })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "sidebar-card muted", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "sidebar-label", children: "Supported Classes" }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "stacked-chips", children: [
+            (dashboard.supported_classes || []).map((item) => /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "chip", children: item }, item)),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: "chip ghost", children: "others = unidentified" })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("main", { className: "workspace", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("header", { className: "topbar", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: "eyebrow", children: "Professional QML + OCR Workspace" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h2", { children: NAV_ITEMS.find((item) => item.id === activeView)?.label })
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("main", { className: "workspace", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("header", { className: "topbar", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "topbar-copy", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "eyebrow", children: "QML Object Detection Research and Development" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h2", { children: activeNav.label }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: activeNav.description })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "topbar-status", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: `status-pill ${trainingStatus.training ? "warn" : "good"}`, children: trainingStatus.training ? "Training Running" : "System Ready" }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("button", { className: "ghost-btn", type: "button", onClick: () => loadDashboard(), children: "Refresh" })
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "topbar-status", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: `status-pill ${benchmark.has_report ? "good" : "warn"}`, children: benchmark.has_report ? "Benchmark Ready" : "Benchmark Pending" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: `status-pill ${trainingStatus.training ? "warn" : "good"}`, children: trainingStatus.training ? "Training Running" : "System Idle" }),
+            /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("button", { className: "ghost-btn", type: "button", onClick: () => loadDashboard(), children: "Refresh Data" })
           ] })
         ] }),
-        notice ? /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: `notice ${notice.tone}`, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { children: notice.text }),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("button", { type: "button", onClick: () => setNotice(null), children: "Dismiss" })
+        notice ? /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: `notice ${notice.tone}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { children: notice.text }),
+          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("button", { type: "button", onClick: () => setNotice(null), children: "Dismiss" })
         ] }) : null,
-        activeView === "overview" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        activeView === "overview" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           OverviewView,
           {
             dashboard,
             recommendation,
-            benchmark: dashboard.benchmark,
+            benchmark,
             projectBrief: dashboard.project_brief,
             onJump: setActiveView
           }
         ) : null,
-        activeView === "workflow" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        activeView === "workflow" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           WorkflowView,
           {
             flowSteps: dashboard.flow_steps || [],
@@ -22929,7 +23445,7 @@
             setActiveStep
           }
         ) : null,
-        activeView === "training" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        activeView === "training" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           TrainingView,
           {
             detectorForm,
@@ -22951,8 +23467,8 @@
             onBuildBenchmark: () => postJson("/api/benchmark/generate", {}, "benchmark")
           }
         ) : null,
-        activeView === "benchmarks" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(BenchmarksView, { benchmark: dashboard.benchmark, recommendation, projectBrief: dashboard.project_brief }) : null,
-        activeView === "inference" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        activeView === "benchmarks" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(BenchmarksView, { benchmark, recommendation, projectBrief: dashboard.project_brief }) : null,
+        activeView === "inference" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           InferenceView,
           {
             recommendation,
@@ -22967,22 +23483,22 @@
             trainingRunning: trainingStatus.training
           }
         ) : null,
-        activeView === "future" ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+        activeView === "future" ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
           FutureLabView,
           {
             projectBrief: dashboard.project_brief,
             recommendation,
-            benchmark: dashboard.benchmark,
+            benchmark,
             modelCatalog: dashboard.model_catalog
           }
         ) : null
       ] })
     ] });
   }
-  var import_react11, import_jsx_runtime11, NAV_ITEMS;
+  var import_react12, import_jsx_runtime12, NAV_ITEMS;
   var init_App = __esm({
     "frontend/src/App.jsx"() {
-      import_react11 = __toESM(require_react());
+      import_react12 = __toESM(require_react());
       init_api();
       init_OverviewView();
       init_WorkflowView();
@@ -22990,14 +23506,14 @@
       init_BenchmarksView();
       init_InferenceView();
       init_FutureLabView();
-      import_jsx_runtime11 = __toESM(require_jsx_runtime());
+      import_jsx_runtime12 = __toESM(require_jsx_runtime());
       NAV_ITEMS = [
-        { id: "overview", label: "Overview", short: "OV" },
-        { id: "workflow", label: "Workflow", short: "WF" },
-        { id: "training", label: "Training", short: "TR" },
-        { id: "benchmarks", label: "Benchmarks", short: "BM" },
-        { id: "inference", label: "Inference Lab", short: "IN" },
-        { id: "future", label: "Project Brief", short: "PB" }
+        { id: "overview", label: "Overview", short: "01", description: "Research dashboard and executive snapshot" },
+        { id: "workflow", label: "Workflow", short: "02", description: "Step-by-step operating flow" },
+        { id: "training", label: "Training", short: "03", description: "Detector and ROI model training control" },
+        { id: "benchmarks", label: "Benchmarks", short: "04", description: "Classical, quantum, and hybrid comparison" },
+        { id: "inference", label: "Inference Lab", short: "05", description: "Upload, detect, classify, and extract text" },
+        { id: "future", label: "Research Brief", short: "06", description: "Presentation-ready project notes" }
       ];
     }
   });
@@ -23006,10 +23522,10 @@
   var require_main = __commonJS({
     "frontend/src/main.jsx"() {
       var import_client = __toESM(require_client());
-      var import_react12 = __toESM(require_react());
+      var import_react13 = __toESM(require_react());
       init_App();
-      var import_jsx_runtime12 = __toESM(require_jsx_runtime());
-      (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime12.jsx)(App, {}));
+      var import_jsx_runtime13 = __toESM(require_jsx_runtime());
+      (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime13.jsx)(App, {}));
     }
   });
   require_main();

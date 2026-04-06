@@ -148,7 +148,7 @@ def main() -> None:
         {
             "name": "TrOCR",
             "score": "policy fallback",
-            "notes": "Transformer OCR for difficult packaging text.",
+            "notes": "Transformer OCR for difficult object text regions.",
         },
         {
             "name": "Tesseract",

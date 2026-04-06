@@ -39,9 +39,42 @@ export default function TrainingView({
 
   return (
     <div className="page-grid">
+      <section className="training-hero">
+        <div className="panel-card">
+          <p className="eyebrow">Training Console</p>
+          <h3>Manage detector training, ROI model experiments, and saved benchmark suites</h3>
+          <p>
+            The training view is organized for research iteration. You can keep the detector fixed, expand only the ROI
+            model suite, reuse compatible saved artifacts, and regenerate the benchmark board when new results are ready.
+          </p>
+        </div>
+        <div className="panel-card">
+          <p className="eyebrow">Live Status</p>
+          <h3>{trainingStatus.title || "No active job"}</h3>
+          <div className="detail-list compact">
+            <div>
+              <span>Job Type</span>
+              <strong>{trainingStatus.job_type || "idle"}</strong>
+            </div>
+            <div>
+              <span>Active Item</span>
+              <strong>{activeTrainingLabel}</strong>
+            </div>
+            <div>
+              <span>Suite Progress</span>
+              <strong>{suiteProgress}</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong>{trainingStatus.progress_status || "idle"}</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="card-grid two">
         <div className={`panel-card dataset-card ${detectorReady ? "ready" : "warn"}`}>
-          <p className="eyebrow">Detector Dataset Check</p>
+          <p className="eyebrow">Detector Dataset</p>
           <h3>{detectorReady ? "YOLO dataset ready" : "Detector dataset missing"}</h3>
           <p>{detectorStatus.message}</p>
           <div className="dataset-stats">
@@ -65,8 +98,8 @@ export default function TrainingView({
         </div>
 
         <div className={`panel-card dataset-card ${classifierReady ? "ready" : "warn"}`}>
-          <p className="eyebrow">ROI Classifier Dataset Check</p>
-          <h3>{classifierReady ? "ROI dataset ready" : "ROI dataset incomplete"}</h3>
+          <p className="eyebrow">ROI Dataset</p>
+          <h3>{classifierReady ? "ROI classifier dataset ready" : "ROI dataset incomplete"}</h3>
           <p>{classifierStatus.message}</p>
           <div className="dataset-stats">
             <div>
@@ -92,7 +125,7 @@ export default function TrainingView({
       <section className="card-grid two">
         <FormCard
           title="Detector Trainer"
-          subtitle="Optional: full-scene YOLO detection dataset required"
+          subtitle="Optional full-scene detector training"
           fields={[
             { key: "dataset_yaml", label: "Dataset YAML" },
             { key: "model", label: "Base Model" },
@@ -116,8 +149,8 @@ export default function TrainingView({
         />
 
         <FormCard
-          title="Single Model Trainer"
-          subtitle="Train a specific classical or quantum-ready ROI classifier"
+          title="Single ROI Model Trainer"
+          subtitle="Train one classical or quantum-ready model"
           fields={[
             { key: "dataset_dir", label: "ROI Dataset Directory" },
             { key: "artifact_path", label: "Artifact Path" },
@@ -132,10 +165,10 @@ export default function TrainingView({
           data={classifierForm}
           onChange={setClassifierForm}
           onSubmit={onRunClassifier}
-          submitLabel={busyAction === "classifier" ? "Starting..." : classifierReady ? "Start Classifier Training" : "ROI Dataset Required"}
+          submitLabel={busyAction === "classifier" ? "Starting..." : classifierReady ? "Start ROI Model Training" : "ROI Dataset Required"}
           disabled={trainingStatus.training}
           submitDisabled={trainingStatus.training || !classifierReady}
-          message="Choose a classical baseline, a quantum-kernel model, or a trainable VQC. Encoding mainly affects the quantum families."
+          message="Use this for targeted experiments when you want to study one model family or one encoding configuration."
           messageTone="success"
         />
       </section>
@@ -143,7 +176,7 @@ export default function TrainingView({
       <section className="card-grid two">
         <FormCard
           title="Comparison Suite Runner"
-          subtitle="Run saved, reusable benchmark suites"
+          subtitle="Benchmark suite execution"
           fields={[
             { key: "dataset_dir", label: "ROI Dataset Directory" },
             { key: "artifacts_dir", label: "Artifacts Directory" },
@@ -155,8 +188,8 @@ export default function TrainingView({
                 { value: "core", label: "core - strong baselines + one quantum reference" },
                 { value: "quantum", label: "quantum - kernel and VQC variants only" },
                 { value: "presentation", label: "presentation - clean manager-ready mix" },
-                { value: "all_models", label: "all models - train every supported ROI model" },
-                { value: "extended", label: "extended - broader classical + quantum grid" },
+                { value: "all_models", label: "all_models - every supported ROI model" },
+                { value: "extended", label: "extended - broader classical and quantum grid" },
               ],
             },
             { key: "test_size", label: "Test Split" },
@@ -169,17 +202,17 @@ export default function TrainingView({
           submitLabel={busyAction === "suite" ? "Starting..." : classifierReady ? "Run Comparison Suite" : "ROI Dataset Required"}
           disabled={trainingStatus.training}
           submitDisabled={trainingStatus.training || !classifierReady}
-          message="Use suite runs to save a full benchmark pack. Reuse mode skips compatible artifacts so you do not retrain the same models repeatedly."
+          message="Suite runs save a full benchmark pack so the benchmark board and inference lab can reuse the results without retraining."
           messageTone="success"
         />
 
         <div className="panel-card">
           <p className="eyebrow">Quick Actions</p>
-          <h3>Detector can stay saved while ROI models expand</h3>
+          <h3>Fastest way to expand the benchmark board</h3>
           <p>
             {savedDetectorCount > 0
-              ? `Saved detector weights found: ${savedDetectorCount}. You only need to train new ROI models unless you want to retrain detection.`
-              : "No saved detector weights found yet. You can still train ROI models now and add or retrain detection later."}
+              ? `Saved detector weights found: ${savedDetectorCount}. You can keep detector training fixed and focus on ROI model comparisons.`
+              : "No saved detector weights were found yet. ROI-only benchmarking is still available and full-scene detection can be added later."}
           </p>
           <div className="button-stack">
             <button
@@ -202,9 +235,9 @@ export default function TrainingView({
         </div>
       </section>
 
-      <section className="card-grid one">
+      <section className="card-grid two">
         <div className="panel-card log-card">
-          <p className="eyebrow">Live Job Status</p>
+          <p className="eyebrow">Live Job Stream</p>
           <h3>{trainingStatus.title || "Idle"}</h3>
           <div className="status-line">
             <span>{trainingStatus.job_type || "no active job"}</span>
@@ -213,24 +246,10 @@ export default function TrainingView({
                 ? "Running"
                 : trainingStatus.return_code === 0
                   ? "Completed"
-                : trainingStatus.return_code === 1
+                  : trainingStatus.return_code === 1
                     ? "Failed"
                     : "Idle"}
             </strong>
-          </div>
-          <div className="training-progress-grid">
-            <div className="progress-pill">
-              <span>Active Item</span>
-              <strong>{activeTrainingLabel}</strong>
-            </div>
-            <div className="progress-pill">
-              <span>Suite Progress</span>
-              <strong>{suiteProgress}</strong>
-            </div>
-            <div className="progress-pill">
-              <span>Status</span>
-              <strong>{trainingStatus.progress_status || "idle"}</strong>
-            </div>
           </div>
           <div className="log-stream">
             {(trainingStatus.status_messages || []).slice().reverse().map((line, index) => (
@@ -240,33 +259,10 @@ export default function TrainingView({
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="card-grid two">
-        <div className="panel-card">
-          <p className="eyebrow">Supported Models</p>
-          <h3>Comparison menu</h3>
-          <div className="catalog-grid">
-            {(modelCatalog || []).map((item) => (
-              <article className="catalog-card" key={item.model_type}>
-                <div className="step-row">
-                  <strong>{item.display_name}</strong>
-                  <span className={`family-chip ${item.family}`}>{item.family}</span>
-                </div>
-                <p>{item.summary}</p>
-                <div className="meta-chip-row">
-                  <span className="chip">{item.kernel_name}</span>
-                  <span className="chip">{item.feature_map_name}</span>
-                  <span className="chip">{item.ansatz_name}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
 
         <div className="panel-card">
-          <p className="eyebrow">Saved Models</p>
-          <h3>{`${(availableModels || []).length} trained artifacts available`}</h3>
+          <p className="eyebrow">Model Inventory</p>
+          <h3>{`${(availableModels || []).length} trained ROI artifacts available`}</h3>
           {(availableModels || []).length ? (
             <div className="catalog-grid compact">
               {availableModels.map((item) => (
@@ -281,8 +277,29 @@ export default function TrainingView({
               ))}
             </div>
           ) : (
-            <p className="empty-text">No trained classifier artifacts yet. Train one model or run a suite to populate this area.</p>
+            <p className="empty-text">No trained classifier artifacts yet. Start one ROI model or run a full suite.</p>
           )}
+        </div>
+      </section>
+
+      <section className="panel-card">
+        <p className="eyebrow">Supported ROI Model Families</p>
+        <h3>Available comparison menu</h3>
+        <div className="catalog-grid">
+          {(modelCatalog || []).map((item) => (
+            <article className="catalog-card" key={item.model_type}>
+              <div className="step-row">
+                <strong>{item.display_name}</strong>
+                <span className={`family-chip ${item.family}`}>{item.family}</span>
+              </div>
+              <p>{item.summary}</p>
+              <div className="meta-chip-row">
+                <span className="chip">{item.kernel_name}</span>
+                <span className="chip">{item.feature_map_name}</span>
+                <span className="chip">{item.ansatz_name}</span>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </div>

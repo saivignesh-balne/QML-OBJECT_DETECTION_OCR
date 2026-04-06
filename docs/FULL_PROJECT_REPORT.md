@@ -2,7 +2,7 @@
 
 ## Title
 
-**Hybrid Quantum-Enhanced Object Detection, Classification, and OCR for Bottles, Chip Packets, and Medicine Boxes**
+**Hybrid Quantum-Enhanced Object Detection, Classification, and OCR for QML Research and Development**
 
 ## Authoring Context
 
@@ -29,7 +29,7 @@ The project was designed not only to achieve end-to-end functional performance, 
 
 ## 1. Introduction
 
-Packaging recognition is a realistic applied computer-vision problem because the task is not limited to identifying an object class. A useful system must also locate the item in the image, distinguish among visually similar packaging types, and recover printed text that may be partially visible, reflective, or distorted by lighting and perspective.
+Object detection with OCR is a realistic applied computer-vision problem because the task is not limited to identifying an object class. A useful system must also locate the item in the image, distinguish among visually similar object categories, and recover printed text that may be partially visible, reflective, or distorted by lighting and perspective.
 
 This project addresses that problem by integrating three major subsystems:
 
